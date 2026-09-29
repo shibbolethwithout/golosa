@@ -17,42 +17,42 @@
         "id": "p1",
         "title": "Часть 1",
         "url": "https://sheba.spb.ru/skaz/12m-1.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/dvenadcat_mesjacev_spektakl.mp3",
         "isTitr": false
       },
       {
         "id": "p2",
         "title": "Часть 2",
         "url": "https://sheba.spb.ru/skaz/12m-2.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/dvenadcat_mesjacev_spektakl.mp3",
         "isTitr": false
       },
       {
         "id": "p3",
         "title": "Часть 3",
         "url": "https://sheba.spb.ru/skaz/12m-3.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/dvenadcat_mesjacev_spektakl.mp3",
         "isTitr": false
       },
       {
         "id": "p4",
         "title": "Часть 4",
         "url": "https://sheba.spb.ru/skaz/12m-4.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/dvenadcat_mesjacev_spektakl.mp3",
         "isTitr": false
       },
       {
         "id": "p5",
         "title": "Часть 5",
         "url": "https://sheba.spb.ru/skaz/12m-5.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/dvenadcat_mesjacev_spektakl.mp3",
         "isTitr": false
       },
       {
         "id": "p6",
         "title": "Часть 6",
         "url": "https://sheba.spb.ru/skaz/12m-6.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/dvenadcat_mesjacev_spektakl.mp3",
         "isTitr": false
       }
     ],
@@ -4426,28 +4426,28 @@
         "id": "p1",
         "title": "Часть 1",
         "url": "https://sheba.spb.ru/skaz/aladdin1.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/volshebnaja_lampa_aladdina.mp3",
         "isTitr": false
       },
       {
         "id": "p2",
         "title": "Часть 2",
         "url": "https://sheba.spb.ru/skaz/aladdin2.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/volshebnaja_lampa_aladdina.mp3",
         "isTitr": false
       },
       {
         "id": "p3",
         "title": "Часть 3",
         "url": "https://sheba.spb.ru/skaz/aladdin3.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/volshebnaja_lampa_aladdina.mp3",
         "isTitr": false
       },
       {
         "id": "p4",
         "title": "Часть 4",
         "url": "https://sheba.spb.ru/skaz/aladdin4.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/volshebnaja_lampa_aladdina.mp3",
         "isTitr": false
       }
     ],
@@ -5620,49 +5620,49 @@
         "id": "p1",
         "title": "Часть 1",
         "url": "https://sheba.spb.ru/radio/ostro_gor-1.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=39954",
         "isTitr": false
       },
       {
         "id": "p2",
         "title": "Часть 2",
         "url": "https://sheba.spb.ru/radio/ostro_gor-2.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=39954",
         "isTitr": false
       },
       {
         "id": "p3",
         "title": "Часть 3",
         "url": "https://sheba.spb.ru/radio/ostro_gor-3.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=39954",
         "isTitr": false
       },
       {
         "id": "p4",
         "title": "Часть 4",
         "url": "https://sheba.spb.ru/radio/ostro_gor-4.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=39954",
         "isTitr": false
       },
       {
         "id": "p5",
         "title": "Часть 5",
         "url": "https://sheba.spb.ru/radio/ostro_gor-5.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=39954",
         "isTitr": false
       },
       {
         "id": "p6",
         "title": "Часть 6",
         "url": "https://sheba.spb.ru/radio/ostro_gor-6.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=39954",
         "isTitr": false
       },
       {
         "id": "p7",
         "title": "Часть 7",
         "url": "https://sheba.spb.ru/radio/ostro_gor-titry.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=39954",
         "isTitr": false
       }
     ],
@@ -7223,14 +7223,14 @@
         "id": "p1",
         "title": "Часть 1",
         "url": "https://sheba.spb.ru/radio/vampilov_dom1.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=10872",
         "isTitr": false
       },
       {
         "id": "p2",
         "title": "Часть 2",
         "url": "https://sheba.spb.ru/radio/vampilov_dom2.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=10872",
         "isTitr": false
       }
     ],
@@ -9638,28 +9638,28 @@
         "id": "p1",
         "title": "Часть 1",
         "url": "https://sheba.spb.ru/skaz/zolushka1.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/zolushka_1.mp3",
         "isTitr": false
       },
       {
         "id": "p2",
         "title": "Часть 2",
         "url": "https://sheba.spb.ru/skaz/zolushka2.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/zolushka_1.mp3",
         "isTitr": false
       },
       {
         "id": "p3",
         "title": "Часть 3",
         "url": "https://sheba.spb.ru/skaz/zolushka3.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/zolushka_1.mp3",
         "isTitr": false
       },
       {
         "id": "p4",
         "title": "Часть 4",
         "url": "https://sheba.spb.ru/skaz/zolushka4.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/zolushka_1.mp3",
         "isTitr": false
       }
     ],
@@ -14046,60 +14046,32 @@
         "id": "p1",
         "title": "Часть 1",
         "url": "https://sheba.spb.ru/skaz/maugli1.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/maugli_1.mp3",
         "isTitr": false
       },
       {
         "id": "p2",
         "title": "Часть 2",
-        "url": "https://sheba.spb.ru/skaz/maugli1.mp3",
-        "backup": null,
+        "url": "https://sheba.spb.ru/skaz/maugli2.aac",
+        "backup": "https://mp3tales.info/audio/maugli_1.mp3",
         "isTitr": false
       },
       {
         "id": "p3",
         "title": "Часть 3",
-        "url": "https://sheba.spb.ru/skaz/maugli2.aac",
-        "backup": null,
+        "url": "https://sheba.spb.ru/skaz/maugli3.aac",
+        "backup": "https://mp3tales.info/audio/maugli_1.mp3",
         "isTitr": false
       },
       {
         "id": "p4",
         "title": "Часть 4",
-        "url": "https://sheba.spb.ru/skaz/maugli2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p5",
-        "title": "Часть 5",
-        "url": "https://sheba.spb.ru/skaz/maugli3.aac",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p6",
-        "title": "Часть 6",
-        "url": "https://sheba.spb.ru/skaz/maugli3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p7",
-        "title": "Часть 7",
         "url": "https://sheba.spb.ru/skaz/maugli4.aac",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p8",
-        "title": "Часть 8",
-        "url": "https://sheba.spb.ru/skaz/maugli4.mp3",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/maugli_1.mp3",
         "isTitr": false
       }
     ],
-    "partCount": 8
+    "partCount": 4
   },
   {
     "id": "мафин-и-его-весёлые-друзья-пластинка-1972",
@@ -21555,28 +21527,28 @@
         "id": "p1",
         "title": "Часть 1",
         "url": "https://sheba.spb.ru/radio/dama1.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=11108",
         "isTitr": false
       },
       {
         "id": "p2",
         "title": "Часть 2",
         "url": "https://sheba.spb.ru/radio/dama2.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=11108",
         "isTitr": false
       },
       {
         "id": "p3",
         "title": "Часть 3",
         "url": "https://sheba.spb.ru/radio/nina.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=11108",
         "isTitr": false
       },
       {
         "id": "p4",
         "title": "Часть 4",
         "url": "https://sheba.spb.ru/radio/rus_harakter.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=11108",
         "isTitr": false
       }
     ],
