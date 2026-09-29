@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "oxlint src",
-    "scan": "node scripts/scan.js"
+    "scan": "node scripts/scan.js",
     "deploy": "npm run build && cp dist/index.html dist/404.html && gh-pages -d dist"
   },
   "dependencies": {

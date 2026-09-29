@@ -56,6 +56,16 @@ export default function Player() {
 
   const handleEnded = () => {
     clearPartProgress(activeUrl)
+    const { queue, currentTrack } = usePlayerStore.getState()
+    const idx = queue.findIndex(t => t.id === currentTrack?.id)
+    const nextTrack = queue[idx + 1]
+    if (
+      usingBackup &&
+      nextTrack &&
+      nextTrack.backup === currentTrack?.backup
+    ) {
+      return
+    }
     next()
   }
 

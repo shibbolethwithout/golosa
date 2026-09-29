@@ -17,7 +17,7 @@ const M3U_DIR     = path.join(os.homedir(), 'Music/Music/Radio')
 const OUTPUT      = 'public/library.json'
 const OVERRIDES   = 'scripts/overrides.json'
 const COVERS_DIR  = 'public/covers'
-
+const BACKUP_URLS = 'scripts/backup-urls.json'
 // ─────────────────────────────────────────────────────
 //  Утилиты
 // ─────────────────────────────────────────────────────
@@ -132,6 +132,10 @@ async function main() {
     ? JSON.parse(fs.readFileSync(OVERRIDES, 'utf-8'))
     : {}
 
+  const backupUrls = fs.existsSync(BACKUP_URLS)
+  ? JSON.parse(fs.readFileSync(BACKUP_URLS, 'utf-8'))
+  : {}
+
   const playlists = fs.readdirSync(M3U_DIR)
     .filter(f => f.toLowerCase().endsWith('.m3u'))
     .sort()
@@ -169,6 +173,8 @@ async function main() {
 
     // Формируем части
     let partIdx = 0
+    const backupAll = backupUrls[folder] || null
+
     const parts = sorted.map((url, i) => {
       const p = parseUrlFilename(url)
       const isTitr = p.isTitr
@@ -180,7 +186,7 @@ async function main() {
         id: `p${i + 1}`,
         title,
         url,
-        backup: null,
+        backup: backupAll,
         isTitr,
       }
     })
