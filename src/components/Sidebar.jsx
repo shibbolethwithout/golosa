@@ -4,12 +4,14 @@ export default function Sidebar({ library, onFilter, activeFilter, className = '
   const facets = useMemo(() => {
     const genres = new Map()
     const authors = new Map()
+    const directors = new Map()
     const theatres = new Map()
     const decades = new Map()
 
     for (const play of library) {
       for (const g of play.genre || []) genres.set(g, (genres.get(g) || 0) + 1)
       if (play.author) authors.set(play.author, (authors.get(play.author) || 0) + 1)
+      for (const d of play.directors || []) directors.set(d, (directors.get(d) || 0) + 1)
       if (play.theatre) theatres.set(play.theatre, (theatres.get(play.theatre) || 0) + 1)
       if (play.year) {
         const dec = Math.floor(play.year / 10) * 10
@@ -20,6 +22,7 @@ export default function Sidebar({ library, onFilter, activeFilter, className = '
     return {
       genres: [...genres.entries()].sort((a, b) => b[1] - a[1]).slice(0, 20),
       authors: [...authors.entries()].sort((a, b) => a[0].localeCompare(b[0], 'ru')),
+      directors: [...directors.entries()].sort((a, b) => a[0].localeCompare(b[0], 'ru')),
       theatres: [...theatres.entries()].sort((a, b) => a[0].localeCompare(b[0], 'ru')),
       decades: [...decades.entries()].sort((a, b) => b[0] - a[0]),
     }
@@ -31,18 +34,20 @@ export default function Sidebar({ library, onFilter, activeFilter, className = '
   const Item = ({ type, value, label, count }) => (
     <button
       onClick={() => onFilter(isActive(type, value) ? null : { type, value })}
-      className={`w-full flex items-center justify-between gap-2 px-3 py-1.5 rounded text-sm transition
+      className={`w-full grid items-center gap-2 px-3 py-1.5 rounded text-sm transition
         ${isActive(type, value)
           ? 'bg-[var(--color-accent-dim)]/20 text-[var(--color-accent)]'
           : 'hover:bg-[var(--color-bg-2)] text-[var(--color-fg-1)]'}`}
+      style={{ gridTemplateColumns: 'minmax(0, 1fr) auto' }}
+      title={label}
     >
       <span className="truncate text-left">{label}</span>
-      <span className="shrink-0 text-xs text-[var(--color-fg-2)] tabular-nums">{count}</span>
+      <span className="text-xs text-[var(--color-fg-2)] tabular-nums">{count}</span>
     </button>
   )
 
   return (
-    <aside className={`w-64 border-r border-white/5 bg-[var(--color-bg-1)] overflow-auto ${className}`}>
+    <aside className={`w-64 border-r border-white/5 bg-[var(--color-bg-1)] overflow-y-auto overflow-x-hidden ${className}`}>
       <div className="p-4">
         <button
           onClick={onHome}
@@ -66,6 +71,17 @@ export default function Sidebar({ library, onFilter, activeFilter, className = '
             <div className="space-y-0.5">
               {facets.authors.map(([a, c]) => (
                 <Item key={a} type="author" value={a} label={a} count={c} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {facets.directors.length > 0 && (
+          <div className="mb-6">
+            <h2 className="text-xs uppercase text-[var(--color-fg-2)] mb-2 tracking-wide">Режиссёры</h2>
+            <div className="space-y-0.5">
+              {facets.directors.map(([d, c]) => (
+                <Item key={d} type="director" value={d} label={d} count={c} />
               ))}
             </div>
           </div>
