@@ -1,5 +1,6 @@
 const LABELS = {
   author: 'Автор',
+  director: 'Режиссёр',
   actor: 'Актёр',
   genre: 'Жанр',
   tag: 'Тег',

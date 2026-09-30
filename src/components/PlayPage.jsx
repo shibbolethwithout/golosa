@@ -78,6 +78,23 @@ export default function PlayPage({ play, onBack, onFilter }) {
             ))}
           </div>
 
+	  {/* Режиссёр(ы) */}
+          {play.directors && play.directors.length > 0 && (
+            <div className="mt-5">
+              <div className="text-xs uppercase text-[var(--color-fg-2)] mb-2 tracking-wide">
+                {play.directors.length > 1 ? 'Режиссёры' : 'Режиссёр'}
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {play.directors.map(d => (
+                  <button key={d}
+                    onClick={() => onFilter({ type: 'director', value: d })}
+                    className="px-3 py-1 rounded-full bg-[var(--color-bg-2)] hover:bg-[var(--color-bg-3)] text-sm text-[var(--color-fg-1)] hover:text-[var(--color-accent)] transition"
+                  >🎬 {d}</button>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* В ролях */}
           {play.actors && play.actors.length > 0 && (
             <div className="mt-5">

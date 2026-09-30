@@ -12,6 +12,7 @@ function prepareItem(item) {
     title: norm(item.title),
     author: norm(item.author),
     theatre: norm(item.theatre),
+    directors: (item.directors || []).map(norm),
     actors: (item.actors || []).map(norm),
     genre: (item.genre || []).map(norm),
     tags: (item.tags || []).map(norm),
@@ -27,6 +28,7 @@ export function buildIndex(library) {
     keys: [
       { name: 'title', weight: 2.0 },
       { name: 'author', weight: 1.5 },
+      { name: 'directors', weight: 1.4 },
       { name: 'actors', weight: 1.3 },
       { name: 'theatre', weight: 1.1 },
       { name: 'genre', weight: 1.0 },
@@ -60,6 +62,7 @@ export function applyFilter(list, filter) {
   return list.filter(play => {
     switch (filter.type) {
       case 'author':   return norm(play.author) === nv
+      case 'director':  return (play.directors || []).some(d => norm(d) === nv)
       case 'actor':    return (play.actors || []).some(a => norm(a) === nv)
       case 'genre':    return (play.genre || []).some(g => norm(g) === nv)
       case 'tag':      return (play.tags || []).some(t => norm(t) === nv)

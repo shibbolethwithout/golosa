@@ -218,6 +218,7 @@ async function main() {
       author: ov.author ?? parsed.author,
       year: ov.year ?? parsed.year,
       theatre: ov.theatre ?? null,
+      directors: ov.directors || [],
       actors: ov.actors ?? [],
       genre: ov.genre ?? [],
       tags: ov.tags ?? [],
