@@ -48,7 +48,7 @@ function parsePlaylistName(name) {
   // Автор: «Фамилия И.О.» или «Фамилия И.»
   let author = null
   let title = work
-  const re = /^([А-ЯЁ][а-яё\-]+(?:\s+[А-ЯЁ][а-яё\-]+)*\s+[А-ЯЁ]\.(?:\s*[А-ЯЁ]\.)?)\s+(.+)$/
+  const re = /^([А-ЯЁ][А-ЯЁа-яё\-]*(?:\s+[А-ЯЁ][А-ЯЁа-яё\-]*)*\s+[А-ЯЁ]\.(?:\s*[А-ЯЁ]\.)?)\s+(.+)$/
   const m = work.match(re)
   if (m && m[2].length >= 2) {
     author = m[1].trim()

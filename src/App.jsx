@@ -7,6 +7,7 @@ import PlayPage from './components/PlayPage'
 import Player from './components/Player'
 import Queue from './components/Queue'
 import { buildIndex, search, applyFilter } from './lib/search'
+import { usePlayerStore } from './store/playerStore'
 
 export default function App() {
   const [library, setLibrary] = useState([])
@@ -15,18 +16,54 @@ export default function App() {
   const [showQueue, setShowQueue] = useState(false)
   const [currentPlay, setCurrentPlay] = useState(null)
 
+  // ─── Загрузка библиотеки + обработка deep link ───────────
   useEffect(() => {
+    const handleDeepLink = (lib) => {
+      const params = new URLSearchParams(window.location.search)
+      const playSlug = params.get('play')
+      const partId = params.get('part')
+      const t = parseFloat(params.get('t') || '0')
+
+      if (!playSlug) return
+
+      const play = lib.find(p => p.slug === playSlug || p.id === playSlug)
+      if (!play) return
+
+      setCurrentPlay(play)
+
+      const { playPart } = usePlayerStore.getState()
+      const partIdx = partId ? play.parts.findIndex(p => p.id === partId) : 0
+      const idx = partIdx >= 0 ? partIdx : 0
+
+      playPart(play, idx)
+
+      if (t > 0) {
+        const targetPart = play.parts[idx]
+        setTimeout(() => {
+          const { saveProgress } = usePlayerStore.getState()
+          saveProgress(targetPart.url, t)
+        }, 100)
+      }
+
+      // Убираем query-параметры, чтобы при перезагрузке не открывалось заново
+      window.history.replaceState({}, '', window.location.pathname)
+    }
+
     fetch('/library.json')
       .then(r => r.json())
-      .then(data => { setLibrary(data); buildIndex(data) })
+      .then(data => {
+        setLibrary(data)
+        buildIndex(data)
+        handleDeepLink(data)
+      })
       .catch(() => setLibrary([]))
   }, [])
 
-  // ─── Сброс всех фильтров при выборе нового ───
+  // ─── Действия с фильтрами ────────────────────────────────
   const applyNewFilter = (f) => {
     setFilter(f)          // null → сброс
-    setQuery('')          // очищаем поиск
-    setCurrentPlay(null)  // уходим со страницы спектакля
+    setQuery('')
+    setCurrentPlay(null)
   }
 
   const clearFilter = () => {
@@ -43,7 +80,7 @@ export default function App() {
     setCurrentPlay(play)
   }
 
-  // ─── Формируем отображаемый список ───
+  // ─── Формирование отображаемого списка ───────────────────
   let visible = library
   if (query) {
     const found = search(query)

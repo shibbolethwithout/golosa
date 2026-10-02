@@ -3,7 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <script>
+      // Определяем браузер и вешаем класс на <html>
+      (function() {
+        var ua = navigator.userAgent.toLowerCase();
+        var el = document.documentElement;
+        if (ua.includes('firefox')) el.classList.add('is-firefox');
+        else if (ua.includes('chrome') && !ua.includes('edg')) el.classList.add('is-chrome');
+        else if (ua.includes('safari')) el.classList.add('is-safari');
+      })();
+    </script>
     <!-- Иконки и манифест (Вставлено сюда) -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
