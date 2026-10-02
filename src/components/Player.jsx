@@ -337,7 +337,8 @@ export default function Player() {
             max={duration || 0}
             value={progress}
             onChange={handleSeek}
-            className="flex-1 accent-[var(--color-accent)] min-w-0"
+            className="flex-1 min-w-0"
+            style={{ '--range-progress': `${duration > 0 ? (progress / duration) * 100 : 0}%` }}
           />
           <span className="hidden md:inline text-xs text-[var(--color-fg-2)] w-10 shrink-0">{fmt(duration)}</span>
         </div>
@@ -359,7 +360,8 @@ export default function Player() {
             step={0.01}
             value={volume}
             onChange={e => setVolume(Number(e.target.value))}
-            className="w-20 lg:w-28 accent-[var(--color-accent)]"
+            className="w-20 lg:w-28"
+            style={{ '--range-progress': `${volume * 100}%` }}
           />
         </div>
       </div>

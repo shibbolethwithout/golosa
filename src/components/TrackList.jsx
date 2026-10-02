@@ -8,15 +8,15 @@ function partsLabel(n) {
   return 'частей'
 }
 
-function PlayIcon({ size = 18 }) {
+function PlayIcon({ size = 30 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <polygon points="7 4 20 12 7 20" />
+      <polygon points="5 3 21 12 5 21" />
     </svg>
-  )
+  );
 }
 
-function PauseIcon({ size = 18 }) {
+function PauseIcon({ size = 30 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <rect x="6.5" y="4" width="3.5" height="16" rx="0.5" />
