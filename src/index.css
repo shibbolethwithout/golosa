@@ -37,7 +37,7 @@ body {
   html.is-firefox { font-size: 17px !important; }
 
   /* Chrome/Chromium: увеличивает мелкий текст, но у вас всё равно мелко */
-  html.is-chrome  { font-size: 26px !important; }
+  html.is-chrome  { font-size: 17px !important; }
 
   /* Safari (iOS): как Firefox, не делает boosting */
   html.is-safari  { font-size: 17px !important; }
