@@ -3,13 +3,14 @@
 @theme {
   --color-bg-0: #161616;
   --color-bg-1: #1E1E1E;
-  --color-bg-2: #282828;
-  --color-bg-3: #202020;
+  --color-bg-2: #262626;
+  --color-bg-3: #343434;
   --color-fg-0: #e4e4e7;
   --color-fg-1: #a1a1aa;
   --color-fg-2: #71717a;
   --color-accent: #804942;
   --color-accent-dim: #6b3630;
+  --color-track: #2b2b2b;
 }
 
 html {
@@ -52,9 +53,8 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
-/* ─── Стили слайдеров (прогресс и громкость) ─── */
 
-/* ─── Стили слайдеров (прогресс и громкость) ─── */
+/* ─── Слайдеры (прогресс и громкость) ─── */
 
 input[type="range"] {
   -webkit-appearance: none;
@@ -62,20 +62,24 @@ input[type="range"] {
   background: transparent;
   cursor: pointer;
   height: 20px;
-  /* Значение по умолчанию — 0%, переопределяется из JS через inline-style */
   --range-progress: 0%;
+  --range-fill: var(--color-accent-dim);
 }
 
-/* ─── WebKit (Chrome, Edge, Safari) ─── */
+input[type="range"]:hover {
+  --range-fill: var(--color-accent);
+}
+
+/* WebKit */
 input[type="range"]::-webkit-slider-runnable-track {
   height: 4px;
   border-radius: 2px;
   background: linear-gradient(
     to right,
-    var(--color-accent) 0%,
-    var(--color-accent) var(--range-progress),
-    var(--color-bg-3) var(--range-progress),
-    var(--color-bg-3) 100%
+    var(--range-fill) 0%,
+    var(--range-fill) var(--range-progress),
+    var(--color-track) var(--range-progress),
+    var(--color-track) 100%
   );
 }
 
@@ -86,25 +90,21 @@ input[type="range"]::-webkit-slider-thumb {
   height: 14px;
   margin-top: -5px;
   border-radius: 50%;
-  background: var(--color-accent-dim);
+  background: var(--range-fill);
   transition: background 0.15s;
 }
 
-input[type="range"]:hover::-webkit-slider-thumb {
-  background: var(--color-accent);
-}
-
-/* ─── Firefox ─── */
+/* Firefox */
 input[type="range"]::-moz-range-track {
   height: 4px;
   border-radius: 2px;
-  background: var(--color-bg-3);
+  background: var(--color-track);
 }
 
 input[type="range"]::-moz-range-progress {
   height: 4px;
   border-radius: 2px;
-  background: var(--color-accent);
+  background: var(--range-fill);
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -112,23 +112,16 @@ input[type="range"]::-moz-range-thumb {
   height: 14px;
   border: none;
   border-radius: 50%;
-  background: var(--color-accent-dim);
+  background: var(--range-fill);
   transition: background 0.15s;
 }
 
-input[type="range"]:hover::-moz-range-thumb {
-  background: var(--color-accent);
-}
-
-/* ─── Focus ─── */
+/* Focus */
 input[type="range"]:focus {
   outline: none;
 }
 
-input[type="range"]:focus-visible::-webkit-slider-thumb {
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 30%, transparent);
-}
-
+input[type="range"]:focus-visible::-webkit-slider-thumb,
 input[type="range"]:focus-visible::-moz-range-thumb {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 30%, transparent);
 }
