@@ -16,7 +16,7 @@ export default function App() {
   const [showQueue, setShowQueue] = useState(false)
   const [currentPlay, setCurrentPlay] = useState(null)
 
-  // ─── Загрузка библиотеки + глубокие ссылки ───────────
+  // ─── Загрузка библиотеки + обработка deep link ───────
   useEffect(() => {
     const handleDeepLink = (lib) => {
       const params = new URLSearchParams(window.location.search)
@@ -25,10 +25,39 @@ export default function App() {
       const partId = params.get('part')
       const t = parseFloat(params.get('t') || '0')
 
-      if (queue) setShowQueue(true)
-      if (!playSlug) return
+      const play = playSlug
+        ? lib.find(p => p.slug === playSlug || p.id === playSlug)
+        : null
 
-      const play = lib.find(p => p.slug === playSlug || p.id === playSlug)
+      // Пришли извне по deep link на валидный спектакль?
+      const isExternal = play && !window.history.state?.__app
+
+      if (isExternal) {
+        // 1) Заменяем текущую запись (play) на главную
+        window.history.replaceState({ __app: true }, '', '/')
+        // 2) Пушим поверх play-запись
+        const qs = new URLSearchParams()
+        qs.set('play', playSlug)
+        if (queue) qs.set('queue', '1')
+        window.history.pushState(
+          { __app: true, currentPlay: playSlug, showQueue: queue },
+          '',
+          `?${qs.toString()}`
+        )
+      } else if (!play && playSlug) {
+        // play не найден — тихо уходим на главную
+        window.history.replaceState({ __app: true }, '', '/')
+      } else {
+        // Обычная загрузка или F5 — просто помечаем state
+        const st = window.history.state || {}
+        window.history.replaceState(
+          { ...st, __app: true },
+          '',
+          window.location.href
+        )
+      }
+
+      if (queue) setShowQueue(true)
       if (!play) return
 
       setCurrentPlay(play)
@@ -46,16 +75,6 @@ export default function App() {
           saveProgress(targetPart.url, t)
         }, 100)
       }
-
-      // Убираем ?t=&part= — оставляем только ?play= для чистоты
-      const clean = new URLSearchParams()
-      clean.set('play', playSlug)
-      if (queue) clean.set('queue', '1')
-      window.history.replaceState(
-        { currentPlay: play.slug, showQueue: queue },
-        '',
-        `?${clean.toString()}`
-      )
     }
 
     fetch('/library.json')
@@ -68,7 +87,7 @@ export default function App() {
       .catch(() => setLibrary([]))
   }, [])
 
-  // ─── Синхронизация URL → состояние (popstate) ─────────
+  // ─── popstate: браузерная кнопка «Назад» ─────────────
   useEffect(() => {
     const onPopState = () => {
       if (!library.length) return
@@ -89,30 +108,45 @@ export default function App() {
     return () => window.removeEventListener('popstate', onPopState)
   }, [library])
 
-  // ─── Помощник: пушим состояние в историю ──────────────
+  // ─── Работа с историей ───────────────────────────────
   const pushState = (play, queue) => {
     const params = new URLSearchParams()
     if (play) params.set('play', play.slug || play.id)
     if (queue) params.set('queue', '1')
     const qs = params.toString()
-    const url = qs ? `?${qs}` : window.location.pathname
-    window.history.pushState({ currentPlay: play?.slug || null, showQueue: queue }, '', url)
+    const url = qs ? `?${qs}` : '/'
+    window.history.pushState(
+      { __app: true, currentPlay: play?.slug || null, showQueue: queue },
+      '',
+      url
+    )
   }
 
-  // ─── Навигация ─────────────────────────────────────────
+  // Возврат на главную БЕЗ history.back() — заменяем текущую запись
+  const replaceWithHome = () => {
+    window.history.replaceState(
+      { __app: true, currentPlay: null, showQueue: false },
+      '',
+      '/'
+    )
+  }
+
+  // ─── Навигация ───────────────────────────────────────
   const openPlay = (play) => {
     pushState(play, showQueue)
     setCurrentPlay(play)
   }
 
   const closePlay = () => {
-    // Если в истории есть предыдущая запись — идём назад.
-    // Если мы попали сюда по прямой ссылке — просто закрываем.
-    if (window.history.state === null) {
-      window.history.replaceState({}, '', window.location.pathname)
-      setCurrentPlay(null)
-    } else {
+    const st = window.history.state
+    if (st?.currentPlay) {
+      // Мы попали на play-страницу внутренним переходом — back() вернёт на главную
       window.history.back()
+    } else {
+      // Страховка: если истории нет — просто идём на главную
+      replaceWithHome()
+      setCurrentPlay(null)
+      setShowQueue(false)
     }
   }
 
@@ -123,21 +157,23 @@ export default function App() {
   }
 
   const closeQueue = () => {
-    if (window.history.state === null) {
-      window.history.replaceState({}, '', window.location.pathname)
-      setShowQueue(false)
-    } else {
+    const st = window.history.state
+    if (st?.showQueue) {
       window.history.back()
+    } else {
+      setShowQueue(false)
     }
   }
 
-  // ─── Фильтры ────────────────────────────────────────────
+  // ─── Фильтры и поиск ────────────────────────────────
   const applyNewFilter = (f) => {
     setFilter(f)
     setQuery('')
-    // Фильтры не меняют URL — они не «страницы»
-    // Но если открыт спектакль — закрываем его
-    if (currentPlay) closePlay()
+    if (currentPlay || showQueue) {
+      replaceWithHome()   // ← НЕ history.back()
+      setCurrentPlay(null)
+      setShowQueue(false)
+    }
   }
 
   const clearFilter = () => setFilter(null)
@@ -146,14 +182,24 @@ export default function App() {
     setFilter(null)
     setQuery('')
     if (currentPlay || showQueue) {
-      // Сбрасываем URL и состояние одним махом
-      window.history.replaceState({}, '', window.location.pathname)
+      replaceWithHome()
       setCurrentPlay(null)
       setShowQueue(false)
     }
   }
 
-  // ─── Формирование списка ────────────────────────────────
+  const onSearchChange = (v) => {
+    setQuery(v)
+    // При вводе в поиск — прячем play/queue БЕЗ history.back(),
+    // иначе браузер уйдёт во внешний сайт (мессенджер).
+    if (currentPlay || showQueue) {
+      replaceWithHome()
+      setCurrentPlay(null)
+      setShowQueue(false)
+    }
+  }
+
+  // ─── Список ─────────────────────────────────────────
   let visible = library
   if (query) {
     const found = search(query)
@@ -185,7 +231,7 @@ export default function App() {
 
         <SearchBar
           value={query}
-          onChange={(v) => { setQuery(v); if (currentPlay) closePlay() }}
+          onChange={onSearchChange}
           onToggleQueue={toggleQueue}
         />
 

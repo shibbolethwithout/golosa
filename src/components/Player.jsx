@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { usePlayerStore } from '../store/playerStore'
 
-// ─── Иконки (SVG) ───────────────────────────────────────────
+// ─── Иконки ────────────────────────────────────────────────
 function PlayIcon({ size = 20 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -9,7 +9,6 @@ function PlayIcon({ size = 20 }) {
     </svg>
   )
 }
-
 function PauseIcon({ size = 20 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -18,7 +17,6 @@ function PauseIcon({ size = 20 }) {
     </svg>
   )
 }
-
 function PrevIcon({ size = 18 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -27,7 +25,6 @@ function PrevIcon({ size = 18 }) {
     </svg>
   )
 }
-
 function NextIcon({ size = 18 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -36,21 +33,10 @@ function NextIcon({ size = 18 }) {
     </svg>
   )
 }
-
 function ShareIcon({ size = 18 }) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="18" cy="5" r="3" />
       <circle cx="6" cy="12" r="3" />
       <circle cx="18" cy="19" r="3" />
@@ -60,7 +46,7 @@ function ShareIcon({ size = 18 }) {
   )
 }
 
-// ─── Утилиты Share ──────────────────────────────────────────
+// ─── Share утилиты ─────────────────────────────────────────
 function buildShareUrl(track, playSlug, time) {
   const base = window.location.origin + window.location.pathname
   const params = new URLSearchParams({
@@ -118,6 +104,8 @@ export default function Player() {
   const audioRef = useRef(null)
   const lastSavedRef = useRef(0)
   const restoredRef = useRef(null)
+  const shareRef = useRef(null)          // ← обёртка вокруг popover
+
   const [usingBackup, setUsingBackup] = useState(false)
   const [error, setError] = useState(null)
   const [toast, setToast] = useState(null)
@@ -157,13 +145,21 @@ export default function Player() {
     return () => clearTimeout(id)
   }, [toast])
 
+  // ─── Закрытие меню при клике СНАРУЖИ (не внутри shareRef) ───
   useEffect(() => {
     if (!shareMenuOpen) return
-    const close = () => setShareMenuOpen(false)
-    const id = setTimeout(() => document.addEventListener('click', close), 0)
+    const onDown = (e) => {
+      if (shareRef.current && !shareRef.current.contains(e.target)) {
+        setShareMenuOpen(false)
+      }
+    }
+    // mousedown / touchstart срабатывают ДО click,
+    // но мы проверяем contains — клик по нашей кнопке не закроет меню раньше времени
+    document.addEventListener('mousedown', onDown)
+    document.addEventListener('touchstart', onDown)
     return () => {
-      clearTimeout(id)
-      document.removeEventListener('click', close)
+      document.removeEventListener('mousedown', onDown)
+      document.removeEventListener('touchstart', onDown)
     }
   }, [shareMenuOpen])
 
@@ -210,12 +206,15 @@ export default function Player() {
   }
 
   const handleShareWith = async (withTime) => {
-    setShareMenuOpen(false)
     if (!currentTrack) return
     const time = withTime ? progress : 0
     const slug = currentTrack?.playId || ''
     const url = buildShareUrl(currentTrack, slug, time)
     const title = `${currentTrack?.playTitle || 'Радиоспектакль'} — ${currentTrack?.title || 'часть'}`
+
+    // Меню закрываем ПОСЛЕ формирования URL, но ДО вызова share
+    setShareMenuOpen(false)
+
     const result = await shareUrl(url, title)
     if (result.method === 'clipboard') setToast('Ссылка скопирована')
     else if (result.method === 'error') setToast('Не удалось скопировать')
@@ -232,7 +231,7 @@ export default function Player() {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 border-t border-white/5 bg-[var(--color-bg-1)]/72 backdrop-blur">
+    <div className="fixed bottom-0 left-0 right-0 border-t border-white/5 bg-[var(--color-bg-1)]/95 backdrop-blur">
       <audio
         ref={audioRef}
         src={activeUrl}
@@ -251,60 +250,47 @@ export default function Player() {
         </div>
       )}
 
-      {shareMenuOpen && (
-        <div
-          className="absolute bottom-full right-3 md:right-6 mb-2 rounded-lg shadow-lg
-                     bg-[var(--color-bg-2)] border border-white/10 overflow-hidden z-10"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <button
-            onClick={() => handleShareWith(true)}
-            className="block w-full text-left px-4 py-2.5 text-sm hover:bg-[var(--color-bg-3)] whitespace-nowrap"
-          >
-            С текущего места · {fmt(progress)}
-          </button>
-          <button
-            onClick={() => handleShareWith(false)}
-            className="block w-full text-left px-4 py-2.5 text-sm hover:bg-[var(--color-bg-3)] whitespace-nowrap
-                       border-t border-white/5"
-          >
-            С начала
-          </button>
-        </div>
-      )}
+      {/* Обёртка для popover: клики внутри неё не закрывают меню */}
+      <div ref={shareRef} className="absolute bottom-full right-3 md:right-6 mb-2 z-10">
+        {shareMenuOpen && (
+          <div className="rounded-lg shadow-lg bg-[var(--color-bg-2)] border border-white/10 overflow-hidden">
+            <button
+              type="button"
+              onClick={() => handleShareWith(true)}
+              className="block w-full text-left px-4 py-2.5 text-sm hover:bg-[var(--color-bg-3)] whitespace-nowrap"
+            >
+              С текущего места · {fmt(progress)}
+            </button>
+            <button
+              type="button"
+              onClick={() => handleShareWith(false)}
+              className="block w-full text-left px-4 py-2.5 text-sm hover:bg-[var(--color-bg-3)] whitespace-nowrap border-t border-white/5"
+            >
+              С начала
+            </button>
+          </div>
+        )}
+      </div>
 
       <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 px-3 md:px-6 py-2 md:py-3">
 
         <div className="flex items-center gap-2 md:gap-4 md:shrink-0">
           <div className="flex items-center gap-0.5 md:gap-1 shrink-0">
-            <button
-              onClick={prev}
-              className="p-2 text-[var(--color-fg-1)] hover:text-[var(--color-accent)]"
-              title="Предыдущая"
-              aria-label="Предыдущая"
-            >
+            <button onClick={prev} className="p-2 text-[var(--color-fg-1)] hover:text-[var(--color-accent)]" title="Предыдущая" aria-label="Предыдущая">
               <PrevIcon size={18} />
             </button>
-            <button
-              onClick={togglePlay}
-              className="p-2 text-[var(--color-fg-0)] hover:text-[var(--color-accent)]"
-              title={isPlaying ? 'Пауза' : 'Играть'}
-              aria-label={isPlaying ? 'Пауза' : 'Играть'}
-            >
+            <button onClick={togglePlay} className="p-2 text-[var(--color-fg-0)] hover:text-[var(--color-accent)]" title={isPlaying ? 'Пауза' : 'Играть'} aria-label={isPlaying ? 'Пауза' : 'Играть'}>
               {isPlaying ? <PauseIcon size={22} /> : <PlayIcon size={22} />}
             </button>
-            <button
-              onClick={next}
-              className="p-2 text-[var(--color-fg-1)] hover:text-[var(--color-accent)]"
-              title="Следующая"
-              aria-label="Следующая"
-            >
+            <button onClick={next} className="p-2 text-[var(--color-fg-1)] hover:text-[var(--color-accent)]" title="Следующая" aria-label="Следующая">
               <NextIcon size={18} />
             </button>
           </div>
 
+          {/* Share — мобильная */}
           <button
-            onClick={(e) => { e.stopPropagation(); setShareMenuOpen(o => !o) }}
+            type="button"
+            onClick={() => setShareMenuOpen(o => !o)}
             className="p-2 text-[var(--color-fg-1)] hover:text-[var(--color-accent)] md:hidden"
             title="Поделиться"
             aria-label="Поделиться"
@@ -343,8 +329,10 @@ export default function Player() {
           <span className="hidden md:inline text-xs text-[var(--color-fg-2)] w-10 shrink-0">{fmt(duration)}</span>
         </div>
 
+        {/* Share — десктоп */}
         <button
-          onClick={(e) => { e.stopPropagation(); setShareMenuOpen(o => !o) }}
+          type="button"
+          onClick={() => setShareMenuOpen(o => !o)}
           className="hidden md:inline-flex p-2 text-[var(--color-fg-1)] hover:text-[var(--color-accent)] shrink-0"
           title="Поделиться"
           aria-label="Поделиться"
