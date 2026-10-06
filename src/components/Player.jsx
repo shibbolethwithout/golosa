@@ -231,7 +231,10 @@ export default function Player() {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 border-t border-white/5 bg-[var(--color-bg-1)]/95 backdrop-blur">
+    <div
+      className="fixed left-0 right-0 border-t border-white/5 bg-[var(--color-bg-1)]/82 backdrop-blur safe-bottom-fixed"
+      style={{ bottom: 'var(--safe-bottom, 0px)' }}
+    >
       <audio
         ref={audioRef}
         src={activeUrl}

@@ -237,7 +237,7 @@ export default function App() {
 
         <FilterChips filter={filter} onClear={clearFilter} />
 
-        <div className="flex-1 overflow-auto px-4 md:px-6 pb-32">
+        <div className="flex-1 overflow-auto px-4 md:px-6 safe-bottom-pad">
           {currentPlay ? (
             <PlayPage
               play={currentPlay}

@@ -125,3 +125,13 @@ input[type="range"]:focus-visible::-webkit-slider-thumb,
 input[type="range"]:focus-visible::-moz-range-thumb {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 30%, transparent);
 }
+/* ─── iOS: панель браузера перекрывает fixed-элементы ─── */
+:root {
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+.safe-bottom-fixed {
+  bottom: var(--safe-bottom);
+}
+.safe-bottom-pad {
+  padding-bottom: calc(var(--safe-bottom) + 8rem);
+}
