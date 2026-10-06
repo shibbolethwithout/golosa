@@ -70,15 +70,15 @@
     "actors": [
       "МиллиотиЕ",
       "Фролов Г",
-      "Аугшкап А",
-      "Стриженова Л",
-      "Стриженова Е",
-      "Кутасов С",
-      "Сулимов В",
-      "Жирнов С",
-      "Маликова И",
-      "Андреева З",
-      "Чебоксаров В"
+      "Аугшкап_А",
+      "Стриженова_Л",
+      "Стриженова_Е",
+      "Кутасов_С",
+      "Сулимов_В",
+      "Жирнов_С",
+      "Маликова_И",
+      "Андреева_З",
+      "Чебоксаров_В"
     ],
     "genre": [
       "детектив"
@@ -1730,6 +1730,149 @@
       }
     ],
     "partCount": 1
+  },
+  {
+    "id": "безумный-день-или-женитьба-фигаро-1950",
+    "slug": "безумный-день-или-женитьба-фигаро-1950",
+    "title": "Безумный день или женитьба Фигаро",
+    "author": "Бомарше П.",
+    "year": 1950,
+    "theatre": "МХАТ",
+    "directors": [
+      "Вершилов_БИ",
+      "Телешева_ЕС"
+    ],
+    "actors": [
+      "Массальский_ПВ",
+      "Ливанов_БН",
+      "Степанова_АИ",
+      "Прудкин_МИ",
+      "Андровская_ОН",
+      "Шевченко_ФВ",
+      "Яншин_ММ",
+      "Бендина_ВД",
+      "Момиссаров_АМ",
+      "Станицын_ВЯ",
+      "Конский_ГГ",
+      "Петкер_БЯ",
+      "Марков_ВП",
+      "Гузеев_АИ",
+      "Грибков_ВВ",
+      "Морес_ЕН"
+    ],
+    "genre": [
+      "комедия",
+      "комедия_положений"
+    ],
+    "tags": [
+      "зарубежная_классика",
+      "франция"
+    ],
+    "description": null,
+    "cover": null,
+    "folder": "Бомарше П. Безумный день или женитьба Фигаро, 1950",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Часть 1",
+        "url": "https://sheba.spb.ru/rs/bomarshe-fig1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Часть 2",
+        "url": "https://sheba.spb.ru/rs/bomarshe-fig2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Часть 3",
+        "url": "https://sheba.spb.ru/rs/bomarshe-fig3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Часть 4",
+        "url": "https://sheba.spb.ru/rs/bomarshe-fig4.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 4
+  },
+  {
+    "id": "безумный-день-или-женитьба-фигаро-1979",
+    "slug": "безумный-день-или-женитьба-фигаро-1979",
+    "title": "Безумный день или женитьба Фигаро",
+    "author": "Бомарше П.",
+    "year": 1979,
+    "theatre": "Московский_академический_театр_сатиры",
+    "directors": [
+      "Плучек_ВН"
+    ],
+    "actors": [
+      "Плучек_ВН",
+      "Ширвиндт_АА",
+      "Васильева_ВК",
+      "Миронов_АА",
+      "Корниенко_НГ",
+      "Аросева_ОА",
+      "Ткачук_РД",
+      "Воеводин_АМ",
+      "Высоковский_ЗМ",
+      "Авшаров_ЮМ",
+      "Козловский_ЮИ",
+      "Петкер_БЯ",
+      "Марков_ВП",
+      "Гузеев_АИ",
+      "Грибков_ВВ",
+      "Морес_ЕН"
+    ],
+    "genre": [
+      "комедия",
+      "комедия_положений"
+    ],
+    "tags": [
+      "зарубежная_классика",
+      "франция"
+    ],
+    "description": null,
+    "cover": null,
+    "folder": "Бомарше П. Безумный день или женитьба Фигаро, 1979",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Часть 1",
+        "url": "https://sheba.spb.ru/rs/bomarshe-figaro1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Часть 2",
+        "url": "https://sheba.spb.ru/rs/bomarshe-figaro2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Часть 3",
+        "url": "https://sheba.spb.ru/rs/bomarshe-figaro3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Часть 4",
+        "url": "https://sheba.spb.ru/rs/bomarshe-figaro4.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 4
   },
   {
     "id": "беккеровский-рояль-1959",
@@ -8808,98 +8951,6 @@
     "partCount": 10
   },
   {
-    "id": "женитьба-фигаро-1927",
-    "slug": "женитьба-фигаро-1927",
-    "title": "Женитьба Фигаро",
-    "author": "Бомарше П.О.",
-    "year": 1927,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [],
-    "tags": [],
-    "description": null,
-    "cover": null,
-    "folder": "Бомарше П.О. Женитьба Фигаро, 1927",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Часть 1",
-        "url": "https://sheba.spb.ru/rs/bomarshe-fig1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Часть 2",
-        "url": "https://sheba.spb.ru/rs/bomarshe-fig2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Часть 3",
-        "url": "https://sheba.spb.ru/rs/bomarshe-fig3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Часть 4",
-        "url": "https://sheba.spb.ru/rs/bomarshe-fig4.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 4
-  },
-  {
-    "id": "женитьба-фигаро-1979",
-    "slug": "женитьба-фигаро-1979",
-    "title": "Женитьба Фигаро",
-    "author": "Бомарше П.О.",
-    "year": 1979,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [],
-    "tags": [],
-    "description": null,
-    "cover": null,
-    "folder": "Бомарше П.О. Женитьба Фигаро, 1979",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Часть 1",
-        "url": "https://sheba.spb.ru/rs/bomarshe-figaro1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Часть 2",
-        "url": "https://sheba.spb.ru/rs/bomarshe-figaro2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Часть 3",
-        "url": "https://sheba.spb.ru/rs/bomarshe-figaro3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Часть 4",
-        "url": "https://sheba.spb.ru/rs/bomarshe-figaro4.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 4
-  },
-  {
     "id": "жених",
     "slug": "жених",
     "title": "Жених",
@@ -9421,7 +9472,7 @@
     "theatre": null,
     "directors": [],
     "actors": [
-      "Левинсон_Б",
+      "Левинсон_БЛ",
       "Леньков_А",
       "Гордеев_В",
       "Баранцев_А",
@@ -10896,19 +10947,40 @@
     "partCount": 5
   },
   {
-    "id": "интервью-в-буэнос-айресе-1975",
-    "slug": "интервью-в-буэнос-айресе-1975",
+    "id": "интервью-в-буэнос-айресе-1977",
+    "slug": "интервью-в-буэнос-айресе-1977",
     "title": "Интервью в Буэнос Айресе",
     "author": "Боровик Г.А.",
-    "year": 1975,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [],
-    "tags": [],
-    "description": null,
+    "year": 1977,
+    "theatre": "Киевский_русский_драматический_театр_им.Леси_Украинки",
+    "directors": [
+      "Резникович_МИ"
+    ],
+    "actors": [
+      "Мажуга_ЮМ",
+      "Кадочникова_ЛВ",
+      "Ковязина_Н",
+      "Пакерский_Е",
+      "Сивач_ВН",
+      "Филимонов_СИ",
+      "Белоусов_АМ",
+      "Бессараб_ВА",
+      "Меличкина_О",
+      "Шаролапова_НВ",
+      "Клименко_Г",
+      "Вознюк_Б",
+      "Черницкий_ИМ"
+    ],
+    "genre": [
+      "драма"
+    ],
+    "tags": [
+      "гражданская_война",
+      "революция"
+    ],
+    "description": "Свержение Сальвадора Альенде в Чили (1973–1974 гг.)",
     "cover": null,
-    "folder": "Боровик Г.А. Интервью в Буэнос Айресе, 1975",
+    "folder": "Боровик Г.А. Интервью в Буэнос Айресе, 1977",
     "parts": [
       {
         "id": "p1",
@@ -11731,7 +11803,7 @@
       "Весник_Е",
       "Вицин_ГМ",
       "Табаков_О",
-      "Орлова_В",
+      "Орлова_ВМ",
       "Муравьев_В",
       "Чистякова_Т",
       "Киселева_Н",
@@ -21661,6 +21733,31 @@
     "partCount": 1
   },
   {
+    "id": "полный-поворот-кругом-1965",
+    "slug": "полный-поворот-кругом-1965",
+    "title": "Полный поворот кругом",
+    "author": "Фолкнер У.",
+    "year": 1965,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [],
+    "tags": [],
+    "description": null,
+    "cover": null,
+    "folder": "Фолкнер У. Полный поворот кругом, 1965",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Часть 1",
+        "url": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=9239",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 1
+  },
+  {
     "id": "полтава-1950",
     "slug": "полтава-1950",
     "title": "Полтава",
@@ -23552,7 +23649,7 @@
     "title": "Пятый десяток",
     "author": "Белинский А.А.",
     "year": 1978,
-    "theatre": "Лен-кий_театр_им._Ленсовета",
+    "theatre": "Ленсовет",
     "directors": [
       "Рейхштейн_НА"
     ],
@@ -26728,59 +26825,43 @@
     "title": "Солдат и Ева",
     "author": "Борисова Е.",
     "year": 1969,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [],
-    "tags": [],
+    "theatre": "Центральный_академический_театр_Советской_Армии",
+    "directors": [
+      "Кулагин_СС"
+    ],
+    "actors": [
+      "Чеханков_ФЯ",
+      "Голубкина_ЛИ",
+      "Перцовский_МН",
+      "Майоров_ММ",
+      "Шабарин_ЛГ",
+      "Малько_ОМ",
+      "Солдатова_ИА",
+      "Еремеев_МЛ",
+      "Халецкий_ЯА"
+    ],
+    "genre": [
+      "комедия",
+      "сказка",
+      "музыкальная_комедия"
+    ],
+    "tags": [
+      "музыка",
+      "детям"
+    ],
     "description": null,
     "cover": null,
     "folder": "Борисова Е. Солдат и Ева, 1969",
     "parts": [
       {
         "id": "p1",
-        "title": "Титр (вступление)",
-        "url": "https://sheba.spb.ru/rs/borisova-soldatieva0titr.mp3",
-        "backup": null,
-        "isTitr": true
-      },
-      {
-        "id": "p2",
         "title": "Часть 1",
-        "url": "https://sheba.spb.ru/rs/borisova-soldatieva1.mp3",
+        "url": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=14703",
         "backup": null,
         "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Часть 2",
-        "url": "https://sheba.spb.ru/rs/borisova-soldatieva2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Часть 3",
-        "url": "https://sheba.spb.ru/rs/borisova-soldatieva3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p5",
-        "title": "Часть 4",
-        "url": "https://sheba.spb.ru/rs/borisova-soldatieva4.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p6",
-        "title": "Титр (завершение)",
-        "url": "https://sheba.spb.ru/rs/borisova-soldatieva5titr.mp3",
-        "backup": null,
-        "isTitr": true
       }
     ],
-    "partCount": 6
+    "partCount": 1
   },
   {
     "id": "солярис-1968",
@@ -29406,19 +29487,41 @@
     "partCount": 9
   },
   {
-    "id": "три-минуты-мартина-гроу-1971",
-    "slug": "три-минуты-мартина-гроу-1971",
+    "id": "три-минуты-мартина-гроу-1973",
+    "slug": "три-минуты-мартина-гроу-1973",
     "title": "Три минуты Мартина Гроу",
-    "author": "Боровик Г.",
-    "year": 1971,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [],
-    "tags": [],
-    "description": null,
+    "author": "Боровик Г.А.",
+    "year": 1973,
+    "theatre": "Всесоюзное_радио",
+    "directors": [
+      "Красницкий_ЕИ"
+    ],
+    "actors": [
+      "Боровик_ГА",
+      "Левинсон_БЛ",
+      "Самойлов_ВЯ",
+      "Ромашин_АВ",
+      "Карпова_ТМ",
+      "Орлова_ВМ",
+      "Джигарханян_АБ",
+      "Комратов_ВН",
+      "Наумкина_ЛД",
+      "Постников_МН",
+      "Преснецов_АМ",
+      "Лылов_КВ",
+      "Аржанов_ПМ",
+      "Назаров_АП"
+    ],
+    "genre": [
+      "детектив",
+      "драма"
+    ],
+    "tags": [
+      "США"
+    ],
+    "description": "пьеса написана автором под впечатлением убийства Д.Кеннеди (сюжет не связан напрямую)",
     "cover": null,
-    "folder": "Боровик Г. Три минуты Мартина Гроу, 1971",
+    "folder": "Боровик Г.А. Три минуты Мартина Гроу, 1973",
     "parts": [
       {
         "id": "p1",
