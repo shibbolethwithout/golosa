@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { usePlayerStore } from '../store/playerStore'
 
-// ─── Иконки ────────────────────────────────────────────────
+// ─── Иконки ───────────────────────────────────────────────
 function PlayIcon({ size = 20 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -46,7 +46,7 @@ function ShareIcon({ size = 18 }) {
   )
 }
 
-// ─── Share утилиты ─────────────────────────────────────────
+// ─── Share утилиты ────────────────────────────────────────
 function buildShareUrl(track, playSlug, time) {
   const base = window.location.origin + window.location.pathname
   const params = new URLSearchParams({
@@ -99,20 +99,22 @@ async function shareUrl(url, title) {
   return { ok: copied, method: copied ? 'clipboard' : 'error' }
 }
 
-// ─── Компонент ─────────────────────────────────────────────
+// ─── Компонент ────────────────────────────────────────────
 export default function Player() {
   const audioRef = useRef(null)
   const lastSavedRef = useRef(0)
   const restoredRef = useRef(null)
-  const shareRef = useRef(null)          // ← обёртка вокруг popover
+  const shareRef = useRef(null)
+  const preloadAudioRef = useRef(null)   // ← скрытый <audio> для предзагрузки
 
   const [usingBackup, setUsingBackup] = useState(false)
   const [error, setError] = useState(null)
   const [toast, setToast] = useState(null)
   const [shareMenuOpen, setShareMenuOpen] = useState(false)
+  const [nextUrl, setNextUrl] = useState(null)
 
   const {
-    currentTrack, isPlaying, volume, progress, duration,
+    currentTrack, currentPlay, isPlaying, volume, progress, duration,
     togglePlay, next, prev, setProgress, setDuration, setVolume,
     saveProgress, getPartProgress, clearPartProgress,
   } = usePlayerStore()
@@ -121,6 +123,7 @@ export default function Player() {
     ? currentTrack.backup
     : currentTrack?.url
 
+  // ─── Сброс состояния при смене трека ───
   useEffect(() => {
     setUsingBackup(false)
     setError(null)
@@ -128,6 +131,7 @@ export default function Player() {
     setShareMenuOpen(false)
   }, [currentTrack?.id])
 
+  // ─── Играть / пауза ───
   useEffect(() => {
     const el = audioRef.current
     if (!el || !currentTrack) return
@@ -135,17 +139,19 @@ export default function Player() {
     else el.pause()
   }, [isPlaying, currentTrack, activeUrl])
 
+  // ─── Громкость ───
   useEffect(() => {
     if (audioRef.current) audioRef.current.volume = volume
   }, [volume])
 
+  // ─── Автоскрытие тоста ───
   useEffect(() => {
     if (!toast) return
     const id = setTimeout(() => setToast(null), 2500)
     return () => clearTimeout(id)
   }, [toast])
 
-  // ─── Закрытие меню при клике СНАРУЖИ (не внутри shareRef) ───
+  // ─── Закрытие меню Share при клике вне ───
   useEffect(() => {
     if (!shareMenuOpen) return
     const onDown = (e) => {
@@ -153,8 +159,6 @@ export default function Player() {
         setShareMenuOpen(false)
       }
     }
-    // mousedown / touchstart срабатывают ДО click,
-    // но мы проверяем contains — клик по нашей кнопке не закроет меню раньше времени
     document.addEventListener('mousedown', onDown)
     document.addEventListener('touchstart', onDown)
     return () => {
@@ -162,6 +166,96 @@ export default function Player() {
       document.removeEventListener('touchstart', onDown)
     }
   }, [shareMenuOpen])
+
+  // ─── Предзагрузка следующего трека (мгновенный переход) ───
+  useEffect(() => {
+    const { queue, currentTrack: cur } = usePlayerStore.getState()
+    const idx = queue.findIndex(t => t.id === cur?.id)
+    const nextTrack = queue[idx + 1] || null
+    const url = nextTrack
+      ? (nextTrack.backup || nextTrack.url)
+      : null
+    setNextUrl(url)
+
+    if (!url) return
+    // Скрытый <audio> с preload=auto заставит браузер скачать файл в кэш
+    const el = preloadAudioRef.current
+    if (el) {
+      try {
+        el.src = url
+        el.load()
+      } catch {}
+    }
+  }, [currentTrack?.id])
+
+  // ─── Media Session API (управление с экрана блокировки) ───
+  useEffect(() => {
+    if (typeof navigator === 'undefined' || !('mediaSession' in navigator)) return
+    if (!currentTrack) return
+
+    const playTitle = currentTrack.playTitle || 'Радиоспектакль'
+    const author = currentTrack.playAuthor || ''
+    const partTitle = currentTrack.title || 'Часть'
+
+    // Метаданные для экрана блокировки
+    const artwork = currentPlay?.cover
+      ? [{ src: currentPlay.cover, sizes: '512x512', type: 'image/webp' }]
+      : []
+    try {
+      navigator.mediaSession.metadata = new window.MediaMetadata({
+        title: partTitle,
+        artist: author,
+        album: playTitle,
+        artwork,
+      })
+    } catch {}
+
+    // Обработчики действий
+    try {
+      navigator.mediaSession.setActionHandler('play', () => {
+        usePlayerStore.getState().togglePlay()
+      })
+      navigator.mediaSession.setActionHandler('pause', () => {
+        usePlayerStore.getState().togglePlay()
+      })
+      navigator.mediaSession.setActionHandler('previoustrack', () => {
+        usePlayerStore.getState().prev()
+      })
+      navigator.mediaSession.setActionHandler('nexttrack', () => {
+        usePlayerStore.getState().next()
+      })
+      navigator.mediaSession.setActionHandler('seekbackward', () => {
+        const el = audioRef.current
+        if (el) el.currentTime = Math.max(0, el.currentTime - 10)
+      })
+      navigator.mediaSession.setActionHandler('seekforward', () => {
+        const el = audioRef.current
+        if (el && el.duration) el.currentTime = Math.min(el.duration, el.currentTime + 10)
+      })
+    } catch {}
+  }, [currentTrack?.id, currentPlay?.id])
+
+  // ─── Media Session: состояние воспроизведения ───
+  useEffect(() => {
+    if (typeof navigator === 'undefined' || !('mediaSession' in navigator)) return
+    try {
+      navigator.mediaSession.playbackState = isPlaying ? 'playing' : 'paused'
+    } catch {}
+  }, [isPlaying])
+
+  // ─── Media Session: позиция (прогресс на экране блокировки) ───
+  useEffect(() => {
+    if (typeof navigator === 'undefined' || !('mediaSession' in navigator)) return
+    if (typeof navigator.mediaSession.setPositionState !== 'function') return
+    if (!duration || !isFinite(duration) || duration <= 0) return
+    try {
+      navigator.mediaSession.setPositionState({
+        duration,
+        playbackRate: 1,
+        position: Math.min(Math.max(0, progress), duration),
+      })
+    } catch {}
+  }, [progress, duration])
 
   const handleLoadedMetadata = (e) => {
     const el = e.target
@@ -186,7 +280,7 @@ export default function Player() {
 
   const handleEnded = () => {
     clearPartProgress(activeUrl)
-    next()
+    next()   // ← моментальный переход к следующей части
   }
 
   const handleSeek = (e) => {
@@ -211,10 +305,7 @@ export default function Player() {
     const slug = currentTrack?.playId || ''
     const url = buildShareUrl(currentTrack, slug, time)
     const title = `${currentTrack?.playTitle || 'Радиоспектакль'} — ${currentTrack?.title || 'часть'}`
-
-    // Меню закрываем ПОСЛЕ формирования URL, но ДО вызова share
     setShareMenuOpen(false)
-
     const result = await shareUrl(url, title)
     if (result.method === 'clipboard') setToast('Ссылка скопирована')
     else if (result.method === 'error') setToast('Не удалось скопировать')
@@ -231,19 +322,28 @@ export default function Player() {
   }
 
   return (
-    <div
-      className="fixed left-0 right-0 border-t border-white/5 bg-[var(--color-bg-1)]/82 backdrop-blur safe-bottom-fixed"
-      style={{ bottom: 'var(--safe-bottom, 0px)' }}
-    >
+    <div className="fixed bottom-0 left-0 right-0 border-t border-white/5 bg-[var(--color-bg-1)]/82 backdrop-blur">
+      {/* Основной проигрыватель */}
       <audio
         ref={audioRef}
         src={activeUrl}
-        preload="metadata"
+        preload="auto"
         onLoadedMetadata={handleLoadedMetadata}
         onTimeUpdate={handleTimeUpdate}
         onEnded={handleEnded}
         onError={handleError}
       />
+
+      {/* Скрытый проигрыватель для предзагрузки следующего трека */}
+      {nextUrl && (
+        <audio
+          ref={preloadAudioRef}
+          src={nextUrl}
+          preload="auto"
+          muted
+          style={{ display: 'none' }}
+        />
+      )}
 
       {toast && (
         <div className="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-full
@@ -253,7 +353,6 @@ export default function Player() {
         </div>
       )}
 
-      {/* Обёртка для popover: клики внутри неё не закрывают меню */}
       <div ref={shareRef} className="absolute bottom-full right-3 md:right-6 mb-2 z-10">
         {shareMenuOpen && (
           <div className="rounded-lg shadow-lg bg-[var(--color-bg-2)] border border-white/10 overflow-hidden">
@@ -290,7 +389,6 @@ export default function Player() {
             </button>
           </div>
 
-          {/* Share — мобильная */}
           <button
             type="button"
             onClick={() => setShareMenuOpen(o => !o)}
@@ -332,7 +430,6 @@ export default function Player() {
           <span className="hidden md:inline text-xs text-[var(--color-fg-2)] w-10 shrink-0">{fmt(duration)}</span>
         </div>
 
-        {/* Share — десктоп */}
         <button
           type="button"
           onClick={() => setShareMenuOpen(o => !o)}
