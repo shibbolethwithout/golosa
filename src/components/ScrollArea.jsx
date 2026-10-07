@@ -1,11 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
 
-export default function ScrollArea({ children, className = '', thumbColor }) {
+export default function ScrollArea({ children, className = '', thumbColor, resetKey }) {
   const containerRef = useRef(null)
   const contentRef = useRef(null)
   const thumbRef = useRef(null)
+  const scrollTimeoutRef = useRef(null)
+
   const [hovered, setHovered] = useState(false)
   const [dragging, setDragging] = useState(false)
+  const [scrolling, setScrolling] = useState(false)
+  const [scrollable, setScrollable] = useState(false)
 
   // ─── Обновление thumb при скролле ───
   useEffect(() => {
@@ -15,23 +19,21 @@ export default function ScrollArea({ children, className = '', thumbColor }) {
     if (!el || !content || !thumb) return
 
     let raf = null
-
     const update = () => {
       if (raf) return
       raf = requestAnimationFrame(() => {
         raf = null
         const { scrollHeight, clientHeight, scrollTop } = el
-        if (scrollHeight <= clientHeight + 1) {
-          thumb.style.opacity = '0'
-          return
+        const canScroll = scrollHeight > clientHeight + 1
+        if (canScroll) {
+          const ratio = clientHeight / scrollHeight
+          const h = Math.max(32, clientHeight * ratio)
+          const maxTop = clientHeight - h
+          const y = (scrollTop / (scrollHeight - clientHeight)) * maxTop
+          thumb.style.height = `${h}px`
+          thumb.style.transform = `translateY(${y}px)`
         }
-        const ratio = clientHeight / scrollHeight
-        const h = Math.max(32, clientHeight * ratio)
-        const maxTop = clientHeight - h
-        const y = (scrollTop / (scrollHeight - clientHeight)) * maxTop
-        thumb.style.height = `${h}px`
-        thumb.style.transform = `translateY(${y}px)`
-        thumb.style.opacity = '1'
+        setScrollable(canScroll)
       })
     }
 
@@ -50,7 +52,19 @@ export default function ScrollArea({ children, className = '', thumbColor }) {
     }
   }, [])
 
-  // ─── Drag thumb ───
+  // ─── Сброс скролла при смене resetKey ───
+  useEffect(() => {
+    if (containerRef.current) containerRef.current.scrollTop = 0
+  }, [resetKey])
+
+  // ─── Показ thumb во время скролла ───
+  const onScroll = () => {
+    setScrolling(true)
+    clearTimeout(scrollTimeoutRef.current)
+    scrollTimeoutRef.current = setTimeout(() => setScrolling(false), 800)
+  }
+
+  // ─── Drag ───
   const onThumbPointerDown = (e) => {
     e.preventDefault()
     e.stopPropagation()
@@ -91,6 +105,8 @@ export default function ScrollArea({ children, className = '', thumbColor }) {
       ? '#b0b0b8'
       : (thumbColor || '#8a8a90')
 
+  const thumbVisible = scrollable && (hovered || dragging || scrolling)
+
   return (
     <div
       className={`relative flex flex-col min-h-0 ${className}`}
@@ -99,6 +115,7 @@ export default function ScrollArea({ children, className = '', thumbColor }) {
     >
       <div
         ref={containerRef}
+        onScroll={onScroll}
         className="flex-1 min-h-0 w-full overflow-y-auto overflow-x-hidden scroll-hide-native"
       >
         <div ref={contentRef}>
@@ -113,9 +130,9 @@ export default function ScrollArea({ children, className = '', thumbColor }) {
         style={{
           width: `${thumbWidth}px`,
           height: 0,
-          opacity: 0,
+          opacity: thumbVisible ? 1 : 0,
           background: thumbBg,
-          transition: 'opacity 0.15s, width 0.12s, background 0.12s',
+          transition: 'opacity 0.2s, width 0.12s, background 0.12s',
           cursor: dragging ? 'grabbing' : 'grab',
           touchAction: 'none',
         }}

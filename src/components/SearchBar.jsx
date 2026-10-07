@@ -12,17 +12,6 @@ function HamburgerIcon({ size = 18 }) {
 export default function SearchBar({ value, onChange, onToggleSidebar }) {
   return (
     <div className="flex items-center gap-2 md:gap-3 px-4 md:px-6 py-3 border-b border-white/5">
-      <button
-        onClick={onToggleSidebar}
-        className="md:hidden shrink-0 w-10 h-10 rounded-lg bg-[var(--color-bg-2)]
-                   hover:bg-[var(--color-accent-dim)] hover:text-white
-                   text-[var(--color-fg-1)] flex items-center justify-center"
-        title="Меню"
-        aria-label="Меню"
-      >
-        <HamburgerIcon size={18} />
-      </button>
-
       <div className="relative flex-1 min-w-0">
         <input
           type="text"
@@ -34,6 +23,17 @@ export default function SearchBar({ value, onChange, onToggleSidebar }) {
                      placeholder:text-[var(--color-fg-2)]"
         />
       </div>
+
+      <button
+        onClick={onToggleSidebar}
+        className="md:hidden shrink-0 w-10 h-10 rounded-lg bg-[var(--color-bg-2)]
+                   hover:bg-[var(--color-accent-dim)] hover:text-white
+                   text-[var(--color-fg-1)] flex items-center justify-center"
+        title="Меню"
+        aria-label="Меню"
+      >
+        <HamburgerIcon size={18} />
+      </button>
     </div>
   )
 }

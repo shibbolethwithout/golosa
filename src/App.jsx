@@ -191,11 +191,13 @@ export default function App() {
   const applyNewFilter = (f) => {
     setFilter(f)
     setQuery('')
-    if (currentPlay || showQueue) {
-      replaceWithHome()
-      setCurrentPlay(null)
-      setShowQueue(false)
-    }
+    window.history.replaceState(
+      { __app: true, currentPlay: null, showQueue: false },
+      '',
+      '/'
+    )
+    setCurrentPlay(null)
+    setShowQueue(false)
     setShowSidebar(false)
   }
 
@@ -250,7 +252,7 @@ export default function App() {
           />
           <div className="relative w-72 max-w-[85vw] h-full flex flex-col bg-[var(--color-bg-1)]">
             <Sidebar
-              className="flex-1 overflow-y-auto"
+              className="flex-1"
               library={library}
               onFilter={applyNewFilter}
               activeFilter={filter}
@@ -284,7 +286,10 @@ export default function App() {
 
         <FilterChips filter={filter} onClear={clearFilter} />
 
-        <ScrollArea className="flex-1">
+        <ScrollArea
+          className="flex-1"
+          resetKey={`${query}|${filter?.type || ''}|${filter?.value || ''}|${currentPlay?.id || 'list'}`}
+        >
           <div className="px-4 md:px-6 pb-32">
             {currentPlay ? (
               <PlayPage
