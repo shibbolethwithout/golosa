@@ -1,12 +1,7 @@
 #!/usr/bin/env node
 /**
  * Строит public/library.json из плейлистов ~/Music/Music/Radio/*.m3u.
- *
- * Каждый .m3u → один спектакль.
- * Имя плейлиста парсится: «Автор Название, Год.m3u»
- * Содержимое .m3u → массив частей с полями url и backup.
- * Метаданные (актёры, жанры, театр, описание) подтягиваются из scripts/overrides.json.
- * Обложки — public/covers/{slug}.webp (если есть).
+ * Читает названия из #EXTINF.
  */
 
 import fs from 'node:fs'
@@ -16,8 +11,9 @@ import os from 'node:os'
 const M3U_DIR     = path.join(os.homedir(), 'Music/Music/Radio')
 const OUTPUT      = 'public/library.json'
 const OVERRIDES   = 'scripts/overrides.json'
-const COVERS_DIR  = 'public/covers'
 const BACKUP_URLS = 'scripts/backup-urls.json'
+const COVERS_DIR  = 'public/covers'
+
 // ─────────────────────────────────────────────────────
 //  Утилиты
 // ─────────────────────────────────────────────────────
@@ -31,21 +27,14 @@ function slugify(str) {
     .slice(0, 60)
 }
 
-/**
- * «Достоевский Ф.М. Игрок, 1956» → { author, title, year }
- */
 function parsePlaylistName(name) {
   let work = name.trim()
   let year = null
-
-  // Год в конце: ", 1956" или " 1956"
   const y = work.match(/[,\s]+(\d{4})\s*$/)
   if (y) {
     year = parseInt(y[1], 10)
     work = work.slice(0, y.index).trim()
   }
-
-  // Автор: «Фамилия И.О.» или «Фамилия И.»
   let author = null
   let title = work
   const re = /^([А-ЯЁ][А-ЯЁа-яё\-]*(?:\s+[А-ЯЁ][А-ЯЁа-яё\-]*)*\s+[А-ЯЁ]\.(?:\s*[А-ЯЁ]\.)?)\s+(.+)$/
@@ -54,48 +43,46 @@ function parsePlaylistName(name) {
     author = m[1].trim()
     title = m[2].trim()
   }
-
   return { title, author, year }
 }
 
 /**
- * Парсит .m3u — возвращает массив URL (без #EXTINF, комментариев).
- * #EXTM3U не обязателен.
+ * Парсит .m3u — возвращает массив { url, title }.
+ * title — из строки #EXTINF над URL (если есть).
  */
 function parseM3U(filePath) {
   const text = fs.readFileSync(filePath, 'utf-8')
-  const urls = []
+  const entries = []
+  let pendingTitle = null
   for (const raw of text.split('\n')) {
     const line = raw.trim()
-    if (!line || line.startsWith('#')) continue
-    if (/^https?:\/\//i.test(line)) urls.push(line)
+    if (!line) continue
+    if (line.startsWith('#EXTINF:')) {
+      const comma = line.indexOf(',')
+      pendingTitle = comma >= 0 ? line.slice(comma + 1).trim() : null
+    } else if (line.startsWith('#')) {
+      continue
+    } else if (/^https?:\/\//i.test(line)) {
+      entries.push({ url: line, title: pendingTitle })
+      pendingTitle = null
+    }
   }
-  return urls
+  return entries
 }
 
 /**
- * Достаёт номер части из имени файла в URL.
- * «02_wilde-portret1.mp3»        → 1
- * «wilde-portret5titr.mp3»       → titr, 5
- * «kup-alisa.mp3»                → null (без номера)
+ * Достаёт номер части и titr из URL (по имени файла в конце пути).
  */
 function parseUrlFilename(url) {
-  const fname = url.split('/').pop().toLowerCase()
-
-  // titr
+  const fname = String(url).split('/').pop().toLowerCase()
   const t = fname.match(/(\d+)titr/)
   if (t) return { isTitr: true, titrN: parseInt(t[1], 10), num: null }
-
-  // обычная часть — последнее число перед расширением
   const n = fname.match(/(\d+)(?=\.\w+$)/)
   return { isTitr: false, titrN: null, num: n ? parseInt(n[1], 10) : null }
 }
 
 /**
- * Сортировка частей:
- *  1) 0titr → самое начало (группа 0)
- *  2) обычные части по номеру (группа 1)
- *  3) N titr (N>0) → конец (группа 2)
+ * Сортировка: 0titr → начало, обычные части по номеру, N titr → конец.
  */
 function sortKey(url) {
   const p = parseUrlFilename(url)
@@ -104,18 +91,6 @@ function sortKey(url) {
     return [2, p.titrN]
   }
   return [1, p.num ?? 999]
-}
-
-/**
- * Заголовок части для UI.
- */
-function partTitle(url, index, total) {
-  const p = parseUrlFilename(url)
-  if (p.isTitr) {
-    return p.titrN === 0 ? 'Титр (вступление)' : 'Титр (завершение)'
-  }
-  // нумеруем только не-titr части
-  return `Часть ${index + 1}`
 }
 
 // ─────────────────────────────────────────────────────
@@ -133,8 +108,8 @@ async function main() {
     : {}
 
   const backupUrls = fs.existsSync(BACKUP_URLS)
-  ? JSON.parse(fs.readFileSync(BACKUP_URLS, 'utf-8'))
-  : {}
+    ? JSON.parse(fs.readFileSync(BACKUP_URLS, 'utf-8'))
+    : {}
 
   const playlists = fs.readdirSync(M3U_DIR)
     .filter(f => f.toLowerCase().endsWith('.m3u'))
@@ -150,37 +125,45 @@ async function main() {
   let withoutCover = 0
 
   for (const file of playlists) {
-    const folder = path.basename(file, '.m3u')   // имя плейлиста = folder
+    const folder = path.basename(file, '.m3u')
     const fullPath = path.join(M3U_DIR, file)
-    const urls = parseM3U(fullPath)
 
-    if (urls.length === 0) {
+    // entries = [{ url, title }]
+    const entries = parseM3U(fullPath)
+
+    if (entries.length === 0) {
       console.log(`  ⚠️  ${file}: нет URL, пропуск`)
       continue
     }
 
-    // Сортируем части с учётом titr
-    const sorted = [...urls].sort((a, b) => {
-      const [ga, na] = sortKey(a)
-      const [gb, nb] = sortKey(b)
+    // Сортируем — передаём URL (строку), не объект
+    const sorted = [...entries].sort((a, b) => {
+      const [ga, na] = sortKey(a.url)
+      const [gb, nb] = sortKey(b.url)
       return ga - gb || na - nb
     })
 
-    // Парсим имя плейлиста
     const parsed = parsePlaylistName(folder)
     const ov = overrides[folder] || {}
     if (Object.keys(ov).length === 0) withoutOverrides++
 
-    // Формируем части
-    let partIdx = 0
     const backupAll = backupUrls[folder] || null
 
-    const parts = sorted.map((url, i) => {
+    // Формируем части
+    let partIdx = 0
+    const parts = sorted.map(({ url, title: extTitle }, i) => {
       const p = parseUrlFilename(url)
       const isTitr = p.isTitr
-      const title = isTitr
-        ? (p.titrN === 0 ? 'Титр (вступление)' : 'Титр (завершение)')
-        : `Часть ${++partIdx}`
+
+      let title
+      if (extTitle) {
+        // Название из #EXTINF — «Петербургский ростовщик — часть 1»
+        title = extTitle
+      } else if (isTitr) {
+        title = p.titrN === 0 ? 'Титр (вступление)' : 'Титр (завершение)'
+      } else {
+        title = `Часть ${++partIdx}`
+      }
 
       return {
         id: `p${i + 1}`,
@@ -191,7 +174,6 @@ async function main() {
       }
     })
 
-    // Slug
     let slug = slugify(parsed.title + (parsed.year ? '-' + parsed.year : ''))
     if (usedSlugs.has(slug)) {
       usedSlugs.set(slug, usedSlugs.get(slug) + 1)
@@ -200,7 +182,6 @@ async function main() {
       usedSlugs.set(slug, 1)
     }
 
-    // Обложка: сначала overrides, потом public/covers/{slug}.webp
     let cover = ov.cover || null
     if (!cover) {
       const guess = path.join(COVERS_DIR, `${slug}.webp`)
@@ -219,9 +200,9 @@ async function main() {
       year: ov.year ?? parsed.year,
       theatre: ov.theatre ?? null,
       directors: ov.directors || [],
-      actors: ov.actors ?? [],
-      genre: ov.genre ?? [],
-      tags: ov.tags ?? [],
+      actors: ov.actors || [],
+      genre: ov.genre || [],
+      tags: ov.tags || [],
       description: ov.description ?? null,
       cover,
       folder,
@@ -233,7 +214,6 @@ async function main() {
     totalParts += parts.length
   }
 
-  // Сортировка спектаклей по названию
   library.sort((a, b) => a.title.localeCompare(b.title, 'ru'))
 
   fs.writeFileSync(OUTPUT, JSON.stringify(library, null, 2), 'utf-8')

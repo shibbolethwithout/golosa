@@ -100,13 +100,6 @@ export const usePlayerStore = create(
 
       clearQueue: () => set({ queue: [], currentTrack: null, currentPlay: null, isPlaying: false }),
 
-      moveInQueue: (from, to) => set(s => {
-        const q = [...s.queue]
-        const [item] = q.splice(from, 1)
-        q.splice(to, 0, item)
-        return { queue: q }
-      }),
-
       setProgress: (progress) => set({ progress }),
       setDuration: (duration) => set({ duration }),
       setVolume: (volume) => set({ volume }),

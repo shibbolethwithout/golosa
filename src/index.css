@@ -1,5 +1,16 @@
 @import "tailwindcss";
-
+/* ─── Скрытие нативного скроллбара для кастомного ScrollArea ─── */
+.scroll-hide-native {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
+.scroll-hide-native::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
 @theme {
   --color-bg-0: #161616;
   --color-bg-1: #1e1e1e;
@@ -38,7 +49,7 @@ body {
   html.is-firefox { font-size: 17px !important; }
 
   /* Chrome/Chromium: увеличивает мелкий текст, но у вас всё равно мелко */
-  html.is-chrome  { font-size: 17px !important; }
+  html.is-chrome  { font-size: 24px !important; }
 
   /* Safari (iOS): как Firefox, не делает boosting */
   html.is-safari  { font-size: 17px !important; }
@@ -48,11 +59,6 @@ body {
     font-size: 18px !important;
   }
 }
-
-::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
 
 /* ─── Слайдеры (прогресс и громкость) ─── */
 

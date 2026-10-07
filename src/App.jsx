@@ -8,15 +8,16 @@ import Player from './components/Player'
 import Queue from './components/Queue'
 import { buildIndex, search, applyFilter } from './lib/search'
 import { usePlayerStore } from './store/playerStore'
+import ScrollArea from './components/ScrollArea'
 
 export default function App() {
   const [library, setLibrary] = useState([])
   const [query, setQuery] = useState('')
   const [filter, setFilter] = useState(null)
   const [showQueue, setShowQueue] = useState(false)
+  const [showSidebar, setShowSidebar] = useState(false)
   const [currentPlay, setCurrentPlay] = useState(null)
 
-  // ─── Загрузка библиотеки + обработка deep link ───────
   useEffect(() => {
     const handleDeepLink = (lib) => {
       const params = new URLSearchParams(window.location.search)
@@ -29,13 +30,10 @@ export default function App() {
         ? lib.find(p => p.slug === playSlug || p.id === playSlug)
         : null
 
-      // Пришли извне по deep link на валидный спектакль?
       const isExternal = play && !window.history.state?.__app
 
       if (isExternal) {
-        // 1) Заменяем текущую запись (play) на главную
         window.history.replaceState({ __app: true }, '', '/')
-        // 2) Пушим поверх play-запись
         const qs = new URLSearchParams()
         qs.set('play', playSlug)
         if (queue) qs.set('queue', '1')
@@ -45,22 +43,30 @@ export default function App() {
           `?${qs.toString()}`
         )
       } else if (!play && playSlug) {
-        // play не найден — тихо уходим на главную
         window.history.replaceState({ __app: true }, '', '/')
       } else {
-        // Обычная загрузка или F5 — просто помечаем state
         const st = window.history.state || {}
-        window.history.replaceState(
-          { ...st, __app: true },
-          '',
-          window.location.href
-        )
+        window.history.replaceState({ ...st, __app: true }, '', window.location.href)
       }
 
       if (queue) setShowQueue(true)
       if (!play) return
 
       setCurrentPlay(play)
+
+      // ─── Ключевая проверка ───
+      // Если Zustand уже восстановил currentTrack для этого же спектакля —
+      // не перезапускаем воспроизведение с начала. Это происходит, когда
+      // Chrome перезагрузил вкладку (tab discard) на Android.
+      const playerState = usePlayerStore.getState()
+      const alreadyPlayingThisPlay =
+        playerState.currentTrack?.playId === play.id &&
+        playerState.queue.some(t => t.id === playerState.currentTrack.id)
+
+      if (alreadyPlayingThisPlay && !partId) {
+        // Просто восстанавливаем страницу спектакля, не сбрасывая трек
+        return
+      }
 
       const { playPart } = usePlayerStore.getState()
       const partIdx = partId ? play.parts.findIndex(p => p.id === partId) : 0
@@ -87,13 +93,16 @@ export default function App() {
       .catch(() => setLibrary([]))
   }, [])
 
-  // ─── popstate: браузерная кнопка «Назад» ─────────────
   useEffect(() => {
     const onPopState = () => {
       if (!library.length) return
       const params = new URLSearchParams(window.location.search)
       const playSlug = params.get('play')
       const queue = params.get('queue') === '1'
+      const sidebar = window.history.state?.sidebar
+
+      // Любой back закрывает sidebar, если он был открыт
+      if (!sidebar) setShowSidebar(false)
 
       if (playSlug) {
         const play = library.find(p => p.slug === playSlug || p.id === playSlug)
@@ -103,12 +112,10 @@ export default function App() {
       }
       setShowQueue(queue)
     }
-
     window.addEventListener('popstate', onPopState)
     return () => window.removeEventListener('popstate', onPopState)
   }, [library])
 
-  // ─── Работа с историей ───────────────────────────────
   const pushState = (play, queue) => {
     const params = new URLSearchParams()
     if (play) params.set('play', play.slug || play.id)
@@ -122,7 +129,6 @@ export default function App() {
     )
   }
 
-  // Возврат на главную БЕЗ history.back() — заменяем текущую запись
   const replaceWithHome = () => {
     window.history.replaceState(
       { __app: true, currentPlay: null, showQueue: false },
@@ -131,19 +137,17 @@ export default function App() {
     )
   }
 
-  // ─── Навигация ───────────────────────────────────────
   const openPlay = (play) => {
     pushState(play, showQueue)
     setCurrentPlay(play)
+    setShowSidebar(false)
   }
 
   const closePlay = () => {
     const st = window.history.state
     if (st?.currentPlay) {
-      // Мы попали на play-страницу внутренним переходом — back() вернёт на главную
       window.history.back()
     } else {
-      // Страховка: если истории нет — просто идём на главную
       replaceWithHome()
       setCurrentPlay(null)
       setShowQueue(false)
@@ -165,15 +169,34 @@ export default function App() {
     }
   }
 
-  // ─── Фильтры и поиск ────────────────────────────────
+  // ─── Sidebar (мобильный drawer) с pushState, чтобы back закрывал ───
+  const openSidebar = () => {
+    window.history.pushState({ __app: true, sidebar: true, currentPlay: currentPlay?.slug || null, showQueue }, '', window.location.href)
+    setShowSidebar(true)
+  }
+
+  const closeSidebar = () => {
+    if (window.history.state?.sidebar) {
+      window.history.back()
+    } else {
+      setShowSidebar(false)
+    }
+  }
+
+  const toggleSidebar = () => {
+    if (showSidebar) closeSidebar()
+    else openSidebar()
+  }
+
   const applyNewFilter = (f) => {
     setFilter(f)
     setQuery('')
     if (currentPlay || showQueue) {
-      replaceWithHome()   // ← НЕ history.back()
+      replaceWithHome()
       setCurrentPlay(null)
       setShowQueue(false)
     }
+    setShowSidebar(false)
   }
 
   const clearFilter = () => setFilter(null)
@@ -186,12 +209,11 @@ export default function App() {
       setCurrentPlay(null)
       setShowQueue(false)
     }
+    setShowSidebar(false)
   }
 
   const onSearchChange = (v) => {
     setQuery(v)
-    // При вводе в поиск — прячем play/queue БЕЗ history.back(),
-    // иначе браузер уйдёт во внешний сайт (мессенджер).
     if (currentPlay || showQueue) {
       replaceWithHome()
       setCurrentPlay(null)
@@ -199,7 +221,6 @@ export default function App() {
     }
   }
 
-  // ─── Список ─────────────────────────────────────────
   let visible = library
   if (query) {
     const found = search(query)
@@ -211,6 +232,7 @@ export default function App() {
 
   return (
     <div className="flex h-full">
+      {/* Sidebar — десктоп */}
       <Sidebar
         className="hidden md:flex"
         library={library}
@@ -219,11 +241,36 @@ export default function App() {
         onHome={goHome}
       />
 
+      {/* Sidebar — мобильный drawer */}
+      {showSidebar && (
+        <div className="md:hidden fixed inset-0 z-50 flex">
+          <div
+            className="absolute inset-0 bg-black/60"
+            onClick={closeSidebar}
+          />
+          <div className="relative w-72 max-w-[85vw] h-full flex flex-col bg-[var(--color-bg-1)]">
+            <Sidebar
+              className="flex-1 overflow-y-auto"
+              library={library}
+              onFilter={applyNewFilter}
+              activeFilter={filter}
+              onHome={goHome}
+            />
+            <button
+              onClick={closeSidebar}
+              className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center rounded
+                         text-[var(--color-fg-2)] hover:text-[var(--color-fg-0)] hover:bg-[var(--color-bg-2)]"
+              title="Закрыть меню"
+            >✕</button>
+          </div>
+        </div>
+      )}
+
       <main className="flex-1 flex flex-col overflow-hidden">
         <header className="px-6 py-3 text-center border-b border-white/5">
           <button
             onClick={goHome}
-            className="text-xs uppercase tracking-[0.35em] text-[var(--color-fg-2)] hover:text-[var(--color-accent)]"
+            className="text-xs uppercase tracking-[0.35em] text-[var(--color-fg-2)] hover:text-[var(--color-accent)] transition"
           >
             Радиоспектакли СССР
           </button>
@@ -232,26 +279,28 @@ export default function App() {
         <SearchBar
           value={query}
           onChange={onSearchChange}
-          onToggleQueue={toggleQueue}
+          onToggleSidebar={toggleSidebar}
         />
 
         <FilterChips filter={filter} onClear={clearFilter} />
 
-        <div className="flex-1 overflow-auto px-4 md:px-6 safe-bottom-pad">
-          {currentPlay ? (
-            <PlayPage
-              play={currentPlay}
-              onBack={closePlay}
-              onFilter={applyNewFilter}
-            />
-          ) : (
-            <TrackList plays={visible} onOpen={openPlay} />
-          )}
-        </div>
+        <ScrollArea className="flex-1">
+          <div className="px-4 md:px-6 pb-32">
+            {currentPlay ? (
+              <PlayPage
+                play={currentPlay}
+                onBack={closePlay}
+                onFilter={applyNewFilter}
+              />
+            ) : (
+              <TrackList plays={visible} onOpen={openPlay} />
+            )}
+          </div>
+        </ScrollArea>
       </main>
 
       {showQueue && <Queue onClose={closeQueue} />}
-      <Player />
+      <Player onToggleQueue={toggleQueue} />
     </div>
   )
 }

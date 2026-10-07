@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import ScrollArea from './ScrollArea'
 
 export default function Sidebar({ library, onFilter, activeFilter, className = '', onHome }) {
   const facets = useMemo(() => {
@@ -47,68 +48,70 @@ export default function Sidebar({ library, onFilter, activeFilter, className = '
   )
 
   return (
-    <aside className={`w-64 border-r border-white/5 bg-[var(--color-bg-1)] overflow-y-auto overflow-x-hidden ${className}`}>
-      <div className="p-4">
-        <button
-          onClick={onHome}
-          className="text-lg font-medium mb-4 text-left hover:text-[var(--color-accent)] transition"
-        >Голоса СССР</button>
+    <aside className={`w-64 border-r border-white/5 bg-[var(--color-bg-1)] ${className}`}>
+      <ScrollArea className="h-full">
+        <div className="p-4">
+          <button
+            onClick={onHome}
+            className="text-lg font-medium mb-4 text-left hover:text-[var(--color-accent)] transition"
+          >Голоса СССР</button>
 
-        {facets.genres.length > 0 && (
-          <div className="mb-6">
-            <h2 className="text-xs uppercase text-[var(--color-fg-2)] mb-2 tracking-wide">Жанры</h2>
-            <div className="space-y-0.5">
-              {facets.genres.map(([g, c]) => (
-                <Item key={g} type="genre" value={g} label={g} count={c} />
-              ))}
+          {facets.genres.length > 0 && (
+            <div className="mb-6">
+              <h2 className="text-xs uppercase text-[var(--color-fg-2)] mb-2 tracking-wide">Жанры</h2>
+              <div className="space-y-0.5">
+                {facets.genres.map(([g, c]) => (
+                  <Item key={g} type="genre" value={g} label={g} count={c} />
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {facets.authors.length > 0 && (
-          <div className="mb-6">
-            <h2 className="text-xs uppercase text-[var(--color-fg-2)] mb-2 tracking-wide">Авторы</h2>
-            <div className="space-y-0.5">
-              {facets.authors.map(([a, c]) => (
-                <Item key={a} type="author" value={a} label={a} count={c} />
-              ))}
+          {facets.authors.length > 0 && (
+            <div className="mb-6">
+              <h2 className="text-xs uppercase text-[var(--color-fg-2)] mb-2 tracking-wide">Авторы</h2>
+              <div className="space-y-0.5">
+                {facets.authors.map(([a, c]) => (
+                  <Item key={a} type="author" value={a} label={a} count={c} />
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {facets.directors.length > 0 && (
-          <div className="mb-6">
-            <h2 className="text-xs uppercase text-[var(--color-fg-2)] mb-2 tracking-wide">Режиссёры</h2>
-            <div className="space-y-0.5">
-              {facets.directors.map(([d, c]) => (
-                <Item key={d} type="director" value={d} label={d} count={c} />
-              ))}
+          {facets.directors.length > 0 && (
+            <div className="mb-6">
+              <h2 className="text-xs uppercase text-[var(--color-fg-2)] mb-2 tracking-wide">Режиссёры</h2>
+              <div className="space-y-0.5">
+                {facets.directors.map(([d, c]) => (
+                  <Item key={d} type="director" value={d} label={d} count={c} />
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {facets.theatres.length > 0 && (
-          <div className="mb-6">
-            <h2 className="text-xs uppercase text-[var(--color-fg-2)] mb-2 tracking-wide">Театры</h2>
-            <div className="space-y-0.5">
-              {facets.theatres.map(([t, c]) => (
-                <Item key={t} type="theatre" value={t} label={t} count={c} />
-              ))}
+          {facets.theatres.length > 0 && (
+            <div className="mb-6">
+              <h2 className="text-xs uppercase text-[var(--color-fg-2)] mb-2 tracking-wide">Театры</h2>
+              <div className="space-y-0.5">
+                {facets.theatres.map(([t, c]) => (
+                  <Item key={t} type="theatre" value={t} label={t} count={c} />
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {facets.decades.length > 0 && (
-          <div className="mb-6">
-            <h2 className="text-xs uppercase text-[var(--color-fg-2)] mb-2 tracking-wide">Десятилетия</h2>
-            <div className="space-y-0.5">
-              {facets.decades.map(([d, c]) => (
-                <Item key={d} type="decade" value={d} label={`${d}-е`} count={c} />
-              ))}
+          {facets.decades.length > 0 && (
+            <div className="mb-6">
+              <h2 className="text-xs uppercase text-[var(--color-fg-2)] mb-2 tracking-wide">Десятилетия</h2>
+              <div className="space-y-0.5">
+                {facets.decades.map(([d, c]) => (
+                  <Item key={d} type="decade" value={d} label={`${d}-е`} count={c} />
+                ))}
+              </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      </ScrollArea>
     </aside>
   )
 }

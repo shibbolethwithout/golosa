@@ -100,12 +100,12 @@ async function shareUrl(url, title) {
 }
 
 // ─── Компонент ────────────────────────────────────────────
-export default function Player() {
+export default function Player({ onToggleQueue }) {
   const audioRef = useRef(null)
   const lastSavedRef = useRef(0)
   const restoredRef = useRef(null)
   const shareRef = useRef(null)
-  const preloadAudioRef = useRef(null)   // ← скрытый <audio> для предзагрузки
+  const preloadAudioRef = useRef(null)
 
   const [usingBackup, setUsingBackup] = useState(false)
   const [error, setError] = useState(null)
@@ -123,7 +123,6 @@ export default function Player() {
     ? currentTrack.backup
     : currentTrack?.url
 
-  // ─── Сброс состояния при смене трека ───
   useEffect(() => {
     setUsingBackup(false)
     setError(null)
@@ -131,27 +130,34 @@ export default function Player() {
     setShareMenuOpen(false)
   }, [currentTrack?.id])
 
-  // ─── Играть / пауза ───
   useEffect(() => {
     const el = audioRef.current
     if (!el || !currentTrack) return
-    if (isPlaying) el.play().catch(() => {})
-    else el.pause()
+
+    // При смене URL — принудительно перезагружаем
+    if (el.getAttribute('src') !== activeUrl) {
+      el.src = activeUrl
+      el.load()
+    }
+
+    if (isPlaying) {
+      const p = el.play()
+      if (p && p.catch) p.catch(() => {})
+    } else {
+      el.pause()
+    }
   }, [isPlaying, currentTrack, activeUrl])
 
-  // ─── Громкость ───
   useEffect(() => {
     if (audioRef.current) audioRef.current.volume = volume
   }, [volume])
 
-  // ─── Автоскрытие тоста ───
   useEffect(() => {
     if (!toast) return
     const id = setTimeout(() => setToast(null), 2500)
     return () => clearTimeout(id)
   }, [toast])
 
-  // ─── Закрытие меню Share при клике вне ───
   useEffect(() => {
     if (!shareMenuOpen) return
     const onDown = (e) => {
@@ -167,63 +173,48 @@ export default function Player() {
     }
   }, [shareMenuOpen])
 
-  // ─── Предзагрузка следующего трека (мгновенный переход) ───
+  // ─── Предзагрузка следующего трека ───
   useEffect(() => {
     const { queue, currentTrack: cur } = usePlayerStore.getState()
     const idx = queue.findIndex(t => t.id === cur?.id)
     const nextTrack = queue[idx + 1] || null
-    const url = nextTrack
-      ? (nextTrack.backup || nextTrack.url)
-      : null
+    const url = nextTrack ? (nextTrack.backup || nextTrack.url) : null
     setNextUrl(url)
-
-    if (!url) return
-    // Скрытый <audio> с preload=auto заставит браузер скачать файл в кэш
-    const el = preloadAudioRef.current
-    if (el) {
-      try {
-        el.src = url
-        el.load()
-      } catch {}
-    }
   }, [currentTrack?.id])
 
-  // ─── Media Session API (управление с экрана блокировки) ───
+  // ─── Media Session: метаданные ───
   useEffect(() => {
     if (typeof navigator === 'undefined' || !('mediaSession' in navigator)) return
     if (!currentTrack) return
+
+    // Firefox Android: без сброса metadata в null плашка не обновляется
+    // при автопереходе между частями. Сбрасываем и через 50 мс ставим новую.
+    try { navigator.mediaSession.metadata = null } catch {}
 
     const playTitle = currentTrack.playTitle || 'Радиоспектакль'
     const author = currentTrack.playAuthor || ''
     const partTitle = currentTrack.title || 'Часть'
 
-    // Метаданные для экрана блокировки
     const artwork = currentPlay?.cover
       ? [{ src: currentPlay.cover, sizes: '512x512', type: 'image/webp' }]
       : []
-    try {
-      navigator.mediaSession.metadata = new window.MediaMetadata({
-        title: partTitle,
-        artist: author,
-        album: playTitle,
-        artwork,
-      })
-    } catch {}
 
-    // Обработчики действий
+    const id = setTimeout(() => {
+      try {
+        navigator.mediaSession.metadata = new window.MediaMetadata({
+          title: partTitle,
+          artist: author,
+          album: playTitle,
+          artwork,
+        })
+      } catch {}
+    }, 50)
+
     try {
-      navigator.mediaSession.setActionHandler('play', () => {
-        usePlayerStore.getState().togglePlay()
-      })
-      navigator.mediaSession.setActionHandler('pause', () => {
-        usePlayerStore.getState().togglePlay()
-      })
-      navigator.mediaSession.setActionHandler('previoustrack', () => {
-        usePlayerStore.getState().prev()
-      })
-      navigator.mediaSession.setActionHandler('nexttrack', () => {
-        usePlayerStore.getState().next()
-      })
+      navigator.mediaSession.setActionHandler('play', () => usePlayerStore.getState().togglePlay())
+      navigator.mediaSession.setActionHandler('pause', () => usePlayerStore.getState().togglePlay())
+      navigator.mediaSession.setActionHandler('previoustrack', () => usePlayerStore.getState().prev())
+      navigator.mediaSession.setActionHandler('nexttrack', () => usePlayerStore.getState().next())
       navigator.mediaSession.setActionHandler('seekbackward', () => {
         const el = audioRef.current
         if (el) el.currentTime = Math.max(0, el.currentTime - 10)
@@ -233,9 +224,10 @@ export default function Player() {
         if (el && el.duration) el.currentTime = Math.min(el.duration, el.currentTime + 10)
       })
     } catch {}
-  }, [currentTrack?.id, currentPlay?.id])
 
-  // ─── Media Session: состояние воспроизведения ───
+    return () => clearTimeout(id)
+  }, [currentTrack, currentPlay])
+
   useEffect(() => {
     if (typeof navigator === 'undefined' || !('mediaSession' in navigator)) return
     try {
@@ -243,7 +235,6 @@ export default function Player() {
     } catch {}
   }, [isPlaying])
 
-  // ─── Media Session: позиция (прогресс на экране блокировки) ───
   useEffect(() => {
     if (typeof navigator === 'undefined' || !('mediaSession' in navigator)) return
     if (typeof navigator.mediaSession.setPositionState !== 'function') return
@@ -280,7 +271,7 @@ export default function Player() {
 
   const handleEnded = () => {
     clearPartProgress(activeUrl)
-    next()   // ← моментальный переход к следующей части
+    next()
   }
 
   const handleSeek = (e) => {
@@ -322,8 +313,8 @@ export default function Player() {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 border-t border-white/5 bg-[var(--color-bg-1)]/82 backdrop-blur">
-      {/* Основной проигрыватель */}
+    <div className="fixed left-0 right-0 border-t border-white/5 bg-[var(--color-bg-1)]/82 backdrop-blur"
+         style={{ bottom: 'env(safe-area-inset-bottom, 0px)' }}>
       <audio
         ref={audioRef}
         src={activeUrl}
@@ -334,7 +325,6 @@ export default function Player() {
         onError={handleError}
       />
 
-      {/* Скрытый проигрыватель для предзагрузки следующего трека */}
       {nextUrl && (
         <audio
           ref={preloadAudioRef}
@@ -399,7 +389,14 @@ export default function Player() {
             <ShareIcon size={16} />
           </button>
 
-          <div className="flex-1 min-w-0 md:max-w-[240px] lg:max-w-[320px]">
+          {/* Название — тап открывает очередь */}
+          <button
+            type="button"
+            onClick={onToggleQueue}
+            className="flex-1 min-w-0 md:max-w-[240px] lg:max-w-[320px] text-left
+                       hover:opacity-80 transition"
+            title="Открыть очередь"
+          >
             <div className="truncate text-xs md:text-sm font-medium flex items-center gap-2">
               <span className="truncate">{currentTrack.playTitle || 'Спектакль'}</span>
               {usingBackup && (
@@ -413,7 +410,7 @@ export default function Player() {
               {currentTrack.title}
               {currentTrack.playAuthor && ` · ${currentTrack.playAuthor}`}
             </div>
-          </div>
+          </button>
         </div>
 
         <div className="flex items-center gap-2 flex-1 min-w-0">
