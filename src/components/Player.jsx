@@ -391,27 +391,26 @@ export default function Player({ onToggleQueue }) {
 
           {/* Название — тап открывает очередь */}
           <button
-            type="button"
-            onClick={onToggleQueue}
-            className="flex-1 min-w-0 md:max-w-[240px] lg:max-w-[320px] text-left
-                       hover:opacity-80 transition"
-            title="Открыть очередь"
-          >
-            <div className="truncate text-xs md:text-sm font-medium flex items-center gap-2">
-              <span className="truncate">{currentTrack.playTitle || 'Спектакль'}</span>
-              {usingBackup && (
-                <span className="hidden md:inline text-[10px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400">backup</span>
-              )}
-              {error && (
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-red-500/20 text-red-400">{error}</span>
-              )}
-            </div>
-            <div className="truncate text-[11px] md:text-xs text-[var(--color-fg-2)]">
-              {currentTrack.title}
-              {currentTrack.playAuthor && ` · ${currentTrack.playAuthor}`}
-            </div>
-          </button>
-        </div>
+	    type="button"
+	    onClick={onToggleQueue}
+	    className="flex-1 min-w-0 md:max-w-[240px] lg:max-w-[320px] text-left
+		       hover:opacity-80 transition"
+	    title="Открыть очередь"
+  	  >
+	    <div className="truncate text-xs md:text-sm font-medium flex items-center gap-2">
+	      <span className="truncate">{currentTrack.title || 'Спектакль'}</span>
+	      {usingBackup && (
+	        <span className="hidden md:inline text-[10px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400">backup</span>
+	      )}
+	      {error && (
+	        <span className="text-[10px] px-1.5 py-0.5 rounded bg-red-500/20 text-red-400">{error}</span>
+	      )}
+	    </div>
+	    <div className="truncate text-[11px] md:text-xs text-[var(--color-fg-2)]">
+	      {currentTrack.playAuthor || 'Автор неизвестен'}
+	    </div>
+	  </button>
+	</div>
 
         <div className="flex items-center gap-2 flex-1 min-w-0">
           <span className="hidden md:inline text-xs text-[var(--color-fg-2)] w-10 text-right shrink-0">{fmt(progress)}</span>

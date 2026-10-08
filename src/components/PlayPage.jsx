@@ -158,25 +158,29 @@ export default function PlayPage({ play, onBack, onFilter }) {
           const isCurrent = currentTrack?.url === part.url
           return (
             <div
-              key={part.id}
-              onClick={() => playPart(play, i)}
-              className={`flex items-center gap-3 px-3 py-2 rounded cursor-pointer
-                ${isCurrent
-                  ? 'bg-[var(--color-bg-2)] text-[var(--color-accent)]'
-                  : 'hover:bg-[var(--color-bg-1)]'}`}
-            >
-              <div className="w-6 text-center text-xs text-[var(--color-fg-2)]">
-                {isCurrent && isPlaying ? <PauseIcon size={12} /> : i + 1}
-              </div>
-              <div className="flex-1 text-sm flex items-center gap-2">
-                <span>{part.title || `Часть ${i + 1}`}</span>
-                {part.isTitr && (
-                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--color-bg-3)] text-[var(--color-fg-2)] uppercase tracking-wide">
-                    титр
-                  </span>
-                )}
-              </div>
-            </div>
+	      key={part.id}
+	      onClick={() => isCurrent ? togglePlay() : playPart(play, i)}
+	      className={`flex items-center gap-3 px-3 py-2 rounded cursor-pointer
+	        ${isCurrent
+	          ? 'bg-[var(--color-bg-2)] text-[var(--color-accent)]'
+	         : 'hover:bg-[var(--color-bg-1)]'}`}
+	   >
+	     <div className="w-6 text-center text-xs text-[var(--color-fg-2)]">
+	       {isCurrent && isPlaying
+	         ? <PauseIcon size={12} />
+	          : isCurrent
+	  	    ? <PlayIcon size={12} />
+	 	    : i + 1}
+	      </div>
+	      <div className="flex-1 text-sm flex items-center gap-2">
+	        <span>{part.title || `Часть ${i + 1}`}</span>
+	        {part.isTitr && (
+	          <span className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--color-bg-3)] text-[var(--color-fg-2)] uppercase tracking-wide">
+		    титр
+	          </span>
+	        )}
+	      </div>
+	    </div>
           )
         })}
       </div>
