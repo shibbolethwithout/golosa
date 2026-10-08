@@ -1,10 +1,17 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 
-export default function ScrollArea({ children, className = '', thumbColor, resetKey }) {
+export default function ScrollArea({
+  children,
+  className = '',
+  thumbColor,
+  resetKey,
+  storageKey,
+}) {
   const containerRef = useRef(null)
   const contentRef = useRef(null)
   const thumbRef = useRef(null)
   const scrollTimeoutRef = useRef(null)
+  const isFirstRenderRef = useRef(true)
 
   const [hovered, setHovered] = useState(false)
   const [dragging, setDragging] = useState(false)
@@ -52,19 +59,57 @@ export default function ScrollArea({ children, className = '', thumbColor, reset
     }
   }, [])
 
-  // ─── Сброс скролла при смене resetKey ───
-  useEffect(() => {
-    if (containerRef.current) containerRef.current.scrollTop = 0
-  }, [resetKey])
+  // ─── Восстановление scrollTop при mount ───
+  // useLayoutEffect — до отрисовки, чтобы не было «мигания» из позиции 0 в 500
+  useLayoutEffect(() => {
+    const el = containerRef.current
+    if (!el || !storageKey) return
 
-  // ─── Показ thumb во время скролла ───
-  const onScroll = () => {
+    let saved = 0
+    try {
+      saved = parseInt(sessionStorage.getItem(`scroll:${storageKey}`) || '0', 10)
+    } catch {}
+
+    if (saved > 0) {
+      el.scrollTop = saved
+      // Повтор на следующем кадре — на случай, если высота контента
+      // ещё не рассчитана (например, картинки подгружаются)
+      const rafId = requestAnimationFrame(() => {
+        if (containerRef.current) containerRef.current.scrollTop = saved
+      })
+      return () => cancelAnimationFrame(rafId)
+    }
+  }, [storageKey])
+
+  // ─── Сброс позиции при смене resetKey (кроме первого рендера) ───
+  useEffect(() => {
+    if (isFirstRenderRef.current) {
+      isFirstRenderRef.current = false
+      return
+    }
+    if (containerRef.current) containerRef.current.scrollTop = 0
+    if (storageKey) {
+      try {
+        sessionStorage.removeItem(`scroll:${storageKey}`)
+      } catch {}
+    }
+  }, [resetKey, storageKey])
+
+  // ─── Сохранение позиции при каждом скролле + показ thumb ───
+  const onScroll = (e) => {
+    const el = e.currentTarget
     setScrolling(true)
     clearTimeout(scrollTimeoutRef.current)
     scrollTimeoutRef.current = setTimeout(() => setScrolling(false), 800)
+
+    if (storageKey) {
+      try {
+        sessionStorage.setItem(`scroll:${storageKey}`, String(el.scrollTop))
+      } catch {}
+    }
   }
 
-  // ─── Drag ───
+  // ─── Drag thumb ───
   const onThumbPointerDown = (e) => {
     e.preventDefault()
     e.stopPropagation()
