@@ -9824,105 +9824,105 @@
     "parts": [
       {
         "id": "p1",
-        "title": "Жажда - радиотеатр mp3 — 1 часть",
+        "title": "Жажда — 1 часть",
         "url": "https://sheba.spb.ru/radio/ge_zazda-01.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p2",
-        "title": "Жажда - радиотеатр mp3 — 2 часть",
+        "title": "Жажда — 2 часть",
         "url": "https://sheba.spb.ru/radio/ge_zazda-02.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p3",
-        "title": "Жажда - радиотеатр mp3 — 3 часть",
+        "title": "Жажда — 3 часть",
         "url": "https://sheba.spb.ru/radio/ge_zazda-03.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p4",
-        "title": "Жажда - радиотеатр mp3 — 4 часть",
+        "title": "Жажда — 4 часть",
         "url": "https://sheba.spb.ru/radio/ge_zazda-04.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p5",
-        "title": "Жажда - радиотеатр mp3 — 5 часть",
+        "title": "Жажда — 5 часть",
         "url": "https://sheba.spb.ru/radio/ge_zazda-05.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p6",
-        "title": "Жажда - радиотеатр mp3 — 6 часть",
+        "title": "Жажда — 6 часть",
         "url": "https://sheba.spb.ru/radio/ge_zazda-06.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p7",
-        "title": "Жажда - радиотеатр mp3 — 7 часть",
+        "title": "Жажда — 7 часть",
         "url": "https://sheba.spb.ru/radio/ge_zazda-07.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p8",
-        "title": "Жажда - радиотеатр mp3 — 8 часть",
+        "title": "Жажда — 8 часть",
         "url": "https://sheba.spb.ru/radio/ge_zazda-08.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p9",
-        "title": "Жажда - радиотеатр mp3 — 9 часть",
+        "title": "Жажда — 9 часть",
         "url": "https://sheba.spb.ru/radio/ge_zazda-09.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p10",
-        "title": "Жажда - радиотеатр mp3 — 10 часть",
+        "title": "Жажда — 10 часть",
         "url": "https://sheba.spb.ru/radio/ge_zazda-10.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p11",
-        "title": "Жажда - радиотеатр mp3 — 11 часть",
+        "title": "Жажда — 11 часть",
         "url": "https://sheba.spb.ru/radio/ge_zazda-11.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p12",
-        "title": "Жажда - радиотеатр mp3 — 12 часть",
+        "title": "Жажда — 12 часть",
         "url": "https://sheba.spb.ru/radio/ge_zazda-12.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p13",
-        "title": "Жажда - радиотеатр mp3 — 13 часть",
+        "title": "Жажда — 13 часть",
         "url": "https://sheba.spb.ru/radio/ge_zazda-13.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p14",
-        "title": "Жажда - радиотеатр mp3 — 14 часть",
+        "title": "Жажда — 14 часть",
         "url": "https://sheba.spb.ru/radio/ge_zazda-14.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p15",
-        "title": "Жажда - радиотеатр mp3 — 15 часть",
+        "title": "Жажда — 15 часть",
         "url": "https://sheba.spb.ru/radio/ge_zazda-15.mp3",
         "backup": null,
         "isTitr": false
@@ -14365,6 +14365,129 @@
     "partCount": 4
   },
   {
+    "id": "кража-1910",
+    "slug": "кража-1910",
+    "title": "Кража",
+    "author": "Лондон Д.",
+    "year": 1910,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "зарубежная_классика"
+    ],
+    "tags": [
+      "США",
+      "золотая_лихорадка"
+    ],
+    "description": "Ранний рассказ Джека Лондона о золотой лихорадке и цене человеческой жадности.",
+    "cover": null,
+    "folder": "Лондон Д. Кража, 1910",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Кража — титр",
+        "url": "https://sheba.spb.ru/rs/london-krazha0titr.mp3",
+        "backup": null,
+        "isTitr": true
+      },
+      {
+        "id": "p2",
+        "title": "Кража — титр",
+        "url": "https://sheba.spb.ru/rs/london-krazha1955-0titr.mp3",
+        "backup": null,
+        "isTitr": true
+      },
+      {
+        "id": "p3",
+        "title": "Кража — 1 часть",
+        "url": "https://sheba.spb.ru/rs/london-krazha1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Кража — 2 часть",
+        "url": "https://sheba.spb.ru/rs/london-krazha2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p5",
+        "title": "Кража — 3 часть",
+        "url": "https://sheba.spb.ru/rs/london-krazha3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p6",
+        "title": "Кража — 4 часть",
+        "url": "https://sheba.spb.ru/rs/london-krazha4.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p7",
+        "title": "Кража — титр",
+        "url": "https://sheba.spb.ru/rs/london-krazha1955-5titr.mp3",
+        "backup": null,
+        "isTitr": true
+      }
+    ],
+    "partCount": 7
+  },
+  {
+    "id": "кража-1955",
+    "slug": "кража-1955",
+    "title": "КРАЖА",
+    "author": "Лондон Д.",
+    "year": 1955,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "зарубежная_классика"
+    ],
+    "tags": [
+      "США",
+      "приключения"
+    ],
+    "description": "Советская постановка рассказа Джека Лондона — о приключениях и моральном выборе.",
+    "cover": null,
+    "folder": "Лондон Д. КРАЖА, 1955",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "КРАЖА — 1 часть",
+        "url": "https://sheba.spb.ru/rs/london-krazha1955-1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "КРАЖА — 2 часть",
+        "url": "https://sheba.spb.ru/rs/london-krazha1955-2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "КРАЖА — 3 часть",
+        "url": "https://sheba.spb.ru/rs/london-krazha1955-3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "КРАЖА — 4 часть",
+        "url": "https://sheba.spb.ru/rs/london-krazha1955-4.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 4
+  },
+  {
     "id": "крамнэгел-1983",
     "slug": "крамнэгел-1983",
     "title": "Крамнэгел",
@@ -15165,187 +15288,6 @@
     "partCount": 7
   },
   {
-    "id": "лондон-дж-кража-1910",
-    "slug": "лондон-дж-кража-1910",
-    "title": "Лондон Дж. Кража",
-    "author": null,
-    "year": 1910,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "зарубежная_классика"
-    ],
-    "tags": [
-      "США",
-      "золотая_лихорадка"
-    ],
-    "description": "Ранний рассказ Джека Лондона о золотой лихорадке и цене человеческой жадности.",
-    "cover": null,
-    "folder": "Лондон Дж. Кража, 1910",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Кража — титр",
-        "url": "https://sheba.spb.ru/rs/london-krazha0titr.mp3",
-        "backup": null,
-        "isTitr": true
-      },
-      {
-        "id": "p2",
-        "title": "Кража — титр",
-        "url": "https://sheba.spb.ru/rs/london-krazha1955-0titr.mp3",
-        "backup": null,
-        "isTitr": true
-      },
-      {
-        "id": "p3",
-        "title": "Кража — 1 часть",
-        "url": "https://sheba.spb.ru/rs/london-krazha1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Кража — 2 часть",
-        "url": "https://sheba.spb.ru/rs/london-krazha2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p5",
-        "title": "Кража — 3 часть",
-        "url": "https://sheba.spb.ru/rs/london-krazha3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p6",
-        "title": "Кража — 4 часть",
-        "url": "https://sheba.spb.ru/rs/london-krazha4.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p7",
-        "title": "Кража — титр",
-        "url": "https://sheba.spb.ru/rs/london-krazha1955-5titr.mp3",
-        "backup": null,
-        "isTitr": true
-      }
-    ],
-    "partCount": 7
-  },
-  {
-    "id": "лондон-дж-кража-1955",
-    "slug": "лондон-дж-кража-1955",
-    "title": "Лондон Дж. КРАЖА",
-    "author": null,
-    "year": 1955,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "зарубежная_классика"
-    ],
-    "tags": [
-      "США",
-      "приключения"
-    ],
-    "description": "Советская постановка рассказа Джека Лондона — о приключениях и моральном выборе.",
-    "cover": null,
-    "folder": "Лондон Дж. КРАЖА, 1955",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "КРАЖА — 1 часть",
-        "url": "https://sheba.spb.ru/rs/london-krazha1955-1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "КРАЖА — 2 часть",
-        "url": "https://sheba.spb.ru/rs/london-krazha1955-2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "КРАЖА — 3 часть",
-        "url": "https://sheba.spb.ru/rs/london-krazha1955-3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "КРАЖА — 4 часть",
-        "url": "https://sheba.spb.ru/rs/london-krazha1955-4.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 4
-  },
-  {
-    "id": "лондон-дж-мартин-иден-1976",
-    "slug": "лондон-дж-мартин-иден-1976",
-    "title": "Лондон Дж. Мартин Иден",
-    "author": null,
-    "year": 1976,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "зарубежная_классика"
-    ],
-    "tags": [
-      "США",
-      "писатель"
-    ],
-    "description": "Моряк, ставший писателем, — история о цене успеха и утрате себя.",
-    "cover": null,
-    "folder": "Лондон Дж. Мартин Иден, 1976",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Мартин Иден — титр",
-        "url": "https://sheba.spb.ru/radio/london-iden0titr.mp3",
-        "backup": null,
-        "isTitr": true
-      },
-      {
-        "id": "p2",
-        "title": "Мартин Иден — 1 часть",
-        "url": "https://sheba.spb.ru/radio/london-iden1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Мартин Иден — 2 часть",
-        "url": "https://sheba.spb.ru/radio/london-iden2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Мартин Иден — 3 часть",
-        "url": "https://sheba.spb.ru/radio/london-iden3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p5",
-        "title": "Мартин Иден — 4 часть",
-        "url": "https://sheba.spb.ru/radio/london-iden4.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 5
-  },
-  {
     "id": "лопе-де-вега-собака-на-сене-1944",
     "slug": "лопе-де-вега-собака-на-сене-1944",
     "title": "Лопе де Вега. Собака на сене",
@@ -16056,6 +15998,64 @@
         "url": "https://sheba.spb.ru/radio/bred-mars5titr.mp3",
         "backup": null,
         "isTitr": true
+      }
+    ],
+    "partCount": 5
+  },
+  {
+    "id": "мартин-иден-1976",
+    "slug": "мартин-иден-1976",
+    "title": "Мартин Иден",
+    "author": "Лондон Д.",
+    "year": 1976,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "зарубежная_классика"
+    ],
+    "tags": [
+      "США",
+      "писатель"
+    ],
+    "description": "Моряк, ставший писателем, — история о цене успеха и утрате себя.",
+    "cover": null,
+    "folder": "Лондон Д. Мартин Иден, 1976",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Мартин Иден — титр",
+        "url": "https://sheba.spb.ru/radio/london-iden0titr.mp3",
+        "backup": null,
+        "isTitr": true
+      },
+      {
+        "id": "p2",
+        "title": "Мартин Иден — 1 часть",
+        "url": "https://sheba.spb.ru/radio/london-iden1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Мартин Иден — 2 часть",
+        "url": "https://sheba.spb.ru/radio/london-iden2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Мартин Иден — 3 часть",
+        "url": "https://sheba.spb.ru/radio/london-iden3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p5",
+        "title": "Мартин Иден — 4 часть",
+        "url": "https://sheba.spb.ru/radio/london-iden4.mp3",
+        "backup": null,
+        "isTitr": false
       }
     ],
     "partCount": 5
