@@ -8493,56 +8493,56 @@
         "id": "p1",
         "title": "Добрый человек из Сезуана. слушать — 1 часть",
         "url": "https://sheba.spb.ru/radio/breht_sezuan-1.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=7652",
         "isTitr": false
       },
       {
         "id": "p2",
         "title": "Добрый человек из Сезуана. слушать — 2 часть",
         "url": "https://sheba.spb.ru/radio/breht_sezuan-2.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=7652",
         "isTitr": false
       },
       {
         "id": "p3",
         "title": "Добрый человек из Сезуана. слушать — 3 часть",
         "url": "https://sheba.spb.ru/radio/breht_sezuan-3.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=7652",
         "isTitr": false
       },
       {
         "id": "p4",
         "title": "Добрый человек из Сезуана. слушать — 4 часть",
         "url": "https://sheba.spb.ru/radio/breht_sezuan-4.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=7652",
         "isTitr": false
       },
       {
         "id": "p5",
         "title": "Добрый человек из Сезуана. слушать — 5 часть",
         "url": "https://sheba.spb.ru/radio/breht_sezuan-5.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=7652",
         "isTitr": false
       },
       {
         "id": "p6",
         "title": "Добрый человек из Сезуана. слушать — 6 часть",
         "url": "https://sheba.spb.ru/radio/breht_sezuan-6.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=7652",
         "isTitr": false
       },
       {
         "id": "p7",
         "title": "Добрый человек из Сезуана. слушать — 7 часть",
         "url": "https://sheba.spb.ru/radio/breht_sezuan-7.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=7652",
         "isTitr": false
       },
       {
         "id": "p8",
         "title": "Добрый человек из Сезуана. слушать — 8 часть",
         "url": "https://sheba.spb.ru/radio/breht_sezuan-8.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=7652",
         "isTitr": false
       }
     ],
@@ -19093,28 +19093,28 @@
         "id": "p1",
         "title": "Негодяй из Сефлё — 1 часть",
         "url": "https://sheba.spb.ru/radio/negod1.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=9282",
         "isTitr": false
       },
       {
         "id": "p2",
         "title": "Негодяй из Сефлё — 2 часть",
         "url": "https://sheba.spb.ru/radio/negod2.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=9282",
         "isTitr": false
       },
       {
         "id": "p3",
         "title": "Негодяй из Сефлё — 3 часть",
         "url": "https://sheba.spb.ru/radio/negod3.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=9282",
         "isTitr": false
       },
       {
         "id": "p4",
         "title": "Негодяй из Сефлё — 4 часть",
         "url": "https://sheba.spb.ru/radio/negod4.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=9282",
         "isTitr": false
       }
     ],
@@ -23960,35 +23960,35 @@
     "parts": [
       {
         "id": "p1",
-        "title": "Полтава — 2 часть",
+        "title": "Полтава — 1 часть",
         "url": "https://sheba.spb.ru/radio/pushkin_poltava1.aac",
         "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=9007",
         "isTitr": false
       },
       {
         "id": "p2",
-        "title": "Полтава — 3 часть",
+        "title": "Полтава — 2 часть",
         "url": "https://sheba.spb.ru/radio/pushkin_poltava2.aac",
         "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=9007",
         "isTitr": false
       },
       {
         "id": "p3",
-        "title": "Полтава — 4 часть",
+        "title": "Полтава — 3 часть",
         "url": "https://sheba.spb.ru/radio/pushkin_poltava3.aac",
         "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=9007",
         "isTitr": false
       },
       {
         "id": "p4",
-        "title": "олтава — 5 часть",
+        "title": "олтава — 4 часть",
         "url": "https://sheba.spb.ru/radio/pushkin_poltava4.aac",
         "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=9007",
         "isTitr": false
       },
       {
         "id": "p5",
-        "title": "Полтава — 1 часть",
+        "title": "Полтава — 5 часть",
         "url": "https://sheba.spb.ru/radio/pushkin_poltava5.aac",
         "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=9007",
         "isTitr": false
