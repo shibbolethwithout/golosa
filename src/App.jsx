@@ -17,6 +17,25 @@ export default function App() {
   const [showQueue, setShowQueue] = useState(false)
   const [showSidebar, setShowSidebar] = useState(false)
   const [currentPlay, setCurrentPlay] = useState(null)
+  // Перемешанный список. Хранится в состоянии, обновляется по кнопке.
+  const [shuffledLibrary, setShuffledLibrary] = useState([])
+
+  // Синхронизация с library после загрузки
+  useEffect(() => {
+    setShuffledLibrary(library)
+  }, [library])
+
+  // Функция перемешивания (Fisher-Yates). Вызывается только по клику.
+  const shuffle = () => {
+    setShuffledLibrary(prev => {
+      const arr = [...prev]
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[arr[i], arr[j]] = [arr[j], arr[i]]
+      }
+      return arr
+    })
+  }
 
   useEffect(() => {
     const handleDeepLink = (lib) => {
@@ -212,6 +231,7 @@ export default function App() {
       setShowQueue(false)
     }
     setShowSidebar(false)
+    shuffle()
   }
 
   const onSearchChange = (v) => {
@@ -223,7 +243,7 @@ export default function App() {
     }
   }
 
-  let visible = library
+  let visible = shuffledLibrary
   if (query) {
     const found = search(query)
     if (found) visible = found
