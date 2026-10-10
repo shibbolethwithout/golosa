@@ -5149,6 +5149,36 @@
     "partCount": 4
   },
   {
+    "id": "вождь-краснокожих-1999",
+    "slug": "вождь-краснокожих-1999",
+    "title": "Вождь краснокожих",
+    "author": "Генри О.",
+    "year": 1999,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "юмор"
+    ],
+    "tags": [
+      "США",
+      "детство"
+    ],
+    "description": "Знаменитый рассказ о двух незадачливых похитителях и несносном мальчишке.",
+    "cover": null,
+    "folder": "Генри О. Вождь краснокожих, 1999",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Вождь краснокожих",
+        "url": "https://sheba.spb.ru/radio/ogenry_vozd.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 1
+  },
+  {
     "id": "возможны-варианты-1976",
     "slug": "возможны-варианты-1976",
     "title": "Возможны варианты",
@@ -19180,56 +19210,56 @@
         "id": "p1",
         "title": "Фонвизин, Недоросль — 1 часть",
         "url": "https://sheba.spb.ru/radio/fon1.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=37060",
         "isTitr": false
       },
       {
         "id": "p2",
         "title": "Фонвизин, Недоросль — 2 часть",
         "url": "https://sheba.spb.ru/radio/fon2.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=37060",
         "isTitr": false
       },
       {
         "id": "p3",
         "title": "Фонвизин, Недоросль — 3 часть",
         "url": "https://sheba.spb.ru/radio/fon3.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=37060",
         "isTitr": false
       },
       {
         "id": "p4",
         "title": "Фонвизин, Недоросль — 4 часть",
         "url": "https://sheba.spb.ru/radio/fon4.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=37060",
         "isTitr": false
       },
       {
         "id": "p5",
         "title": "Фонвизин, Недоросль — 5 часть",
         "url": "https://sheba.spb.ru/radio/fon5.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=37060",
         "isTitr": false
       },
       {
         "id": "p6",
         "title": "Фонвизин, Недоросль — 6 часть",
         "url": "https://sheba.spb.ru/radio/fon6.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=37060",
         "isTitr": false
       },
       {
         "id": "p7",
         "title": "Фонвизин, Недоросль — 7 часть",
         "url": "https://sheba.spb.ru/radio/fon7.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=37060",
         "isTitr": false
       },
       {
         "id": "p8",
         "title": "Фонвизин, Недоросль — 8 часть",
         "url": "https://sheba.spb.ru/radio/fon8.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=37060",
         "isTitr": false
       }
     ],
@@ -19963,230 +19993,6 @@
       }
     ],
     "partCount": 3
-  },
-  {
-    "id": "о-генри-вождь-краснокожих-1999",
-    "slug": "о-генри-вождь-краснокожих-1999",
-    "title": "О. Генри Вождь краснокожих",
-    "author": null,
-    "year": 1999,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "юмор"
-    ],
-    "tags": [
-      "США",
-      "детство"
-    ],
-    "description": "Знаменитый рассказ о двух незадачливых похитителях и несносном мальчишке.",
-    "cover": null,
-    "folder": "О. Генри Вождь краснокожих, 1999",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Вождь краснокожих",
-        "url": "https://sheba.spb.ru/radio/ogenry_vozd.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 1
-  },
-  {
-    "id": "о-генри-поросячья-этика-1980",
-    "slug": "о-генри-поросячья-этика-1980",
-    "title": "О. Генри Поросячья этика",
-    "author": null,
-    "year": 1980,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "юмор"
-    ],
-    "tags": [
-      "США",
-      "ирония"
-    ],
-    "description": "Ироничный рассказ О. Генри о дельце, который решает заработать на наивности ближнего.",
-    "cover": null,
-    "folder": "О. Генри Поросячья этика, 1980",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "оросячья этика — 1 часть",
-        "url": "https://sheba.spb.ru/radio/ohenry-pig1.aac",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Поросячья этика — 2 часть",
-        "url": "https://sheba.spb.ru/radio/ohenry-pig2.aac",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 2
-  },
-  {
-    "id": "о-генри-развлечения-современной-древни-1980",
-    "slug": "о-генри-развлечения-современной-древни-1980",
-    "title": "О. Генри Развлечения современной древни",
-    "author": null,
-    "year": 1980,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "юмор"
-    ],
-    "tags": [
-      "США",
-      "город"
-    ],
-    "description": "Остроумный рассказ о нравах большого города и маленьких хитростях.",
-    "cover": null,
-    "folder": "О. Генри Развлечения современной древни, 1980",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Развлечения современной древни",
-        "url": "https://sheba.spb.ru/radio/ohenry-razvlech.aac",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 1
-  },
-  {
-    "id": "о-генри-рука-которая-терзает-весь-мир-1969",
-    "slug": "о-генри-рука-которая-терзает-весь-мир-1969",
-    "title": "О. Генри Рука которая терзает весь мир",
-    "author": null,
-    "year": 1969,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "юмор"
-    ],
-    "tags": [
-      "США",
-      "детектив"
-    ],
-    "description": "Рассказ о злодее, который держит в страхе целый город — и о неожиданной развязке.",
-    "cover": null,
-    "folder": "О. Генри Рука которая терзает весь мир, 1969",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Рука, которая терзает весь мир",
-        "url": "https://sheba.spb.ru/radio/ohenry-ruka.aac",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 1
-  },
-  {
-    "id": "о-генри-совесть-в-искусстве-1980",
-    "slug": "о-генри-совесть-в-искусстве-1980",
-    "title": "О. Генри Совесть в искусстве",
-    "author": null,
-    "year": 1980,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "юмор"
-    ],
-    "tags": [
-      "США",
-      "искусство"
-    ],
-    "description": "Ироничная история о художнике и его совести — в лучших традициях О. Генри.",
-    "cover": null,
-    "folder": "О. Генри Совесть в искусстве, 1980",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Совесть в искусстве",
-        "url": "https://sheba.spb.ru/radio/ohenry-sovest.aac",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 1
-  },
-  {
-    "id": "о-генри-супружество-как-точная-наука-1982",
-    "slug": "о-генри-супружество-как-точная-наука-1982",
-    "title": "О. Генри Супружество как точная наука",
-    "author": null,
-    "year": 1982,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "юмор"
-    ],
-    "tags": [
-      "США",
-      "брак"
-    ],
-    "description": "Ироничный рассказ о математике, который попробовал применить формулы к семейной жизни.",
-    "cover": null,
-    "folder": "О. Генри Супружество как точная наука, 1982",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Супружество как точная наука",
-        "url": "https://sheba.spb.ru/radio/ohenry-supru.aac",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 1
-  },
-  {
-    "id": "о-генри-трест-который-лопнул-1980",
-    "slug": "о-генри-трест-который-лопнул-1980",
-    "title": "О. Генри Трест который лопнул",
-    "author": null,
-    "year": 1980,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "сатира"
-    ],
-    "tags": [
-      "США",
-      "бизнес"
-    ],
-    "description": "Сатирический рассказ о наивных дельцах и о том, что не всё продаётся.",
-    "cover": null,
-    "folder": "О. Генри Трест который лопнул, 1980",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Трест, который лопнул — 1 часть",
-        "url": "https://sheba.spb.ru/radio/ohenry-trest1.aac",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Трест, который лопнул — 2 часть",
-        "url": "https://sheba.spb.ru/radio/ohenry-trest2.aac",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 2
   },
   {
     "id": "обелиск-1974",
@@ -24132,11 +23938,11 @@
     "partCount": 1
   },
   {
-    "id": "полтава-1950",
-    "slug": "полтава-1950",
+    "id": "полтава-1987",
+    "slug": "полтава-1987",
     "title": "Полтава",
     "author": "Пушкин А.С.",
-    "year": 1950,
+    "year": 1987,
     "theatre": null,
     "directors": [],
     "actors": [],
@@ -24150,41 +23956,41 @@
     ],
     "description": "Поэма Пушкина о Петре I и Мазепе — о любви, измене и великой битве.",
     "cover": null,
-    "folder": "Пушкин А.С. Полтава, 1950",
+    "folder": "Пушкин А.С. Полтава, 1987",
     "parts": [
       {
         "id": "p1",
         "title": "Полтава — 2 часть",
         "url": "https://sheba.spb.ru/radio/pushkin_poltava1.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=9007",
         "isTitr": false
       },
       {
         "id": "p2",
         "title": "Полтава — 3 часть",
         "url": "https://sheba.spb.ru/radio/pushkin_poltava2.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=9007",
         "isTitr": false
       },
       {
         "id": "p3",
         "title": "Полтава — 4 часть",
         "url": "https://sheba.spb.ru/radio/pushkin_poltava3.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=9007",
         "isTitr": false
       },
       {
         "id": "p4",
         "title": "олтава — 5 часть",
         "url": "https://sheba.spb.ru/radio/pushkin_poltava4.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=9007",
         "isTitr": false
       },
       {
         "id": "p5",
         "title": "Полтава — 1 часть",
         "url": "https://sheba.spb.ru/radio/pushkin_poltava5.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=9007",
         "isTitr": false
       }
     ],
@@ -24277,6 +24083,43 @@
       }
     ],
     "partCount": 4
+  },
+  {
+    "id": "поросячья-этика-1980",
+    "slug": "поросячья-этика-1980",
+    "title": "Поросячья этика",
+    "author": "Генри О.",
+    "year": 1980,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "юмор"
+    ],
+    "tags": [
+      "США",
+      "ирония"
+    ],
+    "description": "Ироничный рассказ О. Генри о дельце, который решает заработать на наивности ближнего.",
+    "cover": null,
+    "folder": "Генри О. Поросячья этика, 1980",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "оросячья этика — 1 часть",
+        "url": "https://sheba.spb.ru/radio/ohenry-pig1.aac",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Поросячья этика — 2 часть",
+        "url": "https://sheba.spb.ru/radio/ohenry-pig2.aac",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 2
   },
   {
     "id": "портрет-дориана-грея-1981",
@@ -26416,6 +26259,36 @@
     "partCount": 4
   },
   {
+    "id": "развлечения-современной-древни-1980",
+    "slug": "развлечения-современной-древни-1980",
+    "title": "Развлечения современной древни",
+    "author": "Генри О.",
+    "year": 1980,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "юмор"
+    ],
+    "tags": [
+      "США",
+      "город"
+    ],
+    "description": "Остроумный рассказ о нравах большого города и маленьких хитростях.",
+    "cover": null,
+    "folder": "Генри О. Развлечения современной древни, 1980",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Развлечения современной древни",
+        "url": "https://sheba.spb.ru/radio/ohenry-razvlech.aac",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 1
+  },
+  {
     "id": "разговор",
     "slug": "разговор",
     "title": "Разговор",
@@ -27563,6 +27436,36 @@
       }
     ],
     "partCount": 6
+  },
+  {
+    "id": "рука-которая-терзает-весь-мир-1969",
+    "slug": "рука-которая-терзает-весь-мир-1969",
+    "title": "Рука которая терзает весь мир",
+    "author": "Генри О.",
+    "year": 1969,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "юмор"
+    ],
+    "tags": [
+      "США",
+      "детектив"
+    ],
+    "description": "Рассказ о злодее, который держит в страхе целый город — и о неожиданной развязке.",
+    "cover": null,
+    "folder": "Генри О. Рука которая терзает весь мир, 1969",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Рука, которая терзает весь мир",
+        "url": "https://sheba.spb.ru/radio/ohenry-ruka.aac",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 1
   },
   {
     "id": "рядовые-1985",
@@ -29693,6 +29596,36 @@
     "partCount": 6
   },
   {
+    "id": "совесть-в-искусстве-1980",
+    "slug": "совесть-в-искусстве-1980",
+    "title": "Совесть в искусстве",
+    "author": "Генри О.",
+    "year": 1980,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "юмор"
+    ],
+    "tags": [
+      "США",
+      "искусство"
+    ],
+    "description": "Ироничная история о художнике и его совести — в лучших традициях О. Генри.",
+    "cover": null,
+    "folder": "Генри О. Совесть в искусстве, 1980",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Совесть в искусстве",
+        "url": "https://sheba.spb.ru/radio/ohenry-sovest.aac",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 1
+  },
+  {
     "id": "солдат-и-ева-1969",
     "slug": "солдат-и-ева-1969",
     "title": "Солдат и Ева",
@@ -29848,28 +29781,28 @@
         "id": "p1",
         "title": "Сон с продолжением — 1 часть",
         "url": "https://sheba.spb.ru/skaz/son1.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=2156",
         "isTitr": false
       },
       {
         "id": "p2",
         "title": "Сон с продолжением — 2 часть",
         "url": "https://sheba.spb.ru/skaz/son2.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=2156",
         "isTitr": false
       },
       {
         "id": "p3",
         "title": "Сон с продолжением — 3 часть",
         "url": "https://sheba.spb.ru/skaz/son3.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=2156",
         "isTitr": false
       },
       {
         "id": "p4",
         "title": "Сон с продолжением — 4 часть",
         "url": "https://sheba.spb.ru/skaz/son4.aac",
-        "backup": null,
+        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=2156",
         "isTitr": false
       }
     ],
@@ -31089,6 +31022,36 @@
     "partCount": 5
   },
   {
+    "id": "супружество-как-точная-наука-1982",
+    "slug": "супружество-как-точная-наука-1982",
+    "title": "Супружество как точная наука",
+    "author": "Генри О.",
+    "year": 1982,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "юмор"
+    ],
+    "tags": [
+      "США",
+      "брак"
+    ],
+    "description": "Ироничный рассказ о математике, который попробовал применить формулы к семейной жизни.",
+    "cover": null,
+    "folder": "Генри О. Супружество как точная наука, 1982",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Супружество как точная наука",
+        "url": "https://sheba.spb.ru/radio/ohenry-supru.aac",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 1
+  },
+  {
     "id": "таинственный-посетитель-1995",
     "slug": "таинственный-посетитель-1995",
     "title": "ТАИНСТВЕННЫЙ ПОСЕТИТЕЛЬ",
@@ -32222,63 +32185,63 @@
         "id": "p1",
         "title": "Тихий Дон — 1 часть",
         "url": "https://sheba.spb.ru/radio/tihii_don-0.aac",
-        "backup": null,
+        "backup": "https://theatrologia.su/stream/736.mp3",
         "isTitr": false
       },
       {
         "id": "p2",
         "title": "Тихий Дон — 2 часть",
         "url": "https://sheba.spb.ru/radio/tihii_don-1.aac",
-        "backup": null,
+        "backup": "https://theatrologia.su/stream/736.mp3",
         "isTitr": false
       },
       {
         "id": "p3",
         "title": "Тихий Дон — 3 часть",
         "url": "https://sheba.spb.ru/radio/tihii_don-2.aac",
-        "backup": null,
+        "backup": "https://theatrologia.su/stream/736.mp3",
         "isTitr": false
       },
       {
         "id": "p4",
         "title": "Тихий Дон — 4 часть",
         "url": "https://sheba.spb.ru/radio/tihii_don-3.aac",
-        "backup": null,
+        "backup": "https://theatrologia.su/stream/736.mp3",
         "isTitr": false
       },
       {
         "id": "p5",
         "title": "Тихий Дон — 5 часть",
         "url": "https://sheba.spb.ru/radio/tihii_don-4.aac",
-        "backup": null,
+        "backup": "https://theatrologia.su/stream/736.mp3",
         "isTitr": false
       },
       {
         "id": "p6",
         "title": "Тихий Дон — 6 часть",
         "url": "https://sheba.spb.ru/radio/tihii_don-5.aac",
-        "backup": null,
+        "backup": "https://theatrologia.su/stream/736.mp3",
         "isTitr": false
       },
       {
         "id": "p7",
         "title": "Тихий Дон — 7 часть",
         "url": "https://sheba.spb.ru/radio/tihii_don-6.aac",
-        "backup": null,
+        "backup": "https://theatrologia.su/stream/736.mp3",
         "isTitr": false
       },
       {
         "id": "p8",
         "title": "Тихий Дон — 8 часть",
         "url": "https://sheba.spb.ru/radio/tihii_don-7.aac",
-        "backup": null,
+        "backup": "https://theatrologia.su/stream/736.mp3",
         "isTitr": false
       },
       {
         "id": "p9",
         "title": "Тихий Дон — 9 часть",
         "url": "https://sheba.spb.ru/radio/tihii_don-8.aac",
-        "backup": null,
+        "backup": "https://theatrologia.su/stream/736.mp3",
         "isTitr": false
       }
     ],
@@ -32313,6 +32276,43 @@
       }
     ],
     "partCount": 1
+  },
+  {
+    "id": "трест-который-лопнул-1980",
+    "slug": "трест-который-лопнул-1980",
+    "title": "Трест который лопнул",
+    "author": "Генри О.",
+    "year": 1980,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "сатира"
+    ],
+    "tags": [
+      "США",
+      "бизнес"
+    ],
+    "description": "Сатирический рассказ о наивных дельцах и о том, что не всё продаётся.",
+    "cover": null,
+    "folder": "Генри О. Трест который лопнул, 1980",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Трест, который лопнул — 1 часть",
+        "url": "https://sheba.spb.ru/radio/ohenry-trest1.aac",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Трест, который лопнул — 2 часть",
+        "url": "https://sheba.spb.ru/radio/ohenry-trest2.aac",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 2
   },
   {
     "id": "трёхгрошовая-опера-1973",
@@ -33962,28 +33962,28 @@
         "id": "p1",
         "title": "Братец Лис и Братец Кролик — 1 часть",
         "url": "https://sheba.spb.ru/skaz/rimmus1.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/skazki_djadjushki_rimusa_bratec_krolik_i_bratec_lis.mp3",
         "isTitr": false
       },
       {
         "id": "p2",
         "title": "Братец Лис и Братец Кролик — 2 часть",
         "url": "https://sheba.spb.ru/skaz/rimmus2.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/skazki_djadjushki_rimusa_bratec_krolik_i_bratec_lis.mp3",
         "isTitr": false
       },
       {
         "id": "p3",
         "title": "Братец Лис и Братец Кролик — 3 часть",
         "url": "https://sheba.spb.ru/skaz/rimmus3.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/skazki_djadjushki_rimusa_bratec_krolik_i_bratec_lis.mp3",
         "isTitr": false
       },
       {
         "id": "p4",
         "title": "Братец Лис и Братец Кролик — 4 часть",
         "url": "https://sheba.spb.ru/skaz/rimmus4.aac",
-        "backup": null,
+        "backup": "https://mp3tales.info/audio/skazki_djadjushki_rimusa_bratec_krolik_i_bratec_lis.mp3",
         "isTitr": false
       }
     ],
