@@ -1,33 +1,6 @@
 import { useMemo } from 'react'
 import ScrollArea from './ScrollArea'
 
-// Безопасные компараторы — не падают ни на числах, ни на объектах
-const byLabelAsc   = (a, b) => String(a[0]).localeCompare(String(b[0]), 'ru')
-const byCountDesc  = (a, b) => b[1] - a[1]
-const byNumberDesc = (a, b) => Number(b[0]) - Number(a[0])
-
-// Достаём строковое значение из любого представления:
-// "Иванов" → "Иванов"; {name: "Иванов"} → "Иванов"; 42 → "42"; null/[] → null
-function toStr(v) {
-  if (typeof v === 'string') return v.trim() || null
-  if (typeof v === 'number' && Number.isFinite(v)) return String(v)
-  if (v && typeof v === 'object' && typeof v.name === 'string') return v.name.trim() || null
-  return null
-}
-
-// Универсальный обход: массив или одиночное значение
-function eachString(v, cb) {
-  if (Array.isArray(v)) {
-    for (const x of v) {
-      const s = toStr(x)
-      if (s) cb(s)
-    }
-  } else {
-    const s = toStr(v)
-    if (s) cb(s)
-  }
-}
-
 export default function Sidebar({ library, onFilter, activeFilter, className = '', onHome }) {
   const facets = useMemo(() => {
     const genres = new Map()
@@ -36,27 +9,23 @@ export default function Sidebar({ library, onFilter, activeFilter, className = '
     const theatres = new Map()
     const decades = new Map()
 
-    const bump = (map, key) => map.set(key, (map.get(key) || 0) + 1)
-
-    for (const play of library || []) {
-      eachString(play.genre,     g => bump(genres, g))
-      eachString(play.author,    a => bump(authors, a))
-      eachString(play.directors, d => bump(directors, d))
-      eachString(play.theatre,   t => bump(theatres, t))
-
-      const y = Number(play.year)
-      if (Number.isFinite(y) && y > 0) {
-        const dec = Math.floor(y / 10) * 10
-        bump(decades, dec)
+    for (const play of library) {
+      for (const g of play.genre || []) genres.set(g, (genres.get(g) || 0) + 1)
+      if (play.author) authors.set(play.author, (authors.get(play.author) || 0) + 1)
+      for (const d of play.directors || []) directors.set(d, (directors.get(d) || 0) + 1)
+      if (play.theatre) theatres.set(play.theatre, (theatres.get(play.theatre) || 0) + 1)
+      if (play.year) {
+        const dec = Math.floor(play.year / 10) * 10
+        decades.set(dec, (decades.get(dec) || 0) + 1)
       }
     }
 
     return {
-      genres:    [...genres.entries()].sort(byCountDesc).slice(0, 20),
-      authors:   [...authors.entries()].sort(byLabelAsc),
-      directors: [...directors.entries()].sort(byLabelAsc),
-      theatres:  [...theatres.entries()].sort(byLabelAsc),
-      decades:   [...decades.entries()].sort(byNumberDesc),
+      genres: [...genres.entries()].sort((a, b) => b[1] - a[1]).slice(0, 20),
+      authors: [...authors.entries()].sort((a, b) => a[0].localeCompare(b[0], 'ru')),
+      directors: [...directors.entries()].sort((a, b) => a[0].localeCompare(b[0], 'ru')),
+      theatres: [...theatres.entries()].sort((a, b) => a[0].localeCompare(b[0], 'ru')),
+      decades: [...decades.entries()].sort((a, b) => b[0] - a[0]),
     }
   }, [library])
 
