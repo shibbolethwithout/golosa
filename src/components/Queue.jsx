@@ -48,7 +48,25 @@ export default function Queue({ onClose }) {
                     : 'hover:bg-[var(--color-bg-2)]'}`}
                 onClick={() => playPart(null, null, track)}
               >
-                <span className="flex-1 truncate">{track.title}</span>
+              {(() => {
+                // Разбор: «Горячее сердце — 1 часть» → main + part
+                const m = track.title.match(/^(.*?)\s*[—–-]\s*(\d+\s*[Чч]асть|титр)\s*$/i)
+                const main = m ? m[1].trim() : track.title
+                const part = m ? m[2].trim() : ''
+
+                return (
+                  <>
+                    <span className="flex-1 truncate">{main}</span>
+                    {part && (
+                      <span className="shrink-0 text-[10px] px-1.5 py-0.5 rounded
+                                       bg-[var(--color-bg-3)] text-[var(--color-fg-2)]
+                                       tabular-nums whitespace-nowrap">
+                        {part}
+                      </span>
+                    )}
+                  </>
+                )
+              })()}
                 <button
                   onClick={(e) => { e.stopPropagation(); removeFromQueue(i) }}
                   className="shrink-0 w-6 h-6 flex items-center justify-center rounded text-xs
