@@ -413,7 +413,18 @@ export default function Player({ onToggleQueue }) {
 	</div>
 
         <div className="flex items-center gap-2 flex-1 min-w-0">
-          <span className="hidden md:inline text-xs text-[var(--color-fg-2)] w-10 text-right shrink-0">{fmt(progress)}</span>
+          {/* Desktop: две подписи по краям слайдера */}
+          <span className="hidden md:inline text-xs text-[var(--color-fg-2)] w-10 text-right shrink-0 tabular-nums">
+            {fmt(progress)}
+          </span>
+
+          {/* Mobile: одна компактная строчка перед слайдером */}
+          <span className="md:hidden text-[11px] text-[var(--color-fg-2)] tabular-nums shrink-0 leading-none">
+            {fmt(progress)}
+            <span className="opacity-40 mx-0.5">/</span>
+            {fmt(duration)}
+          </span>
+
           <input
             type="range"
             min={0}
@@ -423,7 +434,11 @@ export default function Player({ onToggleQueue }) {
             className="flex-1 min-w-0"
             style={{ '--range-progress': `${duration > 0 ? (progress / duration) * 100 : 0}%` }}
           />
-          <span className="hidden md:inline text-xs text-[var(--color-fg-2)] w-10 shrink-0">{fmt(duration)}</span>
+
+          {/* Desktop: правая подпись */}
+          <span className="hidden md:inline text-xs text-[var(--color-fg-2)] w-10 shrink-0 tabular-nums">
+            {fmt(duration)}
+          </span>
         </div>
 
         <button
