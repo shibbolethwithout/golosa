@@ -3450,6 +3450,58 @@
     "partCount": 4
   },
   {
+    "id": "братец-лис-и-братец-кролик-1967",
+    "slug": "братец-лис-и-братец-кролик-1967",
+    "title": "Братец Лис и Братец Кролик",
+    "author": "Харрис Д.Ч.",
+    "year": 1967,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "сказка",
+      "зарубежная_классика"
+    ],
+    "tags": [
+      "США",
+      "детям"
+    ],
+    "description": "Знаменитые негритянские сказки дядюшки Римуса — о том, как Братец Кролик перехитрил Братца Лиса.",
+    "cover": null,
+    "folder": "Харрис Д.Ч. Братец Лис и Братец Кролик, 1967",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Братец Лис и Братец Кролик — 1 часть",
+        "url": "https://sheba.spb.ru/skaz/rimmus1.aac",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Братец Лис и Братец Кролик — 2 часть",
+        "url": "https://sheba.spb.ru/skaz/rimmus2.aac",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Братец Лис и Братец Кролик — 3 часть",
+        "url": "https://sheba.spb.ru/skaz/rimmus3.aac",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Братец Лис и Братец Кролик — 4 часть",
+        "url": "https://sheba.spb.ru/skaz/rimmus4.aac",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 4
+  },
+  {
     "id": "братья-и-сёстры-1974",
     "slug": "братья-и-сёстры-1974",
     "title": "Братья и сёстры",
@@ -5241,6 +5293,72 @@
       }
     ],
     "partCount": 5
+  },
+  {
+    "id": "война-миров-1991",
+    "slug": "война-миров-1991",
+    "title": "Война миров",
+    "author": "Уэллс Г.Д.",
+    "year": 1991,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "фантастика",
+      "зарубежная_классика"
+    ],
+    "tags": [
+      "Англия",
+      "космос"
+    ],
+    "description": "Марсиане высаживаются на Землю — и человечество оказывается на грани уничтожения.",
+    "cover": null,
+    "folder": "Уэллс Г.Д. Война миров, 1991",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Война миров — 3 часть",
+        "url": "https://sheba.spb.ru/radio/vm1.ogg",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Война миров — 4 часть",
+        "url": "https://sheba.spb.ru/radio/vm2.ogg",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Война миров — 5 часть",
+        "url": "https://sheba.spb.ru/radio/vm3.ogg",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Война миров — 6 часть",
+        "url": "https://sheba.spb.ru/radio/vm4.ogg",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p5",
+        "title": "Война миров — 1 часть",
+        "url": "https://sheba.spb.ru/radio/vm0vst.ogg",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p6",
+        "title": "Война миров — 2 часть",
+        "url": "https://sheba.spb.ru/radio/vm5zak.ogg",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 6
   },
   {
     "id": "волки-и-овцы-1949",
@@ -7153,58 +7271,6 @@
     "partCount": 4
   },
   {
-    "id": "дайсс-дж-крупная-игра-1971",
-    "slug": "дайсс-дж-крупная-игра-1971",
-    "title": "Дайсс Дж. Крупная игра",
-    "author": null,
-    "year": 1971,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "детектив",
-      "зарубежная_классика"
-    ],
-    "tags": [
-      "афера",
-      "расследование"
-    ],
-    "description": "Детектив о крупной афере, где всё оказывается не тем, чем кажется на первый взгляд.",
-    "cover": null,
-    "folder": "Дайсс Дж. Крупная игра, 1971",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Крупная игра — 1 часть",
-        "url": "https://sheba.spb.ru/radio/jeya-igra1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Крупная игра — 2 часть",
-        "url": "https://sheba.spb.ru/radio/jeya-igra2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Крупная игра — 3 часть",
-        "url": "https://sheba.spb.ru/radio/jeya-igra3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Крупная игра — 4 часть",
-        "url": "https://sheba.spb.ru/radio/jeya-igra4.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 4
-  },
-  {
     "id": "дамы-и-гусары-1962",
     "slug": "дамы-и-гусары-1962",
     "title": "Дамы и гусары",
@@ -8104,65 +8170,6 @@
       }
     ],
     "partCount": 2
-  },
-  {
-    "id": "дж-томми-1989",
-    "slug": "дж-томми-1989",
-    "title": "Дж. Томми",
-    "author": "Джером К.",
-    "year": 1989,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "комедия",
-      "зарубежная_классика"
-    ],
-    "tags": [
-      "Англия",
-      "юмор"
-    ],
-    "description": "Ироничные истории Джерома К. Джерома о жизни, друзьях и маленьких человеческих слабостях.",
-    "cover": null,
-    "folder": "Джером К. Дж. Томми, 1989",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Томми — 1 часть",
-        "url": "https://sheba.spb.ru/rs/jerome-tommy1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Томми — 2 часть",
-        "url": "https://sheba.spb.ru/rs/jerome-tommy2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Томми — 3 часть",
-        "url": "https://sheba.spb.ru/rs/jerome-tommy3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Томми — 4 часть",
-        "url": "https://sheba.spb.ru/rs/jerome-tommy4.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p5",
-        "title": "Томми — титр",
-        "url": "https://sheba.spb.ru/rs/jerome-tommy5titr.mp3",
-        "backup": null,
-        "isTitr": true
-      }
-    ],
-    "partCount": 5
   },
   {
     "id": "дипломат-1952",
@@ -11060,6 +11067,71 @@
     "partCount": 4
   },
   {
+    "id": "зима-тревоги-нашей-1993",
+    "slug": "зима-тревоги-нашей-1993",
+    "title": "Зима тревоги нашей",
+    "author": "Стейнбек Д.",
+    "year": 1993,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "зарубежная_классика"
+    ],
+    "tags": [
+      "США",
+      "нравственный_выбор"
+    ],
+    "description": "Поздний роман Стейнбека — о человеке из славного рода, который пытается найти своё место в мире.",
+    "cover": null,
+    "folder": "Стейнбек Д. Зима тревоги нашей, 1993",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Зима тревоги нашей — титр",
+        "url": "https://sheba.spb.ru/radio/steinbeck-zima0titr.mp3",
+        "backup": null,
+        "isTitr": true
+      },
+      {
+        "id": "p2",
+        "title": "Зима тревоги нашей — 1 часть",
+        "url": "https://sheba.spb.ru/radio/steinbeck-zima1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Зима тревоги нашей — 2 часть",
+        "url": "https://sheba.spb.ru/radio/steinbeck-zima2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Зима тревоги нашей — 3 часть",
+        "url": "https://sheba.spb.ru/radio/steinbeck-zima3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p5",
+        "title": "Зима тревоги нашей — 4 часть",
+        "url": "https://sheba.spb.ru/radio/steinbeck-zima4.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p6",
+        "title": "Зима тревоги нашей — титр",
+        "url": "https://sheba.spb.ru/radio/steinbeck-zima5titr.mp3",
+        "backup": null,
+        "isTitr": true
+      }
+    ],
+    "partCount": 6
+  },
+  {
     "id": "злой-мальчик-1948",
     "slug": "злой-мальчик-1948",
     "title": "Злой мальчик",
@@ -11231,6 +11303,72 @@
       }
     ],
     "partCount": 1
+  },
+  {
+    "id": "золотое-руно-1964",
+    "slug": "золотое-руно-1964",
+    "title": "Золотое руно",
+    "author": "Пристли Д.Б.",
+    "year": 1964,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "комедия",
+      "зарубежная_классика"
+    ],
+    "tags": [
+      "Англия",
+      "семья"
+    ],
+    "description": "Английская комедия о семейных ценностях — о том, что золотое руно иногда рядом.",
+    "cover": null,
+    "folder": "Пристли Д.Б. Золотое руно, 1964",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Золотое руно — 1 часть",
+        "url": "https://sheba.spb.ru/radio/prist-runo1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Золотое руно — 2 часть",
+        "url": "https://sheba.spb.ru/radio/prist-runo2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Золотое руно — 3 часть",
+        "url": "https://sheba.spb.ru/radio/prist-runo3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Золотое руно — 4 часть",
+        "url": "https://sheba.spb.ru/radio/prist-runo4.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p5",
+        "title": "Золотое руно — 5 часть",
+        "url": "https://sheba.spb.ru/radio/prist-runo5.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p6",
+        "title": "Золотое руно — 6 часть",
+        "url": "https://sheba.spb.ru/radio/prist-runo6.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 6
   },
   {
     "id": "золотой-ключик-1962",
@@ -14700,6 +14838,58 @@
       }
     ],
     "partCount": 2
+  },
+  {
+    "id": "крупная-игра-1971",
+    "slug": "крупная-игра-1971",
+    "title": "Крупная игра",
+    "author": "Дайсс Д.",
+    "year": 1971,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "детектив",
+      "зарубежная_классика"
+    ],
+    "tags": [
+      "афера",
+      "расследование"
+    ],
+    "description": "Детектив о крупной афере, где всё оказывается не тем, чем кажется на первый взгляд.",
+    "cover": null,
+    "folder": "Дайсс Д. Крупная игра, 1971",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Крупная игра — 1 часть",
+        "url": "https://sheba.spb.ru/radio/jeya-igra1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Крупная игра — 2 часть",
+        "url": "https://sheba.spb.ru/radio/jeya-igra2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Крупная игра — 3 часть",
+        "url": "https://sheba.spb.ru/radio/jeya-igra3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Крупная игра — 4 часть",
+        "url": "https://sheba.spb.ru/radio/jeya-igra4.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 4
   },
   {
     "id": "кто-боится-вирджинии-вульф-1984",
@@ -20481,6 +20671,65 @@
     "partCount": 5
   },
   {
+    "id": "опасный-поворот-1956",
+    "slug": "опасный-поворот-1956",
+    "title": "Опасный поворот",
+    "author": "Пристли Д.Б.",
+    "year": 1956,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "детектив",
+      "психологическая_проза"
+    ],
+    "tags": [
+      "Англия",
+      "семья"
+    ],
+    "description": "Психологический детектив о семейной тайне, которая раскрывается в самый неподходящий момент.",
+    "cover": null,
+    "folder": "Пристли Д.Б. Опасный поворот, 1956",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Опасный поворот — титр",
+        "url": "https://sheba.spb.ru/radio/pristley-povorot0titr.mp3",
+        "backup": null,
+        "isTitr": true
+      },
+      {
+        "id": "p2",
+        "title": "Опасный поворот — 1 часть",
+        "url": "https://sheba.spb.ru/radio/pristley-povorot1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Опасный поворот — 2 часть",
+        "url": "https://sheba.spb.ru/radio/pristley-povorot2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Опасный поворот — 3 часть",
+        "url": "https://sheba.spb.ru/radio/pristley-povorot3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p5",
+        "title": "Опасный поворот — 4 часть",
+        "url": "https://sheba.spb.ru/radio/pristley-povorot4.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 5
+  },
+  {
     "id": "оперетта-баядера-1921",
     "slug": "оперетта-баядера-1921",
     "title": "Оперетта Баядера",
@@ -21236,58 +21485,6 @@
       }
     ],
     "partCount": 5
-  },
-  {
-    "id": "оруэлл-дж-скотский-хутор-1987",
-    "slug": "оруэлл-дж-скотский-хутор-1987",
-    "title": "Оруэлл Дж. Скотский хутор",
-    "author": null,
-    "year": 1987,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "сатира",
-      "антиутопия"
-    ],
-    "tags": [
-      "Англия",
-      "политика"
-    ],
-    "description": "Притча о животных, которые свергли хозяина, — и о том, что «все равны, но некоторые равнее».",
-    "cover": null,
-    "folder": "Оруэлл Дж. Скотский хутор, 1987",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Скотский хутор — 1 часть",
-        "url": "https://sheba.spb.ru/rs/orwell-skot1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Скотский хутор — 2 часть",
-        "url": "https://sheba.spb.ru/rs/orwell-skot2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Скотский хутор — 3 часть",
-        "url": "https://sheba.spb.ru/rs/orwell-skot3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Скотский хутор — 4 часть",
-        "url": "https://sheba.spb.ru/rs/orwell-skot4.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 4
   },
   {
     "id": "осенние-цветы-1980",
@@ -22130,58 +22327,6 @@
         "id": "p4",
         "title": "Пародии — 4 часть",
         "url": "https://sheba.spb.ru/rs/ivanov-parodii4.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 4
-  },
-  {
-    "id": "патрик-дж-странная-миссис-сэвидж-1976",
-    "slug": "патрик-дж-странная-миссис-сэвидж-1976",
-    "title": "Патрик Дж. Странная миссис Сэвидж",
-    "author": null,
-    "year": 1976,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "комедия",
-      "зарубежная_классика"
-    ],
-    "tags": [
-      "США",
-      "психология"
-    ],
-    "description": "Американская комедия о женщине, которая притворилась сумасшедшей, чтобы попасть в клинику — и вылечила всех вокруг.",
-    "cover": null,
-    "folder": "Патрик Дж. Странная миссис Сэвидж, 1976",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Странная миссис Сэвидж — 1 часть",
-        "url": "https://sheba.spb.ru/radio/patrik-sevige1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Странная миссис Сэвидж — 2 часть",
-        "url": "https://sheba.spb.ru/radio/patrik-sevige2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Странная миссис Сэвидж — 3 часть",
-        "url": "https://sheba.spb.ru/radio/patrik-sevige3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Странная миссис Сэвидж — 4 часть",
-        "url": "https://sheba.spb.ru/radio/patrik-sevige4.mp3",
         "backup": null,
         "isTitr": false
       }
@@ -23256,6 +23401,37 @@
         "id": "p1",
         "title": "ПИСЬМО",
         "url": "https://sheba.spb.ru/radio/pismo.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 1
+  },
+  {
+    "id": "планета-новогодних-ёлок-1985",
+    "slug": "планета-новогодних-ёлок-1985",
+    "title": "Планета новогодних ёлок",
+    "author": "Родари Д.",
+    "year": 1985,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "сказка",
+      "фантастика"
+    ],
+    "tags": [
+      "детям",
+      "Италия"
+    ],
+    "description": "Добрая сказка Джанни Родари о планете, где Новый год бывает каждый день — и это не всегда хорошо.",
+    "cover": null,
+    "folder": "Родари Д. Планета новогодних ёлок, 1985",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Планета новогодних ёлок",
+        "url": "https://sheba.spb.ru/libra/rodari_elki.mp3",
         "backup": null,
         "isTitr": false
       }
@@ -25437,131 +25613,6 @@
     "partCount": 4
   },
   {
-    "id": "пристли-джб-золотое-руно-1964",
-    "slug": "пристли-джб-золотое-руно-1964",
-    "title": "Пристли Дж.Б. Золотое руно",
-    "author": null,
-    "year": 1964,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "комедия",
-      "зарубежная_классика"
-    ],
-    "tags": [
-      "Англия",
-      "семья"
-    ],
-    "description": "Английская комедия о семейных ценностях — о том, что золотое руно иногда рядом.",
-    "cover": null,
-    "folder": "Пристли Дж.Б. Золотое руно, 1964",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Золотое руно — 1 часть",
-        "url": "https://sheba.spb.ru/radio/prist-runo1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Золотое руно — 2 часть",
-        "url": "https://sheba.spb.ru/radio/prist-runo2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Золотое руно — 3 часть",
-        "url": "https://sheba.spb.ru/radio/prist-runo3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Золотое руно — 4 часть",
-        "url": "https://sheba.spb.ru/radio/prist-runo4.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p5",
-        "title": "Золотое руно — 5 часть",
-        "url": "https://sheba.spb.ru/radio/prist-runo5.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p6",
-        "title": "Золотое руно — 6 часть",
-        "url": "https://sheba.spb.ru/radio/prist-runo6.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 6
-  },
-  {
-    "id": "пристли-джб-опасный-поворот-1956",
-    "slug": "пристли-джб-опасный-поворот-1956",
-    "title": "Пристли Дж.Б. Опасный поворот",
-    "author": null,
-    "year": 1956,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "детектив",
-      "психологическая_проза"
-    ],
-    "tags": [
-      "Англия",
-      "семья"
-    ],
-    "description": "Психологический детектив о семейной тайне, которая раскрывается в самый неподходящий момент.",
-    "cover": null,
-    "folder": "Пристли Дж.Б. Опасный поворот, 1956",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Опасный поворот — титр",
-        "url": "https://sheba.spb.ru/radio/pristley-povorot0titr.mp3",
-        "backup": null,
-        "isTitr": true
-      },
-      {
-        "id": "p2",
-        "title": "Опасный поворот — 1 часть",
-        "url": "https://sheba.spb.ru/radio/pristley-povorot1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Опасный поворот — 2 часть",
-        "url": "https://sheba.spb.ru/radio/pristley-povorot2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Опасный поворот — 3 часть",
-        "url": "https://sheba.spb.ru/radio/pristley-povorot3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p5",
-        "title": "Опасный поворот — 4 часть",
-        "url": "https://sheba.spb.ru/radio/pristley-povorot4.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 5
-  },
-  {
     "id": "пробуждение-1980",
     "slug": "пробуждение-1980",
     "title": "Пробуждение",
@@ -25940,6 +25991,117 @@
       }
     ],
     "partCount": 1
+  },
+  {
+    "id": "путешествие-голубой-стрелы-1954",
+    "slug": "путешествие-голубой-стрелы-1954",
+    "title": "Путешествие Голубой стрелы",
+    "author": "Родари Д.",
+    "year": 1954,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "сказка",
+      "зарубежная_классика"
+    ],
+    "tags": [
+      "детям",
+      "Италия"
+    ],
+    "description": "Волшебная история о игрушечном поезде, который везёт подарки бедным детям — о доброте и справедливости.",
+    "cover": null,
+    "folder": "Родари Д. Путешествие Голубой стрелы, 1954",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Путешествие Голубой стрелы — 1 часть",
+        "url": "https://sheba.spb.ru/radio/rodari-strelabaraban1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Путешествие Голубой стрелы — 2 часть",
+        "url": "https://sheba.spb.ru/radio/rodari-strelabaraban2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Путешествие Голубой стрелы — 3 часть",
+        "url": "https://sheba.spb.ru/radio/rodari-strelabaraban3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Путешествие Голубой стрелы — 4 часть",
+        "url": "https://sheba.spb.ru/radio/rodari-strelabaraban4.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p5",
+        "title": "Путешествие Голубой стрелы — титр",
+        "url": "https://sheba.spb.ru/radio/rodari-strelabaraban5titr.mp3",
+        "backup": null,
+        "isTitr": true
+      }
+    ],
+    "partCount": 5
+  },
+  {
+    "id": "путешествия-гулливера-1979",
+    "slug": "путешествия-гулливера-1979",
+    "title": "Путешествия Гулливера",
+    "author": "Свифт Д.",
+    "year": 1979,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "приключения",
+      "сатира"
+    ],
+    "tags": [
+      "Англия",
+      "фантастика"
+    ],
+    "description": "Путешественник Лемюэль Гулливер в стране лилипутов и великанов — сатира и приключения.",
+    "cover": null,
+    "folder": "Свифт Д. Путешествия Гулливера, 1979",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Путешествия Гулливера — 1 часть",
+        "url": "https://sheba.spb.ru/rs/svift-gulliver1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Путешествия Гулливера — 2 часть",
+        "url": "https://sheba.spb.ru/rs/svift-gulliver2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Путешествия Гулливера — 3 часть",
+        "url": "https://sheba.spb.ru/rs/svift-gulliver3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Путешествия Гулливера — 4 часть",
+        "url": "https://sheba.spb.ru/rs/svift-gulliver4.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 4
   },
   {
     "id": "пучина-1956",
@@ -27090,96 +27252,6 @@
     "partCount": 6
   },
   {
-    "id": "родари-дж-планета-новогодних-ёлок-1985",
-    "slug": "родари-дж-планета-новогодних-ёлок-1985",
-    "title": "Родари Дж. Планета новогодних ёлок",
-    "author": null,
-    "year": 1985,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "сказка",
-      "фантастика"
-    ],
-    "tags": [
-      "детям",
-      "Италия"
-    ],
-    "description": "Добрая сказка Джанни Родари о планете, где Новый год бывает каждый день — и это не всегда хорошо.",
-    "cover": null,
-    "folder": "Родари Дж. Планета новогодних ёлок, 1985",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Планета новогодних ёлок",
-        "url": "https://sheba.spb.ru/libra/rodari_elki.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 1
-  },
-  {
-    "id": "родари-дж-путешествие-голубой-стрелы-1954",
-    "slug": "родари-дж-путешествие-голубой-стрелы-1954",
-    "title": "Родари Дж. Путешествие Голубой стрелы",
-    "author": null,
-    "year": 1954,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "сказка",
-      "зарубежная_классика"
-    ],
-    "tags": [
-      "детям",
-      "Италия"
-    ],
-    "description": "Волшебная история о игрушечном поезде, который везёт подарки бедным детям — о доброте и справедливости.",
-    "cover": null,
-    "folder": "Родари Дж. Путешествие Голубой стрелы, 1954",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Путешествие Голубой стрелы — 1 часть",
-        "url": "https://sheba.spb.ru/radio/rodari-strelabaraban1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Путешествие Голубой стрелы — 2 часть",
-        "url": "https://sheba.spb.ru/radio/rodari-strelabaraban2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Путешествие Голубой стрелы — 3 часть",
-        "url": "https://sheba.spb.ru/radio/rodari-strelabaraban3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Путешествие Голубой стрелы — 4 часть",
-        "url": "https://sheba.spb.ru/radio/rodari-strelabaraban4.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p5",
-        "title": "Путешествие Голубой стрелы — титр",
-        "url": "https://sheba.spb.ru/radio/rodari-strelabaraban5titr.mp3",
-        "backup": null,
-        "isTitr": true
-      }
-    ],
-    "partCount": 5
-  },
-  {
     "id": "родственники-1976",
     "slug": "родственники-1976",
     "title": "Родственники",
@@ -28084,58 +28156,6 @@
     "partCount": 6
   },
   {
-    "id": "свифт-дж-путешествия-гулливера-1979",
-    "slug": "свифт-дж-путешествия-гулливера-1979",
-    "title": "Свифт Дж. Путешествия Гулливера",
-    "author": null,
-    "year": 1979,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "приключения",
-      "сатира"
-    ],
-    "tags": [
-      "Англия",
-      "фантастика"
-    ],
-    "description": "Путешественник Лемюэль Гулливер в стране лилипутов и великанов — сатира и приключения.",
-    "cover": null,
-    "folder": "Свифт Дж. Путешествия Гулливера, 1979",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Путешествия Гулливера — 1 часть",
-        "url": "https://sheba.spb.ru/rs/svift-gulliver1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Путешествия Гулливера — 2 часть",
-        "url": "https://sheba.spb.ru/rs/svift-gulliver2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Путешествия Гулливера — 3 часть",
-        "url": "https://sheba.spb.ru/rs/svift-gulliver3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Путешествия Гулливера — 4 часть",
-        "url": "https://sheba.spb.ru/rs/svift-gulliver4.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 4
-  },
-  {
     "id": "свои-люди-сочтёмся-1975",
     "slug": "свои-люди-сочтёмся-1975",
     "title": "Свои люди сочтёмся",
@@ -28815,6 +28835,58 @@
       }
     ],
     "partCount": 1
+  },
+  {
+    "id": "скотский-хутор-1987",
+    "slug": "скотский-хутор-1987",
+    "title": "Скотский хутор",
+    "author": "Оруэлл Д.",
+    "year": 1987,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "сатира",
+      "антиутопия"
+    ],
+    "tags": [
+      "Англия",
+      "политика"
+    ],
+    "description": "Притча о животных, которые свергли хозяина, — и о том, что «все равны, но некоторые равнее».",
+    "cover": null,
+    "folder": "Оруэлл Д. Скотский хутор, 1987",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Скотский хутор — 1 часть",
+        "url": "https://sheba.spb.ru/rs/orwell-skot1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Скотский хутор — 2 часть",
+        "url": "https://sheba.spb.ru/rs/orwell-skot2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Скотский хутор — 3 часть",
+        "url": "https://sheba.spb.ru/rs/orwell-skot3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Скотский хутор — 4 часть",
+        "url": "https://sheba.spb.ru/rs/orwell-skot4.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 4
   },
   {
     "id": "скрипка-паганини-1960",
@@ -30390,71 +30462,6 @@
     "partCount": 5
   },
   {
-    "id": "стейнбек-дж-зима-тревоги-нашей-1993",
-    "slug": "стейнбек-дж-зима-тревоги-нашей-1993",
-    "title": "Стейнбек Дж. Зима тревоги нашей",
-    "author": null,
-    "year": 1993,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "зарубежная_классика"
-    ],
-    "tags": [
-      "США",
-      "нравственный_выбор"
-    ],
-    "description": "Поздний роман Стейнбека — о человеке из славного рода, который пытается найти своё место в мире.",
-    "cover": null,
-    "folder": "Стейнбек Дж. Зима тревоги нашей, 1993",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Зима тревоги нашей — титр",
-        "url": "https://sheba.spb.ru/radio/steinbeck-zima0titr.mp3",
-        "backup": null,
-        "isTitr": true
-      },
-      {
-        "id": "p2",
-        "title": "Зима тревоги нашей — 1 часть",
-        "url": "https://sheba.spb.ru/radio/steinbeck-zima1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Зима тревоги нашей — 2 часть",
-        "url": "https://sheba.spb.ru/radio/steinbeck-zima2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Зима тревоги нашей — 3 часть",
-        "url": "https://sheba.spb.ru/radio/steinbeck-zima3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p5",
-        "title": "Зима тревоги нашей — 4 часть",
-        "url": "https://sheba.spb.ru/radio/steinbeck-zima4.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p6",
-        "title": "Зима тревоги нашей — титр",
-        "url": "https://sheba.spb.ru/radio/steinbeck-zima5titr.mp3",
-        "backup": null,
-        "isTitr": true
-      }
-    ],
-    "partCount": 6
-  },
-  {
     "id": "степанчиково-1960",
     "slug": "степанчиково-1960",
     "title": "Степанчиково",
@@ -30594,6 +30601,58 @@
       }
     ],
     "partCount": 5
+  },
+  {
+    "id": "странная-миссис-сэвидж-1976",
+    "slug": "странная-миссис-сэвидж-1976",
+    "title": "Странная миссис Сэвидж",
+    "author": "Патрик Д.",
+    "year": 1976,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "комедия",
+      "зарубежная_классика"
+    ],
+    "tags": [
+      "США",
+      "психология"
+    ],
+    "description": "Американская комедия о женщине, которая притворилась сумасшедшей, чтобы попасть в клинику — и вылечила всех вокруг.",
+    "cover": null,
+    "folder": "Патрик Д. Странная миссис Сэвидж, 1976",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Странная миссис Сэвидж — 1 часть",
+        "url": "https://sheba.spb.ru/radio/patrik-sevige1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Странная миссис Сэвидж — 2 часть",
+        "url": "https://sheba.spb.ru/radio/patrik-sevige2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Странная миссис Сэвидж — 3 часть",
+        "url": "https://sheba.spb.ru/radio/patrik-sevige3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Странная миссис Сэвидж — 4 часть",
+        "url": "https://sheba.spb.ru/radio/patrik-sevige4.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 4
   },
   {
     "id": "страсти-по-мастеру-1978",
@@ -32248,6 +32307,65 @@
     "partCount": 9
   },
   {
+    "id": "томми-1989",
+    "slug": "томми-1989",
+    "title": "Томми",
+    "author": "Джером К.Д.",
+    "year": 1989,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "комедия",
+      "зарубежная_классика"
+    ],
+    "tags": [
+      "Англия",
+      "юмор"
+    ],
+    "description": "Ироничные истории Джерома К. Джерома о жизни, друзьях и маленьких человеческих слабостях.",
+    "cover": null,
+    "folder": "Джером К.Д. Томми, 1989",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Томми — 1 часть",
+        "url": "https://sheba.spb.ru/rs/jerome-tommy1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Томми — 2 часть",
+        "url": "https://sheba.spb.ru/rs/jerome-tommy2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Томми — 3 часть",
+        "url": "https://sheba.spb.ru/rs/jerome-tommy3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Томми — 4 часть",
+        "url": "https://sheba.spb.ru/rs/jerome-tommy4.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p5",
+        "title": "Томми — титр",
+        "url": "https://sheba.spb.ru/rs/jerome-tommy5titr.mp3",
+        "backup": null,
+        "isTitr": true
+      }
+    ],
+    "partCount": 5
+  },
+  {
     "id": "тонкий-и-толстый-1954",
     "slug": "тонкий-и-толстый-1954",
     "title": "Тонкий и толстый",
@@ -33394,72 +33512,6 @@
     "partCount": 4
   },
   {
-    "id": "уэллс-гдж-война-миров-1991",
-    "slug": "уэллс-гдж-война-миров-1991",
-    "title": "Уэллс Г.Дж. Война миров",
-    "author": null,
-    "year": 1991,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "фантастика",
-      "зарубежная_классика"
-    ],
-    "tags": [
-      "Англия",
-      "космос"
-    ],
-    "description": "Марсиане высаживаются на Землю — и человечество оказывается на грани уничтожения.",
-    "cover": null,
-    "folder": "Уэллс Г.Дж. Война миров, 1991",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Война миров — 3 часть",
-        "url": "https://sheba.spb.ru/radio/vm1.ogg",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Война миров — 4 часть",
-        "url": "https://sheba.spb.ru/radio/vm2.ogg",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Война миров — 5 часть",
-        "url": "https://sheba.spb.ru/radio/vm3.ogg",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Война миров — 6 часть",
-        "url": "https://sheba.spb.ru/radio/vm4.ogg",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p5",
-        "title": "Война миров — 1 часть",
-        "url": "https://sheba.spb.ru/radio/vm0vst.ogg",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p6",
-        "title": "Война миров — 2 часть",
-        "url": "https://sheba.spb.ru/radio/vm5zak.ogg",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 6
-  },
-  {
     "id": "фаворит-1984",
     "slug": "фаворит-1984",
     "title": "Фаворит",
@@ -33936,58 +33988,6 @@
       }
     ],
     "partCount": 1
-  },
-  {
-    "id": "харрис-джч-братец-лис-и-братец-кролик-1967",
-    "slug": "харрис-джч-братец-лис-и-братец-кролик-1967",
-    "title": "Харрис Дж.Ч. Братец Лис и Братец Кролик",
-    "author": null,
-    "year": 1967,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "сказка",
-      "зарубежная_классика"
-    ],
-    "tags": [
-      "США",
-      "детям"
-    ],
-    "description": "Знаменитые негритянские сказки дядюшки Римуса — о том, как Братец Кролик перехитрил Братца Лиса.",
-    "cover": null,
-    "folder": "Харрис Дж.Ч. Братец Лис и Братец Кролик, 1967",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Братец Лис и Братец Кролик — 1 часть",
-        "url": "https://sheba.spb.ru/skaz/rimmus1.aac",
-        "backup": "https://mp3tales.info/audio/skazki_djadjushki_rimusa_bratec_krolik_i_bratec_lis.mp3",
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Братец Лис и Братец Кролик — 2 часть",
-        "url": "https://sheba.spb.ru/skaz/rimmus2.aac",
-        "backup": "https://mp3tales.info/audio/skazki_djadjushki_rimusa_bratec_krolik_i_bratec_lis.mp3",
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Братец Лис и Братец Кролик — 3 часть",
-        "url": "https://sheba.spb.ru/skaz/rimmus3.aac",
-        "backup": "https://mp3tales.info/audio/skazki_djadjushki_rimusa_bratec_krolik_i_bratec_lis.mp3",
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Братец Лис и Братец Кролик — 4 часть",
-        "url": "https://sheba.spb.ru/skaz/rimmus4.aac",
-        "backup": "https://mp3tales.info/audio/skazki_djadjushki_rimusa_bratec_krolik_i_bratec_lis.mp3",
-        "isTitr": false
-      }
-    ],
-    "partCount": 4
   },
   {
     "id": "хлопотун-или-дело-мастера-боится-1953",
