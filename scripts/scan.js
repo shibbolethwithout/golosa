@@ -84,8 +84,42 @@ function parseUrlFilename(url) {
 /**
  * Сортировка: 0titr → начало, обычные части по номеру, N titr → конец.
  */
-function sortKey(url) {
-  const p = parseUrlFilename(url)
+/**
+ * Извлекает порядковый ключ из названия части («0 часть», «1 часть», «титр»).
+ * Возвращает [группа, номер] или null, если распознать не удалось.
+ *   [0, 0]   — «0 часть» / «вступление» / «титр (вступление)»
+ *   [1, N]   — обычная часть номер N
+ *   [2, N]   — «титр (завершение)» / «N титр»
+ */
+function sortKeyFromTitle(title) {
+  if (!title) return null
+  const t = title.toLowerCase()
+
+  // «титр», «N titr», «титр (вступление)», «титр (завершение)»
+  if (t.includes('титр') || /\dtitr/.test(t)) {
+    const n = t.match(/(\d+)/)
+    const num = n ? parseInt(n[1], 10) : 0
+    if (num === 0 || t.includes('вступл')) return [0, 0]
+    return [2, num]
+  }
+
+  // «0 часть», «1 часть», «часть 0», «часть 1» — цифры вокруг слова «часть»
+  const m = t.match(/(\d+)\s*час(?:ть|ти)/) || t.match(/час(?:ть|ти)\s*(\d+)/)
+  if (m) return [1, parseInt(m[1], 10)]
+
+  return null
+}
+
+/**
+ * Ключ сортировки для записи плейлиста.
+ * Сначала пытаемся разобрать название из #EXTINF,
+ * если не получилось — падаем на старую логику по URL.
+ */
+function sortKey(entry) {
+  const fromTitle = sortKeyFromTitle(entry.title)
+  if (fromTitle) return fromTitle
+
+  const p = parseUrlFilename(entry.url)
   if (p.isTitr) {
     if (p.titrN === 0) return [0, 0]
     return [2, p.titrN]
@@ -138,8 +172,8 @@ async function main() {
 
     // Сортируем — передаём URL (строку), не объект
     const sorted = [...entries].sort((a, b) => {
-      const [ga, na] = sortKey(a.url)
-      const [gb, nb] = sortKey(b.url)
+      const [ga, na] = sortKey(a)
+      const [gb, nb] = sortKey(b)
       return ga - gb || na - nb
     })
 
