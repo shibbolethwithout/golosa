@@ -106,6 +106,8 @@ export default function Player({ onToggleQueue }) {
   const restoredRef = useRef(null)
   const shareRef = useRef(null)
   const preloadAudioRef = useRef(null)
+  const loadGenRef = useRef(0)
+  const playingBackupRef = useRef(false)
 
   const [usingBackup, setUsingBackup] = useState(false)
   const [error, setError] = useState(null)
@@ -132,14 +134,14 @@ export default function Player({ onToggleQueue }) {
 
   useEffect(() => {
     const el = audioRef.current
-    if (!el || !currentTrack) return
-
-    // При смене URL — принудительно перезагружаем
+    if (!el || !currentTrack) return    
+    loadGenRef.current += 1
+    el.dataset.loadGen = String(loadGenRef.current)
+    playingBackupRef.current = usingBackup && currentTrack.backup === activeUrl
     if (el.getAttribute('src') !== activeUrl) {
       el.src = activeUrl
       el.load()
     }
-
     if (isPlaying) {
       const p = el.play()
       if (p && p.catch) p.catch(() => {})
@@ -282,12 +284,25 @@ export default function Player({ onToggleQueue }) {
     lastSavedRef.current = t
   }
 
-  const handleError = () => {
+  const handleError = (e) => {
+    const el = e?.target || audioRef.current
+    // Если ошибка пришла от старого src (до смены трека) — игнорируем её
+    const gen = Number(el?.dataset?.loadGen || '0')
+    if (gen !== loadGenRef.current) return
+
     if (!usingBackup && currentTrack?.backup) {
       setUsingBackup(true)
       return
     }
     setError('Ошибка')
+  }
+
+  const handleCanPlay = () => {
+    setError(null)
+    // Если заиграл первичный URL — значит backup не нужен
+    if (!playingBackupRef.current) {
+      setUsingBackup(false)
+    }
   }
 
   const handleShareWith = async (withTime) => {
@@ -321,6 +336,8 @@ export default function Player({ onToggleQueue }) {
         preload="auto"
         onLoadedMetadata={handleLoadedMetadata}
         onTimeUpdate={handleTimeUpdate}
+        onCanPlay={handleCanPlay}
+        onPlaying={handleCanPlay}
         onEnded={handleEnded}
         onError={handleError}
       />
@@ -400,7 +417,7 @@ export default function Player({ onToggleQueue }) {
 	    <div className="truncate text-xs md:text-sm font-medium flex items-center gap-2">
 	      <span className="truncate">{currentTrack.title || 'Спектакль'}</span>
 	      {usingBackup && (
-	        <span className="hidden md:inline text-[10px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400">backup</span>
+	        <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400">backup</span>
 	      )}
 	      {error && (
 	        <span className="text-[10px] px-1.5 py-0.5 rounded bg-red-500/20 text-red-400">{error}</span>

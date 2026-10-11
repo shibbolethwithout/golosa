@@ -40,7 +40,7 @@ export default function PlayPage({ play, onBack, onFilter }) {
         )}
 
         <div className="flex-1 min-w-0">
-          <h1 className="text-3xl font-semibold leading-tight">{play.title}</h1>
+          <h1 className="text-2xl md:text-3xl font-semibold leading-tight">{play.title}</h1>
 
           {play.author && (
             <button
