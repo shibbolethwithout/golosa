@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="color-scheme" content="dark" />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="theme-color" content="#161616" />
     <script>
       // Определяем браузер и вешаем класс на <html>
       (function() {
@@ -15,18 +15,44 @@
         else if (ua.includes('safari')) el.classList.add('is-safari');
       })();
     </script>
-    <!-- Иконки и манифест (Вставлено сюда) -->
+
+    <!-- Иконки и манифест -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Название сайта для поисковиков -->
+    <!-- ─── SEO: название и описание ─── -->
     <title>Голоса СССР — Слушать радиоспектакли онлайн</title>
+    <meta name="description" content="Коллекция радиоспектаклей СССР: слушать онлайн бесплатно. Классика, детективы, сказки, приключения — с поиском по авторам, режиссёрам, театрам и жанрам." />
+    <meta name="keywords" content="радиоспектакли, СССР, советские спектакли, слушать онлайн, аудиоспектакли, классика, театр" />
+    <meta name="author" content="Голоса СССР" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ─── Open Graph (соцсети) ─── -->
+    <meta property="og:title" content="Голоса СССР — радиоспектакли" />
+    <meta property="og:description" content="Слушать радиоспектакли СССР онлайн" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://golosa-sssr.ru/" />
+    <meta property="og:image" content="https://golosa-sssr.ru/icon-192.png" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Голоса СССР" />
+
+    <!-- ─── Twitter Card ─── -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Голоса СССР — радиоспектакли" />
+    <meta name="twitter:description" content="Слушать радиоспектакли СССР онлайн" />
+    <meta name="twitter:image" content="https://golosa-sssr.ru/icon-192.png" />
+
+    <!-- ─── Канонический URL ─── -->
+    <link rel="canonical" href="https://golosa-sssr.ru/" />
+
+    <!-- ─── Верификация поисковиков (заменить одну строку ниже) ─── -->
+    <google-site-verification: googled9433f5404b3552a.html>
+    <!-- YANDEX_VERIFICATION -->
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
-
