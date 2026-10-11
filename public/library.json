@@ -15478,51 +15478,6 @@
     "partCount": 7
   },
   {
-    "id": "лопе-де-вега-собака-на-сене-1944",
-    "slug": "лопе-де-вега-собака-на-сене-1944",
-    "title": "Лопе де Вега. Собака на сене",
-    "author": null,
-    "year": 1944,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "комедия",
-      "зарубежная_классика"
-    ],
-    "tags": [
-      "Испания",
-      "любовь"
-    ],
-    "description": "Классическая испанская комедия о гордой красавице и влюблённом секретаре.",
-    "cover": null,
-    "folder": "Лопе де Вега. Собака на сене, 1944",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Собака на сене — 1 часть",
-        "url": "https://sheba.spb.ru/radio/vega-sobaka1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Собака на сене — 2 часть",
-        "url": "https://sheba.spb.ru/radio/vega-sobaka2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Собака на сене — 3 часть",
-        "url": "https://sheba.spb.ru/radio/vega-sobaka3.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 3
-  },
-  {
     "id": "лошадиная-фамилия-1981",
     "slug": "лошадиная-фамилия-1981",
     "title": "Лошадиная фамилия",
@@ -29666,6 +29621,51 @@
       }
     ],
     "partCount": 6
+  },
+  {
+    "id": "собака-на-сене-1944",
+    "slug": "собака-на-сене-1944",
+    "title": "Собака на сене",
+    "author": "Лопе В.",
+    "year": 1944,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "комедия",
+      "зарубежная_классика"
+    ],
+    "tags": [
+      "Испания",
+      "любовь"
+    ],
+    "description": "Классическая испанская комедия о гордой красавице и влюблённом секретаре.",
+    "cover": null,
+    "folder": "Лопе В. Собака на сене, 1944",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Собака на сене — 1 часть",
+        "url": "https://sheba.spb.ru/radio/vega-sobaka1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Собака на сене — 2 часть",
+        "url": "https://sheba.spb.ru/radio/vega-sobaka2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Собака на сене — 3 часть",
+        "url": "https://sheba.spb.ru/radio/vega-sobaka3.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 3
   },
   {
     "id": "совесть-в-искусстве-1980",

@@ -26,8 +26,8 @@
   --color-fg-0: #c9ced5;
   --color-fg-1: #a1a1aa;
   --color-fg-2: #9197a0;
-  --color-accent: #307645;
-  --color-accent-dim: #005325;
+  --color-accent: #226939;
+  --color-accent-dim: #0b592b;
   --color-track: #2b2b2b;
 }
 
@@ -95,11 +95,6 @@ input[type="range"] {
   input[type="range"]:hover {
     --range-fill: var(--color-accent);
   }
-}
-
-/* При нажатии/перетаскивании — светлее (работает и на ПК, и на телефоне) */
-input[type="range"]:active {
-  --range-fill: var(--color-accent);
 }
 
 /* WebKit */

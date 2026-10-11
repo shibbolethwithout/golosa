@@ -74,16 +74,17 @@ export default function TrackList({ plays, onOpen }) {
                   if (isThisPlaying) togglePlay()
                   else playPlay(play)
                 }}
-                className="shrink-0 w-10 h-10 rounded-full
-                           bg-[var(--color-accent-dim)] hover:bg-[var(--color-accent)]
-                           active:bg-[var(--color-accent)]
-                           text-[var(--color-fg-0)] flex items-center justify-center"
+                className={`shrink-0 w-10 h-10 rounded-full
+                           text-[var(--color-fg-0)] flex items-center justify-center
+                           ${isThisPlaying && isPlaying
+                             ? 'bg-[var(--color-accent)]'
+                             : 'bg-[var(--color-accent-dim)] hover:bg-[var(--color-accent)]'}`}
                 title={isThisPlaying && isPlaying ? 'Пауза' : 'Слушать'}
                 aria-label={isThisPlaying && isPlaying ? 'Пауза' : 'Слушать'}
               >
                 {isThisPlaying && isPlaying ? <PauseIcon size={20} /> : <PlayIcon size={20} />}
               </button>
-            </div>
+                    </div>
 
             <div className="mt-1 h-[3.75rem] overflow-hidden">
               {play.description && (

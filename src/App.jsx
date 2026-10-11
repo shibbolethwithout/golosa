@@ -292,7 +292,7 @@ export default function App() {
         <header className="px-6 py-3 text-center border-b border-white/5">
           <button
             onClick={goHome}
-            className="text-xs uppercase tracking-[0.35em] text-[var(--color-fg-2)] hover:text-[var(--color-accent)] transition"
+            className="text-xs uppercase tracking-[0.35em] text-[var(--color-fg-2)] hover:text-[var(--color-accent)]! transition"
           >
             Радиоспектакли СССР
           </button>

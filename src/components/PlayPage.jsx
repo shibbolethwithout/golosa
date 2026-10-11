@@ -52,10 +52,12 @@ export default function PlayPage({ play, onBack, onFilter }) {
           <div className="mt-4 flex items-center gap-2">
             <button
               onClick={() => isThisPlaying ? togglePlay() : playPlay(play)}
-              className="px-5 py-2.5 rounded-full
-                         bg-[var(--color-accent-dim)] hover:bg-[var(--color-accent)]
+              className={`px-5 py-2.5 rounded-full
                          text-white font-medium
-                         flex items-center gap-2 shrink-0"
+                         flex items-center gap-2 shrink-0
+                         ${isThisPlaying && isPlaying
+                           ? 'bg-[var(--color-accent)]'
+                           : 'bg-[var(--color-accent-dim)] hover:bg-[var(--color-accent)]'}`}
               aria-label={isThisPlaying && isPlaying ? 'Пауза' : 'Слушать'}
             >
               {isThisPlaying && isPlaying ? (

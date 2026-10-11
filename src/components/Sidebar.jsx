@@ -84,7 +84,7 @@ export default function Sidebar({ library, onFilter, activeFilter, className = '
         <div className="p-4">
           <button
             onClick={onHome}
-            className="text-lg font-medium mb-4 text-left hover:text-[var(--color-accent)] transition"
+            className="text-lg font-medium mb-4 text-left hover:text-[var(--color-accent)]! transition"
           >Голоса СССР</button>
 
           {facets.genres.length > 0 && (
