@@ -109,6 +109,11 @@ export const usePlayerStore = create(
       })),
 
       getPartProgress: (url) => get().progressMap[url] || 0,
+      resumeIfNeeded: () => {
+        const { isPlaying, currentTrack } = get()
+        if (!isPlaying || !currentTrack) return false
+        return true
+      },
 
       clearPartProgress: (url) => set(s => {
         const { [url]: _, ...rest } = s.progressMap

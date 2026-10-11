@@ -134,21 +134,42 @@ export default function Player({ onToggleQueue }) {
 
   useEffect(() => {
     const el = audioRef.current
-    if (!el || !currentTrack) return    
-    loadGenRef.current += 1
-    el.dataset.loadGen = String(loadGenRef.current)
-    playingBackupRef.current = usingBackup && currentTrack.backup === activeUrl
+    if (!el || !currentTrack) return
+
     if (el.getAttribute('src') !== activeUrl) {
       el.src = activeUrl
       el.load()
     }
+
     if (isPlaying) {
       const p = el.play()
-      if (p && p.catch) p.catch(() => {})
+      if (p && p.catch) {
+        p.catch((err) => {
+          if (err?.name === 'NotAllowedError') return
+          setError('Ошибка')
+        })
+      }
     } else {
       el.pause()
     }
   }, [isPlaying, currentTrack, activeUrl])
+
+  useEffect(() => {
+    const onVisible = () => {
+      if (document.visibilityState !== 'visible') return
+      const el = audioRef.current
+      if (!el || !currentTrack) return
+
+      const shouldPlay = usePlayerStore.getState().isPlaying
+      if (!shouldPlay) return
+      if (el.paused) {
+        const p = el.play()
+        if (p && p.catch) p.catch(() => {})
+      }
+    }
+    document.addEventListener('visibilitychange', onVisible)
+    return () => document.removeEventListener('visibilitychange', onVisible)
+  }, [currentTrack])
 
   useEffect(() => {
     if (audioRef.current) audioRef.current.volume = volume
@@ -191,8 +212,6 @@ export default function Player({ onToggleQueue }) {
 
     // Firefox Android: без сброса metadata в null плашка не обновляется
     // при автопереходе между частями. Сбрасываем и через 50 мс ставим новую.
-    try { navigator.mediaSession.metadata = null } catch {}
-
     const playTitle = currentTrack.playTitle || 'Радиоспектакль'
     const author = currentTrack.playAuthor || ''
     const partTitle = currentTrack.title || 'Часть'
@@ -201,16 +220,14 @@ export default function Player({ onToggleQueue }) {
       ? [{ src: currentPlay.cover, sizes: '512x512', type: 'image/webp' }]
       : []
 
-    const id = setTimeout(() => {
-      try {
-        navigator.mediaSession.metadata = new window.MediaMetadata({
-          title: partTitle,
-          artist: author,
-          album: playTitle,
-          artwork,
-        })
-      } catch {}
-    }, 50)
+    try {
+      navigator.mediaSession.metadata = new window.MediaMetadata({
+        title: partTitle,
+        artist: author,
+        album: playTitle,
+        artwork,
+      })
+    } catch {}
 
     try {
       navigator.mediaSession.setActionHandler('play', () => usePlayerStore.getState().togglePlay())
@@ -226,8 +243,6 @@ export default function Player({ onToggleQueue }) {
         if (el && el.duration) el.currentTime = Math.min(el.duration, el.currentTime + 10)
       })
     } catch {}
-
-    return () => clearTimeout(id)
   }, [currentTrack, currentPlay])
 
   useEffect(() => {

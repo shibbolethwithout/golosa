@@ -677,42 +677,42 @@
     "parts": [
       {
         "id": "p1",
-        "title": "Антоновские яблоки - литературные чтения Ogg Vorbus - один — 1 часть",
+        "title": "Антоновские яблоки — 1 часть",
         "url": "https://sheba.spb.ru/radio/bunin-anton1.ogg",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p2",
-        "title": "Антоновские яблоки - литературные чтения Ogg Vorbus - один — 2 часть",
+        "title": "Антоновские яблоки — 2 часть",
         "url": "https://sheba.spb.ru/radio/bunin-anton2.ogg",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p3",
-        "title": "Антоновские яблоки - литературные чтения Ogg Vorbus - один — 3 часть",
+        "title": "Антоновские яблоки — 3 часть",
         "url": "https://sheba.spb.ru/radio/bunin-anton3.ogg",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p4",
-        "title": "Антоновские яблоки - литературные чтения Ogg Vorbus - один — 4 часть",
+        "title": "Антоновские яблоки — 4 часть",
         "url": "https://sheba.spb.ru/radio/bunin-anton4.ogg",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p5",
-        "title": "Антоновские яблоки - литературные чтения Ogg Vorbus - один — 5 часть",
+        "title": "Антоновские яблоки — 5 часть",
         "url": "https://sheba.spb.ru/radio/bunin-anton5.ogg",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p6",
-        "title": "Антоновские яблоки - литературные чтения Ogg Vorbus - один — 6 часть",
+        "title": "Антоновские яблоки — 6 часть",
         "url": "https://sheba.spb.ru/radio/bunin-anton6.ogg",
         "backup": null,
         "isTitr": false
@@ -13260,14 +13260,14 @@
     "parts": [
       {
         "id": "p1",
-        "title": "КАК ЭТО ДЕЛАЛОСЬ В ОДЕССЕ - литературные чтения — 1 часть",
+        "title": "КАК ЭТО ДЕЛАЛОСЬ В ОДЕССЕ — 1 часть",
         "url": "https://sheba.spb.ru/radio/babel-kak1.aac",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p2",
-        "title": "КАК ЭТО ДЕЛАЛОСЬ В ОДЕССЕ - литературные чтения — 2 часть",
+        "title": "КАК ЭТО ДЕЛАЛОСЬ В ОДЕССЕ — 2 часть",
         "url": "https://sheba.spb.ru/radio/babel-kak2.aac",
         "backup": null,
         "isTitr": false
@@ -29832,7 +29832,7 @@
     "id": "сон-с-продолжением-1983",
     "slug": "сон-с-продолжением-1983",
     "title": "Сон с продолжением",
-    "author": "Михалков С.",
+    "author": "Михалков С.В.",
     "year": 1983,
     "theatre": null,
     "directors": [],
@@ -29847,34 +29847,34 @@
     ],
     "description": "Фантастическая история Сергея Михалкова — о сне, который продолжается наяву.",
     "cover": null,
-    "folder": "Михалков С. Сон с продолжением, 1983",
+    "folder": "Михалков С.В. Сон с продолжением, 1983",
     "parts": [
       {
         "id": "p1",
         "title": "Сон с продолжением — 1 часть",
         "url": "https://sheba.spb.ru/skaz/son1.aac",
-        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=2156",
+        "backup": null,
         "isTitr": false
       },
       {
         "id": "p2",
         "title": "Сон с продолжением — 2 часть",
         "url": "https://sheba.spb.ru/skaz/son2.aac",
-        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=2156",
+        "backup": null,
         "isTitr": false
       },
       {
         "id": "p3",
         "title": "Сон с продолжением — 3 часть",
         "url": "https://sheba.spb.ru/skaz/son3.aac",
-        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=2156",
+        "backup": null,
         "isTitr": false
       },
       {
         "id": "p4",
         "title": "Сон с продолжением — 4 часть",
         "url": "https://sheba.spb.ru/skaz/son4.aac",
-        "backup": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=2156",
+        "backup": null,
         "isTitr": false
       }
     ],
