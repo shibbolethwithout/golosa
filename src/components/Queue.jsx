@@ -42,7 +42,7 @@ export default function Queue({ onClose }) {
             return (
               <div
                 key={`${track.id}-${i}`}
-                className={`flex items-center gap-2 px-3 py-2 rounded cursor-pointer text-sm transition
+                className={`flex items-center gap-2 px-3 py-2 rounded cursor-pointer text-sm transition-colors duration-40
                   ${isCurrent
                     ? 'bg-[var(--color-bg-2)] text-[var(--color-accent)]'
                     : 'hover:bg-[var(--color-bg-2)]'}`}

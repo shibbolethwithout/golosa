@@ -66,7 +66,7 @@ export default function Sidebar({ library, onFilter, activeFilter, className = '
   const Item = ({ type, value, label, count }) => (
     <button
       onClick={() => onFilter(isActive(type, value) ? null : { type, value })}
-      className={`w-full grid items-center gap-2 px-3 py-1.5 rounded text-sm transition
+      className={`w-full grid items-center gap-2 px-3 py-1.5 rounded text-sm transition-colors duration-30
         ${isActive(type, value)
           ? 'bg-[var(--color-accent-dim)]/20 text-[var(--color-accent)]'
           : 'hover:bg-[var(--color-bg-2)] text-[var(--color-fg-1)]'}`}
