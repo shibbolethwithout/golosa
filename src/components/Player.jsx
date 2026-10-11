@@ -313,7 +313,7 @@ export default function Player({ onToggleQueue }) {
   }
 
   return (
-    <div className="fixed left-0 right-0 border-t border-white/5 bg-[var(--color-bg-1)]/82 backdrop-blur"
+    <div className="fixed left-0 right-0 z-50 border-t border-white/5 bg-[var(--color-bg-1)]/82 backdrop-blur"
          style={{ bottom: 'env(safe-area-inset-bottom, 0px)' }}>
       <audio
         ref={audioRef}

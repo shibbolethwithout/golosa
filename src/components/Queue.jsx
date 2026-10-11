@@ -6,7 +6,7 @@ export default function Queue({ onClose }) {
 
   return (
     <aside className="
-      fixed inset-y-0 right-0 z-40 w-full
+      fixed inset-0 z-40 w-full
       md:relative md:inset-auto md:w-80 md:z-auto
       border-l border-white/5 bg-[var(--color-bg-1)] flex flex-col
     ">
@@ -30,7 +30,7 @@ export default function Queue({ onClose }) {
       </div>
 
       <ScrollArea className="flex-1">
-        <div className="p-2">
+        <div className="p-2 pb-24 md:pb-2">
           {queue.length === 0 && (
             <div className="text-center py-8 text-sm text-[var(--color-fg-2)]">
               Очередь пуста

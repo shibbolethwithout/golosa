@@ -76,7 +76,8 @@ export default function TrackList({ plays, onOpen }) {
                 }}
                 className="shrink-0 w-10 h-10 rounded-full
                            bg-[var(--color-accent-dim)] hover:bg-[var(--color-accent)]
-                           text-white flex items-center justify-center"
+                           active:bg-[var(--color-accent)]
+                           text-[var(--color-fg-0)] flex items-center justify-center"
                 title={isThisPlaying && isPlaying ? 'Пауза' : 'Слушать'}
                 aria-label={isThisPlaying && isPlaying ? 'Пауза' : 'Слушать'}
               >

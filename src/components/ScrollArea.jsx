@@ -33,9 +33,11 @@ export default function ScrollArea({
         const { scrollHeight, clientHeight, scrollTop } = el
         const canScroll = scrollHeight > clientHeight + 1
         if (canScroll) {
+          // Резервируем место под плеер, чтобы ручка не доезжала до него
+          const reserve = window.innerWidth < 768 ? 88 : 56
           const ratio = clientHeight / scrollHeight
           const h = Math.max(32, clientHeight * ratio)
-          const maxTop = clientHeight - h
+          const maxTop = Math.max(0, clientHeight - h - reserve)            // стало
           const y = (scrollTop / (scrollHeight - clientHeight)) * maxTop
           thumb.style.height = `${h}px`
           thumb.style.transform = `translateY(${y}px)`
@@ -145,10 +147,10 @@ export default function ScrollArea({
   const active = hovered || dragging
   const thumbWidth = dragging ? 12 : active ? 10 : 8
   const thumbBg = dragging
-    ? '#d0d0d8'
+    ? '#ababb2'
     : active
-      ? '#b0b0b8'
-      : (thumbColor || '#8a8a90')
+      ? '#8c8c93'
+      : (thumbColor || '#717176')
 
   const thumbVisible = scrollable && (hovered || dragging || scrolling)
 
