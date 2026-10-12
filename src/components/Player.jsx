@@ -114,7 +114,7 @@ export default function Player({ onToggleQueue }) {
 
   const [usingBackup, setUsingBackup] = useState(false)
   const [error, setError] = useState(null)
-  const [toast, setToast] = u/seState(null)
+  const [toast, setToast] = useState(null)
   const [shareMenuOpen, setShareMenuOpen] = useState(false)
   const [nextUrl, setNextUrl] = useState(null)
 
@@ -185,12 +185,6 @@ export default function Player({ onToggleQueue }) {
   }, [toast, setToast])
 
   useEffect(() => {
-    return () => {
-      if (seekSafetyTimerRef.current) clearTimeout(seekSafetyTimerRef.current)
-    }
-  }, [])
-
-  useEffect(() => {
     if (!shareMenuOpen) return
     const onDown = (e) => {
       if (shareRef.current && !shareRef.current.contains(e.target)) {
@@ -204,6 +198,13 @@ export default function Player({ onToggleQueue }) {
       document.removeEventListener('touchstart', onDown)
     }
   }, [shareMenuOpen])
+
+  // ─── Очистка страховочного таймера при размонтировании ───
+  useEffect(() => {
+    return () => {
+      if (seekSafetyTimerRef.current) clearTimeout(seekSafetyTimerRef.current)
+    }
+  }, [])
 
   // ─── Предзагрузка следующего трека ───
   useEffect(() => {
@@ -289,8 +290,7 @@ export default function Player({ onToggleQueue }) {
   }
 
   const handleTimeUpdate = (e) => {
-    // Пока пользователь тащит слайдер — не трогаем прогресс.
-    // Иначе WebKit-овый timeupdate со старым временем откатит позицию назад.
+    // Пока пользователь тащит/тапнул слайдер — не трогаем прогресс.
     if (userSeekingRef.current) return
 
     const t = e.target.currentTime
@@ -313,18 +313,19 @@ export default function Player({ onToggleQueue }) {
     userSeekingRef.current = true
   }
 
-  // Фаза 2: палец двигается. Обновляем ТОЛЬКО визуальное значение.
+  // Фаза 2: палец двигается (или произошёл тап).
+  // Обновляем ТОЛЬКО визуальное значение.
   const handleSeekChange = (e) => {
     const t = Number(e.target.value)
     pendingSeekRef.current = t
     setProgress(t)
   }
 
-  // Фаза 3: палец отпущен. Один раз ставим currentTime (или fastSeek).
+  // Фаза 3: палец отпущен (или тап завершился).
   const handleSeekEnd = (e) => {
     const el = audioRef.current
-    const el_input = e?.target
-    const domValue = el_input && 'value' in el_input ? Number(el_input.value) : null
+    const input = e?.target
+    const domValue = input && 'value' in input ? Number(input.value) : null
     const t = pendingSeekRef.current ?? domValue ?? progress
     pendingSeekRef.current = null
 
@@ -333,6 +334,7 @@ export default function Player({ onToggleQueue }) {
       return
     }
 
+    // Ограничиваем целевое время реально доступным диапазоном.
     let maxSeekable = el.duration || 0
     if (el.seekable && el.seekable.length > 0) {
       maxSeekable = el.seekable.end(el.seekable.length - 1)
@@ -350,8 +352,7 @@ export default function Player({ onToggleQueue }) {
       return
     }
 
-    // ─── Страховка ───
-    // Если onSeeked не придёт (iOS иногда молчит) — через 400 мс
+    // Страховка: если onSeeked не придёт (iOS иногда молчит) — через 400 мс
     // принудительно снимаем userSeekingRef, чтобы timeupdate снова работал.
     if (seekSafetyTimerRef.current) clearTimeout(seekSafetyTimerRef.current)
     seekSafetyTimerRef.current = setTimeout(() => {
@@ -370,7 +371,6 @@ export default function Player({ onToggleQueue }) {
     lastSavedRef.current = t
     userSeekingRef.current = false
 
-    // Подтверждение пришло — страховочный таймер больше не нужен
     if (seekSafetyTimerRef.current) {
       clearTimeout(seekSafetyTimerRef.current)
       seekSafetyTimerRef.current = null
@@ -379,7 +379,6 @@ export default function Player({ onToggleQueue }) {
 
   const handleError = (e) => {
     const el = e?.target || audioRef.current
-    // Если ошибка пришла от старого src (до смены трека) — игнорируем её
     const gen = Number(el?.dataset?.loadGen || '0')
     if (gen !== loadGenRef.current) return
 
