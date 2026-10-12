@@ -110,10 +110,11 @@ export default function Player({ onToggleQueue }) {
   const playingBackupRef = useRef(false)
   const userSeekingRef = useRef(false)
   const pendingSeekRef = useRef(null)
+  const seekSafetyTimerRef = useRef(null)
 
   const [usingBackup, setUsingBackup] = useState(false)
   const [error, setError] = useState(null)
-  const [toast, setToast] = useState(null)
+  const [toast, setToast] = u/seState(null)
   const [shareMenuOpen, setShareMenuOpen] = useState(false)
   const [nextUrl, setNextUrl] = useState(null)
 
@@ -181,7 +182,13 @@ export default function Player({ onToggleQueue }) {
     if (!toast) return
     const id = setTimeout(() => setToast(null), 2500)
     return () => clearTimeout(id)
-  }, [toast])
+  }, [toast, setToast])
+
+  useEffect(() => {
+    return () => {
+      if (seekSafetyTimerRef.current) clearTimeout(seekSafetyTimerRef.current)
+    }
+  }, [])
 
   useEffect(() => {
     if (!shareMenuOpen) return
@@ -316,7 +323,9 @@ export default function Player({ onToggleQueue }) {
   // Фаза 3: палец отпущен. Один раз ставим currentTime (или fastSeek).
   const handleSeekEnd = (e) => {
     const el = audioRef.current
-    const t = pendingSeekRef.current ?? Number(e.target.value)
+    const el_input = e?.target
+    const domValue = el_input && 'value' in el_input ? Number(el_input.value) : null
+    const t = pendingSeekRef.current ?? domValue ?? progress
     pendingSeekRef.current = null
 
     if (!el || el.readyState < 1) {
@@ -324,7 +333,6 @@ export default function Player({ onToggleQueue }) {
       return
     }
 
-    // Ограничиваем целевое время реально доступным диапазоном.
     let maxSeekable = el.duration || 0
     if (el.seekable && el.seekable.length > 0) {
       maxSeekable = el.seekable.end(el.seekable.length - 1)
@@ -339,7 +347,17 @@ export default function Player({ onToggleQueue }) {
       }
     } catch {
       userSeekingRef.current = false
+      return
     }
+
+    // ─── Страховка ───
+    // Если onSeeked не придёт (iOS иногда молчит) — через 400 мс
+    // принудительно снимаем userSeekingRef, чтобы timeupdate снова работал.
+    if (seekSafetyTimerRef.current) clearTimeout(seekSafetyTimerRef.current)
+    seekSafetyTimerRef.current = setTimeout(() => {
+      userSeekingRef.current = false
+      seekSafetyTimerRef.current = null
+    }, 400)
   }
 
   // Браузер подтвердил, что seek применился.
@@ -351,6 +369,12 @@ export default function Player({ onToggleQueue }) {
     saveProgress(activeUrl, t)
     lastSavedRef.current = t
     userSeekingRef.current = false
+
+    // Подтверждение пришло — страховочный таймер больше не нужен
+    if (seekSafetyTimerRef.current) {
+      clearTimeout(seekSafetyTimerRef.current)
+      seekSafetyTimerRef.current = null
+    }
   }
 
   const handleError = (e) => {
