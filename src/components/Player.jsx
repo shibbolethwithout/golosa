@@ -108,6 +108,8 @@ export default function Player({ onToggleQueue }) {
   const preloadAudioRef = useRef(null)
   const loadGenRef = useRef(0)
   const playingBackupRef = useRef(false)
+  const userSeekingRef = useRef(false)
+  const pendingSeekRef = useRef(null)
 
   const [usingBackup, setUsingBackup] = useState(false)
   const [error, setError] = useState(null)
@@ -210,8 +212,6 @@ export default function Player({ onToggleQueue }) {
     if (typeof navigator === 'undefined' || !('mediaSession' in navigator)) return
     if (!currentTrack) return
 
-    // Firefox Android: без сброса metadata в null плашка не обновляется
-    // при автопереходе между частями. Сбрасываем и через 50 мс ставим новую.
     const playTitle = currentTrack.playTitle || 'Радиоспектакль'
     const author = currentTrack.playAuthor || ''
     const partTitle = currentTrack.title || 'Часть'
@@ -272,12 +272,20 @@ export default function Player({ onToggleQueue }) {
     restoredRef.current = activeUrl
     const saved = getPartProgress(activeUrl)
     if (saved > 5 && saved < el.duration - 10) {
-      el.currentTime = saved
+      try {
+        if (typeof el.fastSeek === 'function') el.fastSeek(saved)
+        else el.currentTime = saved
+      } catch {}
       setProgress(saved)
+      lastSavedRef.current = saved
     }
   }
 
   const handleTimeUpdate = (e) => {
+    // Пока пользователь тащит слайдер — не трогаем прогресс.
+    // Иначе WebKit-овый timeupdate со старым временем откатит позицию назад.
+    if (userSeekingRef.current) return
+
     const t = e.target.currentTime
     setProgress(t)
     if (Math.abs(t - lastSavedRef.current) > 5) {
@@ -291,12 +299,58 @@ export default function Player({ onToggleQueue }) {
     next()
   }
 
-  const handleSeek = (e) => {
+  // ─── Seek: три фазы ───
+
+  // Фаза 1: палец коснулся слайдера.
+  const handleSeekStart = () => {
+    userSeekingRef.current = true
+  }
+
+  // Фаза 2: палец двигается. Обновляем ТОЛЬКО визуальное значение.
+  const handleSeekChange = (e) => {
     const t = Number(e.target.value)
-    audioRef.current.currentTime = t
+    pendingSeekRef.current = t
+    setProgress(t)
+  }
+
+  // Фаза 3: палец отпущен. Один раз ставим currentTime (или fastSeek).
+  const handleSeekEnd = (e) => {
+    const el = audioRef.current
+    const t = pendingSeekRef.current ?? Number(e.target.value)
+    pendingSeekRef.current = null
+
+    if (!el || el.readyState < 1) {
+      userSeekingRef.current = false
+      return
+    }
+
+    // Ограничиваем целевое время реально доступным диапазоном.
+    let maxSeekable = el.duration || 0
+    if (el.seekable && el.seekable.length > 0) {
+      maxSeekable = el.seekable.end(el.seekable.length - 1)
+    }
+    const target = Math.max(0, Math.min(t, Math.max(0, maxSeekable - 0.1)))
+
+    try {
+      if (typeof el.fastSeek === 'function' && Math.abs(el.currentTime - target) > 2) {
+        el.fastSeek(target)
+      } else {
+        el.currentTime = target
+      }
+    } catch {
+      userSeekingRef.current = false
+    }
+  }
+
+  // Браузер подтвердил, что seek применился.
+  const handleSeeked = () => {
+    const el = audioRef.current
+    if (!el) return
+    const t = el.currentTime
     setProgress(t)
     saveProgress(activeUrl, t)
     lastSavedRef.current = t
+    userSeekingRef.current = false
   }
 
   const handleError = (e) => {
@@ -314,7 +368,6 @@ export default function Player({ onToggleQueue }) {
 
   const handleCanPlay = () => {
     setError(null)
-    // Если заиграл первичный URL — значит backup не нужен
     if (!playingBackupRef.current) {
       setUsingBackup(false)
     }
@@ -354,6 +407,7 @@ export default function Player({ onToggleQueue }) {
         onCanPlay={handleCanPlay}
         onPlaying={handleCanPlay}
         onEnded={handleEnded}
+        onSeeked={handleSeeked}
         onError={handleError}
       />
 
@@ -423,26 +477,26 @@ export default function Player({ onToggleQueue }) {
 
           {/* Название — тап открывает очередь */}
           <button
-	    type="button"
-	    onClick={onToggleQueue}
-	    className="flex-1 min-w-0 md:max-w-[240px] lg:max-w-[320px] text-left
-		       hover:opacity-80 transition"
-	    title="Открыть очередь"
-  	  >
-	    <div className="truncate text-xs md:text-sm font-medium flex items-center gap-2">
-	      <span className="truncate">{currentTrack.title || 'Спектакль'}</span>
-	      {usingBackup && (
-	        <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400">backup</span>
-	      )}
-	      {error && (
-	        <span className="text-[10px] px-1.5 py-0.5 rounded bg-red-500/20 text-red-400">{error}</span>
-	      )}
-	    </div>
-	    <div className="truncate text-[11px] md:text-xs text-[var(--color-fg-2)]">
-	      {currentTrack.playAuthor || 'Автор неизвестен'}
-	    </div>
-	  </button>
-	</div>
+            type="button"
+            onClick={onToggleQueue}
+            className="flex-1 min-w-0 md:max-w-[240px] lg:max-w-[320px] text-left
+                       hover:opacity-80 transition"
+            title="Открыть очередь"
+          >
+            <div className="truncate text-xs md:text-sm font-medium flex items-center gap-2">
+              <span className="truncate">{currentTrack.title || 'Спектакль'}</span>
+              {usingBackup && (
+                <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400">backup</span>
+              )}
+              {error && (
+                <span className="text-[10px] px-1.5 py-0.5 rounded bg-red-500/20 text-red-400">{error}</span>
+              )}
+            </div>
+            <div className="truncate text-[11px] md:text-xs text-[var(--color-fg-2)]">
+              {currentTrack.playAuthor || 'Автор неизвестен'}
+            </div>
+          </button>
+        </div>
 
         <div className="flex items-center gap-2 flex-1 min-w-0">
           {/* Desktop: две подписи по краям слайдера */}
@@ -462,7 +516,11 @@ export default function Player({ onToggleQueue }) {
             min={0}
             max={duration || 0}
             value={progress}
-            onChange={handleSeek}
+            onPointerDown={handleSeekStart}
+            onChange={handleSeekChange}
+            onPointerUp={handleSeekEnd}
+            onPointerCancel={handleSeekEnd}
+            onKeyUp={handleSeekEnd}
             className="flex-1 min-w-0"
             style={{ '--range-progress': `${duration > 0 ? (progress / duration) * 100 : 0}%` }}
           />

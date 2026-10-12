@@ -15113,9 +15113,9 @@
     "partCount": 5
   },
   {
-    "id": "левитан-и-1961",
-    "slug": "левитан-и-1961",
-    "title": "Левитан и",
+    "id": "левитан-и-чехов-1961",
+    "slug": "левитан-и-чехов-1961",
+    "title": "Левитан и Чехов",
     "author": "Чехов А.П.",
     "year": 1961,
     "theatre": null,
@@ -15130,7 +15130,7 @@
     ],
     "description": "История о дружбе Чехова и художника Левитана — о творчестве, ревности и человеческих отношениях.",
     "cover": null,
-    "folder": "Чехов А.П. Левитан и, 1961",
+    "folder": "Чехов А.П. Левитан и Чехов, 1961",
     "parts": [
       {
         "id": "p1",
@@ -26656,84 +26656,84 @@
     "parts": [
       {
         "id": "p1",
-        "title": "Честертон, рассказы — титр",
+        "title": "рассказы — титр",
         "url": "https://sheba.spb.ru/rs/chesterton00titr.mp3",
         "backup": null,
         "isTitr": true
       },
       {
         "id": "p2",
-        "title": "Честертон, рассказы — 1 часть",
+        "title": "Странные шаги — 1 часть",
         "url": "https://sheba.spb.ru/rs/chesterton01.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p3",
-        "title": "Честертон, рассказы — 2 часть",
+        "title": "Летучие звёзды — 2 часть",
         "url": "https://sheba.spb.ru/rs/chesterton02.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p4",
-        "title": "Честертон, рассказы — 3 часть",
+        "title": "Невидимка — 3 часть",
         "url": "https://sheba.spb.ru/rs/chesterton03.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p5",
-        "title": "Честертон, рассказы — 4 часть",
+        "title": "Сломанная шпага — 4 часть",
         "url": "https://sheba.spb.ru/rs/chesterton04.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p6",
-        "title": "Честертон, рассказы — 5 часть",
+        "title": "Вещая собака — 5 часть",
         "url": "https://sheba.spb.ru/rs/chesterton05.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p7",
-        "title": "Честертон, рассказы — 6 часть",
+        "title": "Проклятая книга — 6 часть",
         "url": "https://sheba.spb.ru/rs/chesterton06.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p8",
-        "title": "Честертон, рассказы — 7 часть",
+        "title": "Злой рок семьи Дарнуэй — 7 часть",
         "url": "https://sheba.spb.ru/rs/chesterton07.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p9",
-        "title": "Честертон, рассказы — 8 часть",
+        "title": "Причуда рыболова — 8 часть",
         "url": "https://sheba.spb.ru/rs/chesterton08.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p10",
-        "title": "Честертон, рассказы — 9 часть",
+        "title": "Перстень прелюбодеев — 9 часть",
         "url": "https://sheba.spb.ru/rs/chesterton09.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p11",
-        "title": "Честертон, рассказы — 10 часть",
+        "title": "Три всадника Апокалипсиса — 10 часть",
         "url": "https://sheba.spb.ru/rs/chesterton10.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p12",
-        "title": "Честертон, рассказы — 11 титр",
+        "title": "рассказы — 11 титр",
         "url": "https://sheba.spb.ru/rs/chesterton11titr.mp3",
         "backup": null,
         "isTitr": true
