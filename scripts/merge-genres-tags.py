@@ -33,7 +33,7 @@ def main():
 
     added_genre = added_tags = skipped = 0
 
-    for key, fields in batch.items():
+    for key, fields in batch.items(md+A → Ctrl+A (select all / home)
         if key not in overrides:
             overrides[key] = {}
         target = overrides[key]
