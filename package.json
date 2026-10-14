@@ -9,8 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "oxlint src",
-    "scan": "node scripts/scan.js",
-    "deploy": "npm run build && cp dist/index.html dist/404.html && gh-pages -d dist"
+    "scan": "node scripts/scan.js"
   },
   "dependencies": {
     "fuse.js": "^7.5.0",
@@ -23,7 +22,6 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
-    "gh-pages": "^6.3.0",
     "music-metadata": "^11.15.0",
     "oxlint": "^1.84.0",
     "tailwindcss": "^4.3.3",
