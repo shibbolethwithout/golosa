@@ -131,6 +131,7 @@ export default function Player({ onToggleQueue }) {
   useEffect(() => {
     setUsingBackup(false)
     setError(null)
+    playingBackupRef.current = false   // ← ДОБАВИТЬ
     lastSavedRef.current = 0
     setShareMenuOpen(false)
   }, [currentTrack?.id])
@@ -383,6 +384,7 @@ export default function Player({ onToggleQueue }) {
     if (gen !== loadGenRef.current) return
 
     if (!usingBackup && currentTrack?.backup) {
+      playingBackupRef.current = true
       setUsingBackup(true)
       return
     }
