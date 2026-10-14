@@ -139,7 +139,7 @@
     "actors": [
       "Топчиев_Л",
       "Вицин_Г",
-      " Плятт_Р",
+      "Плятт_Р",
       "Лекарев_В",
       "Штейншнейдер_Я",
       "Абрамов_М",
@@ -10299,7 +10299,7 @@
       {
         "id": "p1",
         "title": "Жестокие игры — 0 часть",
-        "url": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=44377",
+        "url": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=44377&file=.mp3",
         "backup": null,
         "isTitr": false
       }
@@ -26734,7 +26734,7 @@
       {
         "id": "p12",
         "title": "рассказы — 11 титр",
-        "url": "https://sheba.spb.ru/rs/chesterton11titr.mp3",
+        "url": "https://sheba.spb.ru/rs/chesterton12titr.mp3",
         "backup": null,
         "isTitr": true
       }
