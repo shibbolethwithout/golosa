@@ -131,10 +131,10 @@ export default function Player({ onToggleQueue }) {
   useEffect(() => {
     setUsingBackup(false)
     setError(null)
-    playingBackupRef.current = false   // ← ДОБАВИТЬ
+    playingBackupRef.current = false
     lastSavedRef.current = 0
     setShareMenuOpen(false)
-  }, [currentTrack?.id])
+  }, [currentTrack?.playId, currentTrack?.id, currentTrack?.url])
 
   useEffect(() => {
     const el = audioRef.current
