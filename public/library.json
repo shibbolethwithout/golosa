@@ -3243,6 +3243,31 @@
     "partCount": 1
   },
   {
+    "id": "битва-1970",
+    "slug": "битва-1970",
+    "title": "Битва",
+    "author": "Абдуакимов У.",
+    "year": 1970,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [],
+    "tags": [],
+    "description": null,
+    "cover": null,
+    "folder": "Абдуакимов У. Битва, 1970",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Битва",
+        "url": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=29230",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 1
+  },
+  {
     "id": "блюдо-для-сыра-1981",
     "slug": "блюдо-для-сыра-1981",
     "title": "Блюдо для сыра",
@@ -4789,6 +4814,31 @@
       }
     ],
     "partCount": 6
+  },
+  {
+    "id": "вечно-живые-1957",
+    "slug": "вечно-живые-1957",
+    "title": "Вечно живые",
+    "author": "Розов В.С.",
+    "year": 1957,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [],
+    "tags": [],
+    "description": null,
+    "cover": null,
+    "folder": "Розов В.С. Вечно живые, 1957",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Вечно живые",
+        "url": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=12213",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 1
   },
   {
     "id": "визит-на-небольшую-планету-1989",
@@ -6800,6 +6850,31 @@
       }
     ],
     "partCount": 5
+  },
+  {
+    "id": "горец-1993",
+    "slug": "горец-1993",
+    "title": "Горец",
+    "author": "Абдуллаев Н.",
+    "year": 1993,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [],
+    "tags": [],
+    "description": null,
+    "cover": null,
+    "folder": "Абдуллаев Н. Горец, 1993",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Горец",
+        "url": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=42414",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 1
   },
   {
     "id": "город-в-котором-мы-будем-жить-1960",
@@ -14012,6 +14087,31 @@
     "partCount": 6
   },
   {
+    "id": "ковёр-на-балконе-1978",
+    "slug": "ковёр-на-балконе-1978",
+    "title": "Ковёр на балконе",
+    "author": "Аббасзаде Г.",
+    "year": 1978,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [],
+    "tags": [],
+    "description": null,
+    "cover": null,
+    "folder": "Аббасзаде Г. Ковёр на балконе, 1978",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Ковёр на балконе",
+        "url": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=43043",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 1
+  },
+  {
     "id": "когда-скорый-опаздывает-1963",
     "slug": "когда-скорый-опаздывает-1963",
     "title": "Когда скорый опаздывает",
@@ -14998,6 +15098,31 @@
       }
     ],
     "partCount": 6
+  },
+  {
+    "id": "красное-и-жёлтое-1989",
+    "slug": "красное-и-жёлтое-1989",
+    "title": "Красное и жёлтое",
+    "author": "Аббас Х.",
+    "year": 1989,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [],
+    "tags": [],
+    "description": null,
+    "cover": null,
+    "folder": "Аббас Х. Красное и жёлтое, 1989",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Красное и жёлтое",
+        "url": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=47818",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 1
   },
   {
     "id": "кремлёвские-куранты-1956",
@@ -19976,22 +20101,16 @@
     "id": "неравный-бой-1960",
     "slug": "неравный-бой-1960",
     "title": "Неравный бой",
-    "author": "Розов В.",
+    "author": "Розов В.С.",
     "year": 1960,
     "theatre": null,
     "directors": [],
     "actors": [],
-    "genre": [
-      "драма",
-      "советская_проза"
-    ],
-    "tags": [
-      "молодость",
-      "выбор"
-    ],
-    "description": "Пьеса Виктора Розова о молодости, любви и выборе своего пути.",
+    "genre": [],
+    "tags": [],
+    "description": null,
     "cover": null,
-    "folder": "Розов В. Неравный бой, 1960",
+    "folder": "Розов В.С. Неравный бой, 1960",
     "parts": [
       {
         "id": "p1",
@@ -20840,6 +20959,31 @@
       }
     ],
     "partCount": 6
+  },
+  {
+    "id": "озеро-лебедей-1963",
+    "slug": "озеро-лебедей-1963",
+    "title": "Озеро лебедей",
+    "author": "Абакумов Б.",
+    "year": 1963,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [],
+    "tags": [],
+    "description": null,
+    "cover": null,
+    "folder": "Абакумов Б. Озеро лебедей, 1963",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Озеро лебедей",
+        "url": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=42715",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 1
   },
   {
     "id": "оле-лукойе-1945",
@@ -21883,14 +22027,13 @@
     "directors": [],
     "actors": [],
     "genre": [
-      "сказка",
-      "зарубежная_классика"
+      "драма",
+      "мелодрама"
     ],
     "tags": [
-      "детям",
       "Эстония"
     ],
-    "description": "Эстонская сказка о маленьком острове и его необыкновенных обитателях.",
+    "description": "Постановка о людях, мужчинах и женщинах, любви и расставании, сожалении и радости, потерях и приобретениях, о жизни.",
     "cover": null,
     "folder": "Туулик Ю. Остров Линнусита, 2001",
     "parts": [
@@ -21910,29 +22053,29 @@
       },
       {
         "id": "p3",
-        "title": "Остров Линнусита — 1 часть",
-        "url": "https://sheba.spb.ru/rs/tuulik-linnusita0int.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
         "title": "Остров Линнусита — 2 часть",
         "url": "https://sheba.spb.ru/rs/tuulik-linnusita2.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p5",
+        "id": "p4",
         "title": "Остров Линнусита — 3 часть",
         "url": "https://sheba.spb.ru/rs/tuulik-linnusita3.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p6",
+        "id": "p5",
         "title": "Остров Линнусита — 4 часть",
         "url": "https://sheba.spb.ru/rs/tuulik-linnusita4.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p6",
+        "title": "Остров Линнусита — 6 слова автора",
+        "url": "https://sheba.spb.ru/rs/tuulik-linnusita0int.mp3",
         "backup": null,
         "isTitr": false
       },
@@ -25064,6 +25207,31 @@
       }
     ],
     "partCount": 4
+  },
+  {
+    "id": "последняя-охота-1977",
+    "slug": "последняя-охота-1977",
+    "title": "Последняя охота",
+    "author": "Абрамов Ф.А.",
+    "year": 1977,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [],
+    "tags": [],
+    "description": null,
+    "cover": null,
+    "folder": "Абрамов Ф.А. Последняя охота, 1977",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Последняя охота",
+        "url": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=43032",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 1
   },
   {
     "id": "похождения-хлыщёва-1971",
@@ -29980,70 +30148,70 @@
     "parts": [
       {
         "id": "p1",
-        "title": "Чехов, смешные рассказы — 1 часть",
+        "title": "Злоумышленник — 1 часть",
         "url": "https://sheba.spb.ru/radio/che_zloum.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p2",
-        "title": "Чехов, смешные рассказы — 2 часть",
+        "title": "Хамелион — 2 часть",
         "url": "https://sheba.spb.ru/radio/che_hameleon.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p3",
-        "title": "Чехов, смешные рассказы — 3 часть",
+        "title": "Лошадиная фамилия — 3 часть",
         "url": "https://sheba.spb.ru/radio/che_loshad.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p4",
-        "title": "Чехов, смешные рассказы — 4 часть",
+        "title": "Радость — 4 часть",
         "url": "https://sheba.spb.ru/radio/che_radost.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p5",
-        "title": "Чехов, смешные рассказы — 5 часть",
+        "title": "Размазня— 5 часть",
         "url": "https://sheba.spb.ru/radio/che_razmaz.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p6",
-        "title": "Чехов, смешные рассказы — 6 часть",
+        "title": "Толстый и тонкий — 6 часть",
         "url": "https://sheba.spb.ru/radio/che_tit.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p7",
-        "title": "Чехов, смешные рассказы — 7 часть",
+        "title": "Ванька — 7 часть",
         "url": "https://sheba.spb.ru/radio/che_vanka.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p8",
-        "title": "Чехов, смешные рассказы — 8 часть",
+        "title": "Злой мальчик — 8 часть",
         "url": "https://sheba.spb.ru/radio/che_zloy.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p9",
-        "title": "Чехов, смешные рассказы — 9 часть",
+        "title": "Либерал — 9 часть",
         "url": "https://sheba.spb.ru/radio/che_liberal.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p10",
-        "title": "Чехов, смешные рассказы — 10 часть",
+        "title": "Не в духе — 10 часть",
         "url": "https://sheba.spb.ru/radio/che_nevdu.mp3",
         "backup": null,
         "isTitr": false
@@ -33423,6 +33591,45 @@
       }
     ],
     "partCount": 4
+  },
+  {
+    "id": "трудный-рейс-алибалы-1987",
+    "slug": "трудный-рейс-алибалы-1987",
+    "title": "Трудный рейс Алибалы",
+    "author": "Аббасзаде Г.",
+    "year": 1987,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [],
+    "tags": [],
+    "description": null,
+    "cover": null,
+    "folder": "Аббасзаде Г. Трудный рейс Алибалы, 1987",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Трудный рейс Алибалы — 1 часть",
+        "url": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=43198",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Трудный рейс Алибалы — 2 часть",
+        "url": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=43108",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Трудный рейс Алибалы — 3 часть",
+        "url": "https://staroeradio.ru/ap/get_mp3_radio_128.php?id=42824",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 3
   },
   {
     "id": "тупейный-художник-1980",
