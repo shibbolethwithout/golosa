@@ -138,8 +138,8 @@
     "directors": [],
     "actors": [
       "Топчиев_Л",
-      "Вицин_Г",
-      "Плятт_Р",
+      "Вицин_ГМ",
+      "Плятт_РЯ",
       "Лекарев_В",
       "Штейншнейдер_Я",
       "Абрамов_М",
@@ -230,38 +230,38 @@
     "parts": [
       {
         "id": "p1",
-        "title": "А зори здесь тихие — титр",
-        "url": "https://sheba.spb.ru/rs/vasiliev-zori5titr.mp3",
-        "backup": null,
-        "isTitr": true
-      },
-      {
-        "id": "p2",
         "title": "А зори здесь тихие — 1 часть",
         "url": "https://sheba.spb.ru/rs/vasiliev-zori1.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p3",
+        "id": "p2",
         "title": "А зори здесь тихие — 2 часть",
         "url": "https://sheba.spb.ru/rs/vasiliev-zori2.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p4",
+        "id": "p3",
         "title": "А зори здесь тихие — 3 часть",
         "url": "https://sheba.spb.ru/rs/vasiliev-zori3.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p5",
+        "id": "p4",
         "title": "А зори здесь тихие — 4 часть",
         "url": "https://sheba.spb.ru/rs/vasiliev-zori4.mp3",
         "backup": null,
         "isTitr": false
+      },
+      {
+        "id": "p5",
+        "title": "А зори здесь тихие — 5 титр",
+        "url": "https://sheba.spb.ru/rs/vasiliev-zori5titr.mp3",
+        "backup": null,
+        "isTitr": true
       }
     ],
     "partCount": 5
@@ -802,15 +802,15 @@
     "parts": [
       {
         "id": "p1",
-        "title": "Аптекарша — титр",
-        "url": "https://sheba.spb.ru/radio/che-aptekarsha-titr.mp3",
+        "title": "Аптекарша — 1 часть",
+        "url": "https://sheba.spb.ru/radio/che-aptekarsha.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p2",
-        "title": "Аптекарша",
-        "url": "https://sheba.spb.ru/radio/che-aptekarsha.mp3",
+        "title": "Аптекарша — 2 титр",
+        "url": "https://sheba.spb.ru/radio/che-aptekarsha-titr.mp3",
         "backup": null,
         "isTitr": false
       }
@@ -991,38 +991,38 @@
     "parts": [
       {
         "id": "p1",
-        "title": "Ах, эти женщины! — титр",
-        "url": "https://sheba.spb.ru/radio/ah5titr.mp3",
-        "backup": null,
-        "isTitr": true
-      },
-      {
-        "id": "p2",
         "title": "Ах, эти женщины! — 1 часть",
         "url": "https://sheba.spb.ru/radio/ah1.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p3",
+        "id": "p2",
         "title": "Ах, эти женщины! — 2 часть",
         "url": "https://sheba.spb.ru/radio/ah2.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p4",
+        "id": "p3",
         "title": "Ах, эти женщины! — 3 часть",
         "url": "https://sheba.spb.ru/radio/ah3.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p5",
+        "id": "p4",
         "title": "Ах, эти женщины! — 4 часть",
         "url": "https://sheba.spb.ru/radio/ah4.mp3",
         "backup": null,
         "isTitr": false
+      },
+      {
+        "id": "p5",
+        "title": "Ах, эти женщины! — 5 титр",
+        "url": "https://sheba.spb.ru/radio/ah5titr.mp3",
+        "backup": null,
+        "isTitr": true
       }
     ],
     "partCount": 5
@@ -1342,38 +1342,38 @@
     "parts": [
       {
         "id": "p1",
-        "title": "Баня — титр",
-        "url": "https://sheba.spb.ru/rs/maiak-bania5titr.mp3",
-        "backup": null,
-        "isTitr": true
-      },
-      {
-        "id": "p2",
         "title": "Баня — 1 часть",
         "url": "https://sheba.spb.ru/rs/maiak-bania1.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p3",
+        "id": "p2",
         "title": "Баня — 2 часть",
         "url": "https://sheba.spb.ru/rs/maiak-bania2.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p4",
+        "id": "p3",
         "title": "Баня — 3 часть",
         "url": "https://sheba.spb.ru/rs/maiak-bania3.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p5",
+        "id": "p4",
         "title": "Баня — 4 часть",
         "url": "https://sheba.spb.ru/rs/maiak-bania4.mp3",
         "backup": null,
         "isTitr": false
+      },
+      {
+        "id": "p5",
+        "title": "Баня — 5 титр",
+        "url": "https://sheba.spb.ru/rs/maiak-bania5titr.mp3",
+        "backup": null,
+        "isTitr": true
       }
     ],
     "partCount": 5
@@ -1467,119 +1467,119 @@
     "parts": [
       {
         "id": "p1",
-        "title": "тексты с картинками и звуком — 1 часть",
+        "title": "Басни — 1 часть",
         "url": "https://sheba.spb.ru/s/k01.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p2",
-        "title": "тексты с картинками и звуком — 2 часть",
+        "title": "Басни — 2 часть",
         "url": "https://sheba.spb.ru/s/k02.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p3",
-        "title": "тексты с картинками и звуком — 3 часть",
+        "title": "Басни — 3 часть",
         "url": "https://sheba.spb.ru/s/k03.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p4",
-        "title": "тексты с картинками и звуком — 4 часть",
+        "title": "Басни  — 4 часть",
         "url": "https://sheba.spb.ru/s/k04.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p5",
-        "title": "тексты с картинками и звуком — 5 часть",
+        "title": "Басни  — 5 часть",
         "url": "https://sheba.spb.ru/s/k05.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p6",
-        "title": "ексты с картинками и звуком — 6 часть",
+        "title": "Басни — 6 часть",
         "url": "https://sheba.spb.ru/s/k06.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p7",
-        "title": "тексты с картинками и звуком — 7 часть",
+        "title": "Басни — 7 часть",
         "url": "https://sheba.spb.ru/s/k07.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p8",
-        "title": "тексты с картинками и звуком — 8 часть",
+        "title": "Басни  — 8 часть",
         "url": "https://sheba.spb.ru/s/k08.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p9",
-        "title": "тексты с картинками и звуком — 9 часть",
+        "title": "Басни — 9 часть",
         "url": "https://sheba.spb.ru/s/k09.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p10",
-        "title": "тексты с картинками и звуком — 10 часть",
+        "title": "Басни — 10 часть",
         "url": "https://sheba.spb.ru/s/k10.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p11",
-        "title": "тексты с картинками и звуком — 11 часть",
+        "title": "Басни — 11 часть",
         "url": "https://sheba.spb.ru/s/k11.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p12",
-        "title": "тексты с картинками и звуком — 12 часть",
+        "title": "Басни  — 12 часть",
         "url": "https://sheba.spb.ru/s/k12.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p13",
-        "title": "тексты с картинками и звуком — 13 часть",
+        "title": "Басни — 13 часть",
         "url": "https://sheba.spb.ru/s/k13.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p14",
-        "title": "тексты с картинками и звуком — 14 часть",
+        "title": "Басни — 14 часть",
         "url": "https://sheba.spb.ru/s/k14.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p15",
-        "title": "тексты с картинками и звуком — 15 часть",
+        "title": "Басни — 15 часть",
         "url": "https://sheba.spb.ru/s/k15.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p16",
-        "title": "тексты с картинками и звуком — 16 часть",
+        "title": "Басни  — 16 часть",
         "url": "https://sheba.spb.ru/s/k16.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p17",
-        "title": "тексты с картинками и звуком — 17 часть",
+        "title": "Басни — 17 часть",
         "url": "https://sheba.spb.ru/s/k17.mp3",
         "backup": null,
         "isTitr": false
@@ -1773,45 +1773,45 @@
     "parts": [
       {
         "id": "p1",
-        "title": "Без видимых причин — титр",
-        "url": "https://sheba.spb.ru/rs/more-bez6titr.mp3",
-        "backup": null,
-        "isTitr": true
-      },
-      {
-        "id": "p2",
         "title": "Без видимых причин — 1 часть",
         "url": "https://sheba.spb.ru/rs/more-bez1.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p3",
+        "id": "p2",
         "title": "Без видимых причин — 2 часть",
         "url": "https://sheba.spb.ru/rs/more-bez2.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p4",
+        "id": "p3",
         "title": "Без видимых причин — 3 часть",
         "url": "https://sheba.spb.ru/rs/more-bez3.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p5",
+        "id": "p4",
         "title": "Без видимых причин — 4 часть",
         "url": "https://sheba.spb.ru/rs/more-bez4.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p6",
+        "id": "p5",
         "title": "Без видимых причин — 5 часть",
         "url": "https://sheba.spb.ru/rs/more-bez5.mp3",
         "backup": null,
         "isTitr": false
+      },
+      {
+        "id": "p6",
+        "title": "Без видимых причин — 6 титр",
+        "url": "https://sheba.spb.ru/rs/more-bez6titr.mp3",
+        "backup": null,
+        "isTitr": true
       }
     ],
     "partCount": 6
@@ -2272,38 +2272,38 @@
     "parts": [
       {
         "id": "p1",
-        "title": "Беккеровский рояль — титр",
-        "url": "https://sheba.spb.ru/rs/antonov-bekroyal5titr.mp3",
-        "backup": null,
-        "isTitr": true
-      },
-      {
-        "id": "p2",
         "title": "Беккеровский рояль — 1 часть",
         "url": "https://sheba.spb.ru/rs/antonov-bekroyal1.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p3",
+        "id": "p2",
         "title": "Беккеровский рояль — 2 часть",
         "url": "https://sheba.spb.ru/rs/antonov-bekroyal2.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p4",
+        "id": "p3",
         "title": "Беккеровский рояль — 3 часть",
         "url": "https://sheba.spb.ru/rs/antonov-bekroyal3.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p5",
+        "id": "p4",
         "title": "Беккеровский рояль — 4 часть",
         "url": "https://sheba.spb.ru/rs/antonov-bekroyal4.mp3",
         "backup": null,
         "isTitr": false
+      },
+      {
+        "id": "p5",
+        "title": "Беккеровский рояль — 5 титр",
+        "url": "https://sheba.spb.ru/rs/antonov-bekroyal5titr.mp3",
+        "backup": null,
+        "isTitr": true
       }
     ],
     "partCount": 5
@@ -3083,63 +3083,63 @@
     "parts": [
       {
         "id": "p1",
-        "title": "Бешеные деньги mp3 — 1 часть",
+        "title": "Бешеные деньги — 1 часть",
         "url": "https://sheba.spb.ru/radio/ostro-besh1.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p2",
-        "title": "Бешеные деньги mp3 — 2 часть",
+        "title": "Бешеные деньги — 2 часть",
         "url": "https://sheba.spb.ru/radio/ostro-besh2.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p3",
-        "title": "Бешеные деньги mp3 — 3 часть",
+        "title": "Бешеные деньги — 3 часть",
         "url": "https://sheba.spb.ru/radio/ostro-besh3.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p4",
-        "title": "Бешеные деньги mp3 — 4 часть",
+        "title": "Бешеные деньги — 4 часть",
         "url": "https://sheba.spb.ru/radio/ostro-besh4.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p5",
-        "title": "Бешеные деньги mp3 — 5 часть",
+        "title": "Бешеные деньги — 5 часть",
         "url": "https://sheba.spb.ru/radio/ostro-besh5.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p6",
-        "title": "Бешеные деньги mp3 — 6 часть",
+        "title": "Бешеные деньги — 6 часть",
         "url": "https://sheba.spb.ru/radio/ostro-besh6.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p7",
-        "title": "Бешеные деньги mp3 — 7 часть",
+        "title": "Бешеные деньги — 7 часть",
         "url": "https://sheba.spb.ru/radio/ostro-besh7.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p8",
-        "title": "Бешеные деньги mp3 — 8 часть",
+        "title": "Бешеные деньги — 8 часть",
         "url": "https://sheba.spb.ru/radio/ostro-besh8.mp3",
         "backup": null,
         "isTitr": false
       },
       {
         "id": "p9",
-        "title": "Бешеные деньги mp3 — 9 часть",
+        "title": "Бешеные деньги — 9 часть",
         "url": "https://sheba.spb.ru/radio/ostro-besh9.mp3",
         "backup": null,
         "isTitr": false
@@ -7005,11 +7005,11 @@
     "partCount": 1
   },
   {
-    "id": "грабёж-1980",
-    "slug": "грабёж-1980",
+    "id": "грабёж-1990",
+    "slug": "грабёж-1990",
     "title": "Грабёж",
     "author": "Лесков Н.С.",
-    "year": 1980,
+    "year": 1990,
     "theatre": null,
     "directors": [],
     "actors": [],
@@ -7022,87 +7022,45 @@
     ],
     "description": "Рассказ Лескова о человеческой подлости и наказании — с его неповторимым слогом.",
     "cover": null,
-    "folder": "Лесков Н.С. Грабёж, 1980",
+    "folder": "Лесков Н.С. Грабёж, 1990",
     "parts": [
       {
         "id": "p1",
-        "title": "Грабёж — титр",
-        "url": "https://sheba.spb.ru/radio/leskov-zem3titr.mp3",
-        "backup": null,
-        "isTitr": true
-      },
-      {
-        "id": "p2",
-        "title": "Грабёж — 0 часть",
-        "url": "https://sheba.spb.ru/radio/leskov-snfryigeniy0.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Грабёж — 1 часть",
-        "url": "https://sheba.spb.ru/radio/leskov-zem1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Грабёж — 1 часть",
-        "url": "https://sheba.spb.ru/radio/leskov-snfryigeniy1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p5",
         "title": "Грабёж — 1 часть",
         "url": "https://sheba.spb.ru/radio/leskov-grab1.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p6",
-        "title": "Грабёж — 2 часть",
-        "url": "https://sheba.spb.ru/radio/leskov-zem2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p7",
-        "title": "Грабёж — 2 часть",
-        "url": "https://sheba.spb.ru/radio/leskov-snfryigeniy2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p8",
+        "id": "p2",
         "title": "Грабёж — 2 часть",
         "url": "https://sheba.spb.ru/radio/leskov-grab2.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p9",
+        "id": "p3",
         "title": "Грабёж — 3 часть",
         "url": "https://sheba.spb.ru/radio/leskov-grab3.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p10",
+        "id": "p4",
         "title": "Грабёж — 4 часть",
         "url": "https://sheba.spb.ru/radio/leskov-grab4.mp3",
         "backup": null,
         "isTitr": false
       },
       {
-        "id": "p11",
+        "id": "p5",
         "title": "Грабёж — 5 титр",
         "url": "https://sheba.spb.ru/radio/leskov-grab5titr.mp3",
         "backup": null,
         "isTitr": true
       }
     ],
-    "partCount": 11
+    "partCount": 5
   },
   {
     "id": "гранатовый-браслет-1980",
@@ -9995,6 +9953,45 @@
       }
     ],
     "partCount": 5
+  },
+  {
+    "id": "жемчужное-ожерелье-1992",
+    "slug": "жемчужное-ожерелье-1992",
+    "title": "Жемчужное ожерелье",
+    "author": "Лесков Н.С.",
+    "year": 1992,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [],
+    "tags": [],
+    "description": null,
+    "cover": null,
+    "folder": "Лесков Н.С. Жемчужное ожерелье, 1992",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Жемчужное ожерелье — 1 часть",
+        "url": "https://sheba.spb.ru/radio/leskov-zem1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Жемчужное ожерелье — 2 часть",
+        "url": "https://sheba.spb.ru/radio/leskov-zem2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Жемчужное ожерелье — 3 титр",
+        "url": "https://sheba.spb.ru/radio/leskov-zem3titr.mp3",
+        "backup": null,
+        "isTitr": true
+      }
+    ],
+    "partCount": 3
   },
   {
     "id": "жена-за-полкроны-1959",
@@ -30460,6 +30457,45 @@
       }
     ],
     "partCount": 5
+  },
+  {
+    "id": "старый-гений-1993",
+    "slug": "старый-гений-1993",
+    "title": "Старый гений",
+    "author": "Лесков Н.С.",
+    "year": 1993,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [],
+    "tags": [],
+    "description": null,
+    "cover": null,
+    "folder": "Лесков Н.С. Старый гений, 1993",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Старый гений — 0 часть",
+        "url": "https://sheba.spb.ru/radio/leskov-snfryigeniy0.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Старый гений — 1 часть",
+        "url": "https://sheba.spb.ru/radio/leskov-snfryigeniy1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Старый гений — 2 часть",
+        "url": "https://sheba.spb.ru/radio/leskov-snfryigeniy2.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 3
   },
   {
     "id": "степанчиково-1960",
