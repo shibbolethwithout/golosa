@@ -5149,6 +5149,65 @@
     "partCount": 10
   },
   {
+    "id": "вишнёвый-сад-1951",
+    "slug": "вишнёвый-сад-1951",
+    "title": "Вишнёвый сад",
+    "author": "Чехов А.П.",
+    "year": 1951,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "драма",
+      "русская_классика"
+    ],
+    "tags": [
+      "XIX_век",
+      "МХАТ"
+    ],
+    "description": "Легендарная постановка МХАТа — о потере, прощании и тихой грусти уходящего мира.",
+    "cover": null,
+    "folder": "Чехов А.П. Вишнёвый сад, 1951",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Вишнёвый сад — титр",
+        "url": "https://sheba.spb.ru/radio/vsad-titr.ogg",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Вишнёвый сад — 1 часть",
+        "url": "https://sheba.spb.ru/radio/vsad1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Вишнёвый сад — 2 часть",
+        "url": "https://sheba.spb.ru/radio/vsad2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Вишнёвый сад — 3 часть",
+        "url": "https://sheba.spb.ru/radio/vsad3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p5",
+        "title": "Вишнёвый сад — 4 часть",
+        "url": "https://sheba.spb.ru/radio/vsad4.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 5
+  },
+  {
     "id": "вишнёвый-сад-1983",
     "slug": "вишнёвый-сад-1983",
     "title": "Вишнёвый сад",
@@ -5199,65 +5258,6 @@
       }
     ],
     "partCount": 4
-  },
-  {
-    "id": "вишнёвый-сад-мхат-1951",
-    "slug": "вишнёвый-сад-мхат-1951",
-    "title": "Вишнёвый сад МХАТ",
-    "author": "Чехов А.П.",
-    "year": 1951,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "драма",
-      "русская_классика"
-    ],
-    "tags": [
-      "XIX_век",
-      "МХАТ"
-    ],
-    "description": "Легендарная постановка МХАТа — о потере, прощании и тихой грусти уходящего мира.",
-    "cover": null,
-    "folder": "Чехов А.П. Вишнёвый сад МХАТ, 1951",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Вишнёвый сад — титр",
-        "url": "https://sheba.spb.ru/radio/vsad-titr.ogg",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Вишнёвый сад — 1 часть",
-        "url": "https://sheba.spb.ru/radio/vsad1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Вишнёвый сад — 2 часть",
-        "url": "https://sheba.spb.ru/radio/vsad2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Вишнёвый сад — 3 часть",
-        "url": "https://sheba.spb.ru/radio/vsad3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p5",
-        "title": "Вишнёвый сад — 4 часть",
-        "url": "https://sheba.spb.ru/radio/vsad4.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 5
   },
   {
     "id": "власть-тьмы-1956",
@@ -22074,7 +22074,7 @@
       },
       {
         "id": "p6",
-        "title": "Остров Линнусита — 6 слова автора",
+        "title": "слова автора — 6 часть",
         "url": "https://sheba.spb.ru/rs/tuulik-linnusita0int.mp3",
         "backup": null,
         "isTitr": false
@@ -27532,58 +27532,6 @@
     "partCount": 6
   },
   {
-    "id": "рауд-э-странный-господин-1975",
-    "slug": "рауд-э-странный-господин-1975",
-    "title": "Рауд. Э. Странный господин",
-    "author": null,
-    "year": 1975,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "сказка",
-      "зарубежная_классика"
-    ],
-    "tags": [
-      "детям",
-      "Эстония"
-    ],
-    "description": "Эстонская сказка о странном господине, который появляется в городке — и всё меняется.",
-    "cover": null,
-    "folder": "Рауд. Э. Странный господин, 1975",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Странный господин — 1 часть",
-        "url": "https://sheba.spb.ru/rs/raud-stragosp1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Странный господин — 2 часть",
-        "url": "https://sheba.spb.ru/rs/raud-stragosp2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Странный господин — 3 часть",
-        "url": "https://sheba.spb.ru/rs/raud-stragosp3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Странный господин — 4 часть",
-        "url": "https://sheba.spb.ru/rs/raud-stragosp4.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 4
-  },
-  {
     "id": "ревельский-турнир-1989",
     "slug": "ревельский-турнир-1989",
     "title": "Ревельский турнир",
@@ -31362,6 +31310,58 @@
     "partCount": 4
   },
   {
+    "id": "странный-господин-1975",
+    "slug": "странный-господин-1975",
+    "title": "Странный господин",
+    "author": "Рауд Э.",
+    "year": 1975,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "сказка",
+      "зарубежная_классика"
+    ],
+    "tags": [
+      "детям",
+      "Эстония"
+    ],
+    "description": "Эстонская сказка о странном господине, который появляется в городке — и всё меняется.",
+    "cover": null,
+    "folder": "Рауд Э. Странный господин, 1975",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Странный господин — 1 часть",
+        "url": "https://sheba.spb.ru/rs/raud-stragosp1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Странный господин — 2 часть",
+        "url": "https://sheba.spb.ru/rs/raud-stragosp2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Странный господин — 3 часть",
+        "url": "https://sheba.spb.ru/rs/raud-stragosp3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Странный господин — 4 часть",
+        "url": "https://sheba.spb.ru/rs/raud-stragosp4.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 4
+  },
+  {
     "id": "страсти-по-мастеру-1978",
     "slug": "страсти-по-мастеру-1978",
     "title": "Страсти по мастеру",
@@ -35040,6 +35040,58 @@
     "partCount": 4
   },
   {
+    "id": "чайка-1971",
+    "slug": "чайка-1971",
+    "title": "Чайка",
+    "author": "Чехов А.П.",
+    "year": 1971,
+    "theatre": null,
+    "directors": [],
+    "actors": [],
+    "genre": [
+      "драма",
+      "русская_классика"
+    ],
+    "tags": [
+      "XIX_век",
+      "МХАТ"
+    ],
+    "description": "Легендарная постановка МХАТа — о чайке, которую погубили, и о жизни, которая продолжается.",
+    "cover": null,
+    "folder": "Чехов А.П. Чайка, 1971",
+    "parts": [
+      {
+        "id": "p1",
+        "title": "Чайка МХАТ — 1 часть",
+        "url": "https://sheba.spb.ru/radio/chaika-mhat1.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p2",
+        "title": "Чайка МХАТ — 2 часть",
+        "url": "https://sheba.spb.ru/radio/chaika-mhat2.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p3",
+        "title": "Чайка МХАТ — 3 часть",
+        "url": "https://sheba.spb.ru/radio/chaika-mhat3.mp3",
+        "backup": null,
+        "isTitr": false
+      },
+      {
+        "id": "p4",
+        "title": "Чайка МХАТ — 4 часть",
+        "url": "https://sheba.spb.ru/radio/chaika-mhat4.mp3",
+        "backup": null,
+        "isTitr": false
+      }
+    ],
+    "partCount": 4
+  },
+  {
     "id": "чайка-1991",
     "slug": "чайка-1991",
     "title": "Чайка",
@@ -35104,58 +35156,6 @@
       }
     ],
     "partCount": 6
-  },
-  {
-    "id": "чайка-мхат-1971",
-    "slug": "чайка-мхат-1971",
-    "title": "Чайка МХАТ",
-    "author": "Чехов А.П.",
-    "year": 1971,
-    "theatre": null,
-    "directors": [],
-    "actors": [],
-    "genre": [
-      "драма",
-      "русская_классика"
-    ],
-    "tags": [
-      "XIX_век",
-      "МХАТ"
-    ],
-    "description": "Легендарная постановка МХАТа — о чайке, которую погубили, и о жизни, которая продолжается.",
-    "cover": null,
-    "folder": "Чехов А.П. Чайка МХАТ, 1971",
-    "parts": [
-      {
-        "id": "p1",
-        "title": "Чайка МХАТ — 1 часть",
-        "url": "https://sheba.spb.ru/radio/chaika-mhat1.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p2",
-        "title": "Чайка МХАТ — 2 часть",
-        "url": "https://sheba.spb.ru/radio/chaika-mhat2.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p3",
-        "title": "Чайка МХАТ — 3 часть",
-        "url": "https://sheba.spb.ru/radio/chaika-mhat3.mp3",
-        "backup": null,
-        "isTitr": false
-      },
-      {
-        "id": "p4",
-        "title": "Чайка МХАТ — 4 часть",
-        "url": "https://sheba.spb.ru/radio/chaika-mhat4.mp3",
-        "backup": null,
-        "isTitr": false
-      }
-    ],
-    "partCount": 4
   },
   {
     "id": "человек-из-лондона-1983",
